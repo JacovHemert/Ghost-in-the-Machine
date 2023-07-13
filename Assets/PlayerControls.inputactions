@@ -2,7 +2,7 @@
     "name": "PlayerControls",
     "maps": [
         {
-            "name": "New action map",
+            "name": "Moving",
             "id": "c9e3db7d-f242-4eac-905a-e92b6beb2cdf",
             "actions": [
                 {
