@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b05702713973e7942b71fad971d208f4
+guid: 3aa8295f5b439824ca010eb630e6844a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3472538862178493807
-    second: wall-basic-cutout_0
+      213: 1451709767920071199
+    second: device-example_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,22 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-cutout_0
+      name: device-example_0
       rect:
         serializedVersion: 2
-        x: 128
-        y: 75
-        width: 331
-        height: 995
+        x: 396
+        y: 152
+        width: 1056
+        height: 1066
       alignment: 9
-      pivot: {x: 0.41389728, y: 0.2361809}
+      pivot: {x: 0.1344697, y: 0.2945591}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 19a9c1b9d401fcfc0800000000000000
-      internalID: -3472538862178493807
+      spriteID: f1237d9a752852410800000000000000
+      internalID: 1451709767920071199
       vertices: []
       indices: 
       edges: []
@@ -121,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 364aef4ab0e09204185eab98ec16e8b2
+    spriteID: 5202be3976597f84c88f7d9da6773e31
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-cutout_0: -3472538862178493807
+      device-example_0: 1451709767920071199
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
