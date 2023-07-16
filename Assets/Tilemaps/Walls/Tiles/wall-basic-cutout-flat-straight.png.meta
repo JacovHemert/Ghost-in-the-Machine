@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 93ec48cdc87108f4cbc03d53eb192abe
+guid: 078488ef7ac38714b99767c492d8ae75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 410415669677692742
-    second: wall-basic-corner_0
-  - first:
-      213: 5462492131743349794
-    second: wall-basic-corner_1
-  - first:
-      213: 5970901076797474287
-    second: wall-basic-corner_2
+      213: 4196159127274994432
+    second: wall-basic-cutout-flat-straight_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -104,22 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-corner_0
+      name: wall-basic-cutout-flat-straight_0
       rect:
         serializedVersion: 2
-        x: 786
-        y: 569
-        width: 280
-        height: 879
+        x: 128
+        y: 75
+        width: 331
+        height: 956
       alignment: 9
-      pivot: {x: 0.50357145, y: 0.23094426}
+      pivot: {x: 0.42296073, y: 0.24058577}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 647946980e612b500800000000000000
-      internalID: 410415669677692742
+      spriteID: 00b3d3a7e70cb3a30800000000000000
+      internalID: 4196159127274994432
       vertices: []
       indices: 
       edges: []
@@ -127,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7ae57169b332cb44aadfe01bfbe65b91
+    spriteID: 375b7ad96c1acea4fa4433daaaa1b9b7
     internalID: 0
     vertices: []
     indices: 
@@ -135,10 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-corner_0: 410415669677692742
-      wall-basic-corner_1: 5462492131743349794
-      wall-basic-corner_2: 5970901076797474287
-      wall-basic-corner_3: 944171599
+      wall-basic-cutout-flat-straight_0: 4196159127274994432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

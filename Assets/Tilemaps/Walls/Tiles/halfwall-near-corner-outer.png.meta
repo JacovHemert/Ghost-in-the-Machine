@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 93ec48cdc87108f4cbc03d53eb192abe
+guid: 26039f386fc361944b5fd00dac94aba4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 410415669677692742
-    second: wall-basic-corner_0
+      213: -5238308395463939503
+    second: halfwall-near-corner-outer_0
   - first:
-      213: 5462492131743349794
-    second: wall-basic-corner_1
+      213: 9120153394846455716
+    second: halfwall-near-corner-outer_1
   - first:
-      213: 5970901076797474287
-    second: wall-basic-corner_2
+      213: 4727444576148970504
+    second: halfwall-near-corner-outer_2
+  - first:
+      213: -4118918362631660822
+    second: halfwall-near-corner-outer_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -104,22 +107,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-corner_0
+      name: halfwall-near-corner-outer_2
       rect:
         serializedVersion: 2
-        x: 786
-        y: 569
-        width: 280
-        height: 879
+        x: 866
+        y: 153
+        width: 292
+        height: 269
       alignment: 9
-      pivot: {x: 0.50357145, y: 0.23094426}
+      pivot: {x: 0.4760274, y: 0.267658}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 647946980e612b500800000000000000
-      internalID: 410415669677692742
+      spriteID: 80cd4b08bc14b9140800000000000000
+      internalID: 4727444576148970504
       vertices: []
       indices: 
       edges: []
@@ -127,7 +130,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7ae57169b332cb44aadfe01bfbe65b91
+    spriteID: 8c97d807ba951d244b5fd420467870c5
     internalID: 0
     vertices: []
     indices: 
@@ -135,10 +138,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-corner_0: 410415669677692742
-      wall-basic-corner_1: 5462492131743349794
-      wall-basic-corner_2: 5970901076797474287
-      wall-basic-corner_3: 944171599
+      halfwall-near-corner-outer_0: -5238308395463939503
+      halfwall-near-corner-outer_1: 9120153394846455716
+      halfwall-near-corner-outer_2: 4727444576148970504
+      halfwall-near-corner-outer_3: -4118918362631660822
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
