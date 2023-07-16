@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1c04f2595983345ab86d4ef0eea06dea
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 60055
+  packageName: Ink Unity Integration
+  packageVersion: 1.0.0
+  assetPath: Assets/Ink/Demos/Basic Demo/Scripts/Editor/BasicInkExampleEditor.cs
+  uploadId: 419419

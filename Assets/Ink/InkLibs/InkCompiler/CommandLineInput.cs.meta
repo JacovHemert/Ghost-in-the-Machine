@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c05786c433ce449658bbeffe36e74ffd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 60055
+  packageName: Ink Unity Integration
+  packageVersion: 1.0.0
+  assetPath: Assets/Ink/InkLibs/InkCompiler/CommandLineInput.cs
+  uploadId: 419419

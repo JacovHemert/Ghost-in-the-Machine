@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 85254203c0564478cab552275fc29e5f
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 60055
+  packageName: Ink Unity Integration
+  packageVersion: 1.0.0
+  assetPath: Assets/Ink/README.md
+  uploadId: 419419

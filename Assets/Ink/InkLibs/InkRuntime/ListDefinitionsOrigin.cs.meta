@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ec881a45ed342471fb87e412417b6343
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 60055
+  packageName: Ink Unity Integration
+  packageVersion: 1.0.0
+  assetPath: Assets/Ink/InkLibs/InkRuntime/ListDefinitionsOrigin.cs
+  uploadId: 419419
