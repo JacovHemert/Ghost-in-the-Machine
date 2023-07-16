@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 desiredMove;
+    [SerializeField] private float speed;
 
     private void Start()
     {
@@ -24,9 +25,18 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        Debug.Log(desiredMove);
+
         desiredMove = context.ReadValue<Vector2>();
-        
+        Debug.Log(desiredMove);
+        if (Mathf.Abs(desiredMove.x) > 0.1f && Mathf.Abs(desiredMove.y) >= 0.1f)
+        {
+            Debug.Log("DIAGONAL");
+            //desiredMove = new Vector2(desiredMove.x * 1.7f, desiredMove.y);
+            desiredMove = new Vector2(desiredMove.x* 1.4f, desiredMove.y * 0.80f);
+        }
+            
+        desiredMove *= Time.fixedDeltaTime * speed;
+        Debug.Log(desiredMove);
     }
 
 
