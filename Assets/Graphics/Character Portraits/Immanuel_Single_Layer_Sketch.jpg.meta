@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Immanuel_Single_Layer_Sketch_0: 6672344474629477297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

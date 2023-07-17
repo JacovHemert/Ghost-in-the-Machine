@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rousseau_Single_Layer_Sketch_0: 2690530216635778537
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
