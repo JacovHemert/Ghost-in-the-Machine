@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 2169c447d3acc1845a45e66300d12787
+guid: ec9b30199f49aac459c62b8c8e8a9d1e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3493250876566211700
-    second: wall-window-right_0
-  - first:
-      213: 3706199719370391695
-    second: wall-window-right_1
+      213: -6817652953040381045
+    second: honkwich_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,26 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-window-right_0
+      name: honkwich_0
       rect:
         serializedVersion: 2
-        x: 602
-        y: 534
-        width: 218
-        height: 874
-      alignment: 9
-      pivot: {x: 0.61926603, y: 0.13501143}
+        x: 264
+        y: 613
+        width: 403
+        height: 533
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -45, y: -431}
-        - {x: 84, y: -359}
-        - {x: 20, y: -337}
-        - {x: -96, y: -409}
-      tessellationDetail: 0
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: c83f2f6f5da758fc0800000000000000
-      internalID: -3493250876566211700
+      spriteID: b8b922cb2c4d261a0800000000000000
+      internalID: -6817652953040381045
       vertices: []
       indices: 
       edges: []
@@ -128,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 794ba5bee1795c641992e74bc1d6eb77
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-window-right_0: -3493250876566211700
-      wall-window-right_1: 3706199719370391695
+      honkwich_0: -6817652953040381045
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

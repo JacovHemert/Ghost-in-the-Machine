@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 2169c447d3acc1845a45e66300d12787
+guid: f42deca533a3934478c67a684900e782
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3493250876566211700
-    second: wall-window-right_0
-  - first:
-      213: 3706199719370391695
-    second: wall-window-right_1
+      213: 2568956360853038877
+    second: soup_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,26 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-window-right_0
+      name: soup_0
       rect:
         serializedVersion: 2
-        x: 602
-        y: 534
-        width: 218
-        height: 874
+        x: 507
+        y: 1279
+        width: 97
+        height: 114
       alignment: 9
-      pivot: {x: 0.61926603, y: 0.13501143}
+      pivot: {x: 1.7525773, y: -0.77192986}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -45, y: -431}
-        - {x: 84, y: -359}
-        - {x: 20, y: -337}
-        - {x: -96, y: -409}
-      tessellationDetail: 0
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: c83f2f6f5da758fc0800000000000000
-      internalID: -3493250876566211700
+      spriteID: d1720240334c6a320800000000000000
+      internalID: 2568956360853038877
       vertices: []
       indices: 
       edges: []
@@ -128,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 794ba5bee1795c641992e74bc1d6eb77
+    spriteID: c419df39354bc0f45a08e94ca4527cfc
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-window-right_0: -3493250876566211700
-      wall-window-right_1: 3706199719370391695
+      soup_0: 2568956360853038877
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

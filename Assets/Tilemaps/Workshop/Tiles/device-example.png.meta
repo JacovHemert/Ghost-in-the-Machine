@@ -109,8 +109,16 @@ TextureImporter:
       pivot: {x: 0.1344697, y: 0.2945591}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -333, y: 533}
+        - {x: -528, y: 161}
+        - {x: -528, y: -307}
+        - {x: -137, y: -533}
+        - {x: -121, y: -533}
+        - {x: 10, y: -465}
+        - {x: 528, y: -240}
+        - {x: 528, y: 533}
+      tessellationDetail: 0
       bones: []
       spriteID: f1237d9a752852410800000000000000
       internalID: 1451709767920071199
