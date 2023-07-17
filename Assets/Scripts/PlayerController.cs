@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 desiredMove;
+    private HashSet<DialogueTrigger> nearbyTriggers = new();
+
     [SerializeField] private float speed;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
-
     }
 
     public void PrintStuff()
@@ -37,6 +38,52 @@ public class PlayerController : MonoBehaviour
             
         desiredMove *= Time.fixedDeltaTime * speed;
         Debug.Log(desiredMove);
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            DialogueTrigger activeTrigger = NearestTrigger();
+            if (activeTrigger != null)
+            {
+                activeTrigger.InitiateDialogue();
+            }
+        }
+    }
+
+    public bool FocusTrigger(DialogueTrigger trigger)
+    {
+        return nearbyTriggers.Add(trigger);
+    }
+
+    public bool UnfocusTrigger(DialogueTrigger trigger)
+    {
+        return nearbyTriggers.Remove(trigger);
+    }
+
+    private DialogueTrigger NearestTrigger()
+    {
+        return nearbyTriggers.OrderBy(t => Distance(t.gameObject)).FirstOrDefault();
+    }
+
+
+    /// <summary>
+    /// Calculates the distance from the Player to a given GameObject, based on the distance/overlap between the attached colliders.
+    /// </summary>
+    private float Distance(GameObject obj)
+    {
+        float distance = float.PositiveInfinity;
+        
+        if (obj.TryGetComponent<Collider2D>(out var collider))
+        {
+           var distanceInfo = rb.Distance(collider);
+
+            if (distanceInfo.isValid)
+                distance = distanceInfo.distance;
+        }
+        
+        return distance;
     }
 
 
