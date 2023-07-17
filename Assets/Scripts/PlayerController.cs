@@ -70,7 +70,13 @@ public class PlayerController : MonoBehaviour
 
     private DialogueTrigger NearestTrigger()
     {
-        return nearbyTriggers.OrderBy(t => Distance(t.gameObject)).FirstOrDefault();
+        //Debug.Log("----");
+        //foreach(var trigger in nearbyTriggers)
+        //{
+        //    Debug.Log(trigger.transform.parent.name + " /// " + Mathf.Abs(Distance(trigger.gameObject)));
+        //}
+        //Debug.Log(nearbyTriggers.OrderBy(t => Mathf.Abs(Distance(t.gameObject))).LastOrDefault().transform.parent.name);
+        return nearbyTriggers.OrderBy(t => Mathf.Abs(Distance(t.gameObject))).LastOrDefault();//FirstOrDefault();
     }
 
 
@@ -96,13 +102,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (nearbyTriggers.Count > 0)
-        {
-            DialogueTrigger activeTrigger = NearestTrigger();
+        {            
             foreach(DialogueTrigger trigger in nearbyTriggers)
             {
                 trigger.visualCue.SetActive(false);
-            }            
-            
+            }
+            DialogueTrigger activeTrigger = NearestTrigger();
             activeTrigger.visualCue.SetActive(true);
         }
         

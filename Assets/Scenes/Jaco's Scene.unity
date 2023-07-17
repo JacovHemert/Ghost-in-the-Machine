@@ -366,7 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 199469413}
   m_Layer: 0
-  m_Name: Item - Fridge
+  m_Name: Item - Soup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -484,7 +484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 326524587}
   m_Layer: 0
-  m_Name: Item - Fridge (1)
+  m_Name: Item - Bench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,7 +498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326524586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.339, y: -3.02, z: 0.4717595}
+  m_LocalPosition: {x: 10.313, y: -2.951, z: 0.4717595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -727,12 +727,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   objInformation:
-    ObjName: ggg
+    ObjName: Bench
     LucidLevel: 0
     ObjImage: {fileID: -5393949342150720945, guid: e51a00ab571081c468cc5f5fa852e479, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
---- !u!60 &495940383
-PolygonCollider2D:
+--- !u!58 &495940383
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -766,23 +766,7 @@ PolygonCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.13318825, y: 0.20641965}
-      - {x: -0.5237441, y: -0.012854785}
-      - {x: -0.30476004, y: -0.17637253}
-      - {x: 0.18822062, y: -0.44829866}
-      - {x: 0.57368946, y: -0.24038453}
-  m_UseDelaunayMesh: 0
+  m_Radius: 0.5
 --- !u!1 &533612512
 GameObject:
   m_ObjectHideFlags: 0
@@ -24268,7 +24252,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266788415}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -24327,7 +24311,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   objInformation:
-    ObjName: 
+    ObjName: Soup
     LucidLevel: 0
     ObjImage: {fileID: 5739897283171119737, guid: 451bbb28536053644bbfa49943552e12, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
@@ -24610,7 +24594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1494639443
 SpriteRenderer:
   m_ObjectHideFlags: 0
