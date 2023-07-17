@@ -44,6 +44,12 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
+            // Don't allow the player to interact with dialogue triggers when dialogue is already playing
+            if (DialogueManager.GetInstance().DialogueIsPlaying)
+            {
+                return;
+            }
+
             DialogueTrigger activeTrigger = NearestTrigger();
             if (activeTrigger != null)
             {
@@ -96,8 +102,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(new Vector2(transform.position.x + desiredMove.x, transform.position.y + desiredMove.y));
+        // Stop the player's movement during diologue
+        if (DialogueManager.GetInstance().DialogueIsPlaying)
+        {
+            return;
+        }
 
+        rb.MovePosition(new Vector2(transform.position.x + desiredMove.x, transform.position.y + desiredMove.y));
 
     }
 

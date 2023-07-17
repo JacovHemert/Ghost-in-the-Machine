@@ -352,6 +352,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_ActionId: ed8e25cb-66d5-4df5-becf-9aceee445547
+    m_ActionName: 'Player/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 525142008}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: OnSubmitPressed
@@ -364,8 +368,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: ed8e25cb-66d5-4df5-becf-9aceee445547
-    m_ActionName: 'Player/Interact[/Keyboard/e]'
+    m_ActionId: e9682c23-30ac-4bc9-9e09-9971e982ce8f
+    m_ActionName: 'Player/Advance Dialogue[/Keyboard/e,/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -796,6 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 1516927324}
   dialogueText: {fileID: 1407922340}
+  playerControls: {fileID: -944628639613478452, guid: 117aeab2afd446b47af1b9af542198ab, type: 3}
 --- !u!1 &792008571
 GameObject:
   m_ObjectHideFlags: 0

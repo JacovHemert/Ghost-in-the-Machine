@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
     private bool submitPressed;
+    [SerializeField] private InputActionAsset playerControls;
+    private InputAction submitAction;
 
     public bool DialogueIsPlaying { get; private set; }
 
@@ -26,6 +28,9 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         }
         instance = this;
+
+        submitAction = playerControls.FindActionMap("Player").FindAction("Advance Dialogue");
+        submitAction.Disable();
     }
 
     private void Start()
@@ -56,6 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        submitAction.Enable();
         currentStory = new Story(inkJSON.text);
         DialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -65,6 +71,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ExitDialogueMode()
     {
+        submitAction.Disable();
         DialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -87,6 +94,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (context.performed)
         {
+            Debug.Log("Submit");
             submitPressed = true;
         }
         else if (context.canceled)

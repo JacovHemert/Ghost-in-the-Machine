@@ -19,6 +19,18 @@ public class DialogueTrigger : MonoBehaviour
         visualCue.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (playerInRange && !DialogueManager.GetInstance().DialogueIsPlaying)
+        {
+            visualCue.SetActive(true);
+        }
+        else
+        {
+            visualCue.SetActive(false);
+        }
+    }
+
     public void InitiateDialogue()
     {
         DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
@@ -30,7 +42,6 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
-            visualCue.SetActive(true);
             collision.gameObject.GetComponent<PlayerController>().FocusTrigger(this);
         }
     }
@@ -40,7 +51,6 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInRange = false;
-            visualCue.SetActive(false);
             collision.gameObject.GetComponent<PlayerController>().UnfocusTrigger(this);
         }
     }
