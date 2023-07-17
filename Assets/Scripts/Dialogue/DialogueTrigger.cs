@@ -1,17 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
+    //[Header("Visual Cue")]
+    [SerializeField] public GameObject visualCue;
 
-    [Header("Ink JSON")]
-    [SerializeField] private TextAsset inkJSON;
+    //[Header("Ink JSON")]
+    [SerializeField] public TextAsset inkJSON;
+
+    [SerializeField] private UnityEvent interactionEvent;
 
     private bool playerInRange;
+
+    [Header("NPC/Object information")]
+    public InteractableObject objInformation;
+    
+    //[SerializeField] public string objName;
+    //[SerializeField] public int lucidLevel;
+    //[SerializeField] public Sprite image;
+
+
+    
 
     private void Awake()
     {
@@ -33,7 +46,8 @@ public class DialogueTrigger : MonoBehaviour
 
     public void InitiateDialogue()
     {
-        DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+        //DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+        interactionEvent.Invoke();
     }
 
 
