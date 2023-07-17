@@ -95,14 +95,23 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        
+        if (nearbyTriggers.Count > 0)
+        {
+            DialogueTrigger activeTrigger = NearestTrigger();
+            foreach(DialogueTrigger trigger in nearbyTriggers)
+            {
+                trigger.visualCue.SetActive(false);
+            }            
+            
+            activeTrigger.visualCue.SetActive(true);
+        }
         
 
     }
 
     private void FixedUpdate()
     {
-        // Stop the player's movement during diologue
+        // Stop the player's movement during dialogue
         if (DialogueManager.GetInstance().DialogueIsPlaying)
         {
             return;
