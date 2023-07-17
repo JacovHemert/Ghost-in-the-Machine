@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 85254203c0564478cab552275fc29e5f
+guid: e68150e01eeab4632b252ce854b20dd2
 TextScriptImporter:
   externalObjects: {}
   userData: 
@@ -8,7 +8,7 @@ TextScriptImporter:
 AssetOrigin:
   serializedVersion: 1
   productId: 60055
-  packageName: Ink Unity Integration
-  packageVersion: 1.0.0
+  packageName: Ink Integration for Unity
+  packageVersion: 1.1.8
   assetPath: Assets/Ink/README.md
-  uploadId: 419419
+  uploadId: 600250

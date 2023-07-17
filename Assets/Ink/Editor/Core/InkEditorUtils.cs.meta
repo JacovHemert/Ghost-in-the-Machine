@@ -13,7 +13,7 @@ MonoImporter:
 AssetOrigin:
   serializedVersion: 1
   productId: 60055
-  packageName: Ink Unity Integration
-  packageVersion: 1.0.0
+  packageName: Ink Integration for Unity
+  packageVersion: 1.1.8
   assetPath: Assets/Ink/Editor/Core/InkEditorUtils.cs
-  uploadId: 419419
+  uploadId: 600250
