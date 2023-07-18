@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public class JournalManager : MonoBehaviour
 {
     [SerializeField] private GameObject journalPanel;
+    [SerializeField] private GameObject keywordsPage;
     [SerializeField] private TextAsset journalData;
 
     private Dictionary<string, KeywordEntry> keywordMap = new();
@@ -58,6 +59,12 @@ public class JournalManager : MonoBehaviour
     public void AddKeyword(string keyword)
     {
         foundKeywords.Add(keyword);
+        AddKeywordButton(keyword);
+    }
+
+    public void AddKeywordButton(string keyword)
+    {
+        //TODO: dynamically add buttons to the keywords panel
     }
 
     private void LoadJournalData()
