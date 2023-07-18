@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3c3465f561d627548a5fe671d028a14f
+guid: 9fdf83e4cba9c71478d8cc73a21816bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7791075838813079058
-    second: poisson_0
+      213: -9089459538051530926
+    second: fridge-2_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,33 +98,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: poisson_0
+      name: fridge-2_0
       rect:
         serializedVersion: 2
-        x: 970
-        y: 633
-        width: 151
-        height: 541
+        x: 787
+        y: 839
+        width: 299
+        height: 528
       alignment: 9
-      pivot: {x: 0.5, y: 0.29171702}
+      pivot: {x: 0.44428205, y: 0.2782157}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 75.5, y: 8.5}
-        - {x: 40.5, y: 240.5}
-        - {x: 21.5, y: 270.5}
-        - {x: -21.5, y: 270.5}
-        - {x: -75.5, y: 218.5}
-        - {x: -75.5, y: -232.5}
-        - {x: 33.5, y: -270.5}
-        - {x: 48.5, y: -270.5}
-        - {x: 51.5, y: -268.5}
-        - {x: 49.5, y: -224.5}
-        - {x: 75.5, y: -97.5}
-      physicsShape: []
+      outline: []
+      physicsShape:
+      - - {x: -15.5, y: -259}
+        - {x: 141.5, y: -170}
+        - {x: 15.5, y: -102}
+        - {x: -143.5, y: -191}
       tessellationDetail: 0
       bones: []
-      spriteID: ee9fa61bdc980e390800000000000000
-      internalID: -7791075838813079058
+      spriteID: 25ff62a45b0cbd180800000000000000
+      internalID: -9089459538051530926
       vertices: []
       indices: 
       edges: []
@@ -132,7 +125,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 36404936502e96945965cf53c64aaa22
+    spriteID: 73dc1c535cde3504988bbebe72167bf6
     internalID: 0
     vertices: []
     indices: 
@@ -140,7 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      poisson_0: -7791075838813079058
+      fridge-2_0: -9089459538051530926
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3c3465f561d627548a5fe671d028a14f
+guid: ba42b3293fda9954fb20064e0482b9ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7791075838813079058
-    second: poisson_0
+      213: 1702245296201816387
+    second: water-cooler_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,33 +98,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: poisson_0
+      name: water-cooler_0
       rect:
         serializedVersion: 2
-        x: 970
-        y: 633
-        width: 151
-        height: 541
-      alignment: 9
-      pivot: {x: 0.5, y: 0.29171702}
+        x: 660
+        y: 465
+        width: 270
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 75.5, y: 8.5}
-        - {x: 40.5, y: 240.5}
-        - {x: 21.5, y: 270.5}
-        - {x: -21.5, y: 270.5}
-        - {x: -75.5, y: 218.5}
-        - {x: -75.5, y: -232.5}
-        - {x: 33.5, y: -270.5}
-        - {x: 48.5, y: -270.5}
-        - {x: 51.5, y: -268.5}
-        - {x: 49.5, y: -224.5}
-        - {x: 75.5, y: -97.5}
-      physicsShape: []
+      outline: []
+      physicsShape:
+      - - {x: -135, y: -195.5}
+        - {x: 3, y: -284.5}
+        - {x: 135, y: -207.5}
+        - {x: 1, y: -126.5}
       tessellationDetail: 0
       bones: []
-      spriteID: ee9fa61bdc980e390800000000000000
-      internalID: -7791075838813079058
+      spriteID: 34950b8f3179f9710800000000000000
+      internalID: 1702245296201816387
       vertices: []
       indices: 
       edges: []
@@ -132,7 +125,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 36404936502e96945965cf53c64aaa22
+    spriteID: b4182f35f6f998e4097b63ada506a7e2
     internalID: 0
     vertices: []
     indices: 
@@ -140,7 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      poisson_0: -7791075838813079058
+      water-cooler_0: 1702245296201816387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
