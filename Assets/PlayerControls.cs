@@ -62,6 +62,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Journal"",
+                    ""type"": ""Button"",
+                    ""id"": ""7739177c-2b12-49e4-ade5-5c9a4caaeb96"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -163,6 +172,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Advance Dialogue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e39444b-8610-4d80-a9cd-ba3d469fabe1"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Journal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +207,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_jump = m_Player.FindAction("jump", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_AdvanceDialogue = m_Player.FindAction("Advance Dialogue", throwIfNotFound: true);
+        m_Player_Journal = m_Player.FindAction("Journal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -252,6 +273,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_jump;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_AdvanceDialogue;
+    private readonly InputAction m_Player_Journal;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -260,6 +282,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @jump => m_Wrapper.m_Player_jump;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @AdvanceDialogue => m_Wrapper.m_Player_AdvanceDialogue;
+        public InputAction @Journal => m_Wrapper.m_Player_Journal;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -281,6 +304,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @AdvanceDialogue.started += instance.OnAdvanceDialogue;
             @AdvanceDialogue.performed += instance.OnAdvanceDialogue;
             @AdvanceDialogue.canceled += instance.OnAdvanceDialogue;
+            @Journal.started += instance.OnJournal;
+            @Journal.performed += instance.OnJournal;
+            @Journal.canceled += instance.OnJournal;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -297,6 +323,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @AdvanceDialogue.started -= instance.OnAdvanceDialogue;
             @AdvanceDialogue.performed -= instance.OnAdvanceDialogue;
             @AdvanceDialogue.canceled -= instance.OnAdvanceDialogue;
+            @Journal.started -= instance.OnJournal;
+            @Journal.performed -= instance.OnJournal;
+            @Journal.canceled -= instance.OnJournal;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -329,5 +358,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnAdvanceDialogue(InputAction.CallbackContext context);
+        void OnJournal(InputAction.CallbackContext context);
     }
 }

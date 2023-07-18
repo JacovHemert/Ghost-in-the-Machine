@@ -1141,6 +1141,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e9682c23-30ac-4bc9-9e09-9971e982ce8f
     m_ActionName: 'Player/Advance Dialogue[/Keyboard/e,/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1865689478}
+        m_TargetAssemblyTypeName: JournalManager, Assembly-CSharp
+        m_MethodName: OnActivateJournal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7739177c-2b12-49e4-ade5-5c9a4caaeb96
+    m_ActionName: 'Player/Journal[/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
