@@ -17,7 +17,12 @@ public class JournalManager : MonoBehaviour
 
     private JournalData journalData;
     private SortedSet<string> foundKeywords = new();
-    private static JournalManager instance;
+    private static JournalManager instance; 
+    
+    public static JournalManager GetInstance()
+    {
+        return instance;
+    }
 
     private void Awake()
     {

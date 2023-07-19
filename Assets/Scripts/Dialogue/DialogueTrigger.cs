@@ -6,19 +6,19 @@ using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    //[Header("Visual Cue")]
     [SerializeField] public GameObject visualCue;
-
-    //[Header("Ink JSON")]
     [SerializeField] public TextAsset inkJSON;
+
+    [SerializeField] public string associatedKeyword;
 
     [SerializeField] private UnityEvent interactionEvent;
 
-    private bool playerInRange;
-
     [Header("NPC/Object information")]
     public InteractableObject objInformation;
-    
+
+
+    private bool playerInRange;
+
     //[SerializeField] public string objName;
     //[SerializeField] public int lucidLevel;
     //[SerializeField] public Sprite image;
@@ -45,6 +45,11 @@ public class DialogueTrigger : MonoBehaviour
     {
         //DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         interactionEvent.Invoke();
+
+        if (!string.IsNullOrEmpty(associatedKeyword))
+        {
+            JournalManager.GetInstance().AddKeyword(associatedKeyword);
+        }
     }
 
 
