@@ -23,9 +23,6 @@ public class DialogueTrigger : MonoBehaviour
     //[SerializeField] public int lucidLevel;
     //[SerializeField] public Sprite image;
 
-
-    
-
     private void Awake()
     {
         playerInRange = false;

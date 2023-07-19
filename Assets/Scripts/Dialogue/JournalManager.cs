@@ -2,15 +2,18 @@ using Ink.Parsed;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class JournalManager : MonoBehaviour
 {
+    [SerializeField] private TextAsset journalData;
     [SerializeField] private GameObject journalPanel;
     [SerializeField] private GameObject keywordsPage;
-    [SerializeField] private TextAsset journalData;
+    [SerializeField] private Button keywordButton;
 
     private Dictionary<string, KeywordEntry> keywordMap = new();
     private SortedSet<string> foundKeywords = new();
@@ -34,7 +37,8 @@ public class JournalManager : MonoBehaviour
         journalPanel.SetActive(false);
 
         //TODO: this is just for testing, remove later
-        foundKeywords.Add("Hume");
+        AddKeyword("Hume");
+        AddKeyword("Bertrand");
     }
 
     // Update is called once per frame
@@ -65,6 +69,17 @@ public class JournalManager : MonoBehaviour
     public void AddKeywordButton(string keyword)
     {
         //TODO: dynamically add buttons to the keywords panel
+        var button = Instantiate(keywordButton, keywordsPage.transform);
+        var buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+
+        buttonText.text = keyword;
+        button.name = $"Keyword: {keyword}";
+        button.onClick.AddListener(() => ButtonClicked(keyword));
+    }
+
+    public void ButtonClicked(string keyword)
+    {
+        Debug.Log(keyword);
     }
 
     private void LoadJournalData()
