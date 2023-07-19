@@ -106,8 +106,10 @@ public class PlayerController : MonoBehaviour
             foreach(DialogueTrigger trigger in nearbyTriggers)
             {
                 trigger.visualCue.SetActive(false);
-            }
+            }           
+
             DialogueTrigger activeTrigger = NearestTrigger();
+            Debug.Log(activeTrigger.transform.parent.name);
             activeTrigger.visualCue.SetActive(true);
         }
         

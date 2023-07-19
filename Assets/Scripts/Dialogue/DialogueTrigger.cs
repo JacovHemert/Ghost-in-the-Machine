@@ -33,11 +33,11 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerInRange && !DialogueManager.GetInstance().DialogueIsPlaying)
         {
-            visualCue.SetActive(true);
+            //visualCue.SetActive(true);
         }
         else
         {
-            visualCue.SetActive(false);
+            //visualCue.SetActive(false);
         }
     }
 
