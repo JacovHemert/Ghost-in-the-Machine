@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9ad1750d8ed3a934791c30c67ad48b60
+guid: 4d50d0c61d7829f4497a59160de5a38a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8622102018194880036
-    second: wall-basic-cutout-1block-away-2_0
+      213: 3585154711217432898
+    second: garbage_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,22 +98,35 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-cutout-1block-away-2_0
+      name: garbage_0
       rect:
         serializedVersion: 2
-        x: 387
-        y: 338
-        width: 214
-        height: 842
+        x: 498
+        y: 505
+        width: 329
+        height: 409
       alignment: 9
-      pivot: {x: 0.6588785, y: 0.15083136}
+      pivot: {x: 0.4893617, y: 0.4400978}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -109.5, y: -126.5}
+        - {x: -84.5, y: -144.5}
+        - {x: -46.5, y: -155.5}
+        - {x: 1.5, y: -161.5}
+        - {x: 36.5, y: -155.5}
+        - {x: 67.5, y: -144.5}
+        - {x: 89.5, y: -122.5}
+        - {x: 100.5, y: -96.5}
+        - {x: 87.5, y: -56.5}
+        - {x: -11.5, y: -35.5}
+        - {x: -66.5, y: -39.5}
+        - {x: -101.5, y: -64.5}
+        - {x: -128.5, y: -96.5}
+      tessellationDetail: 0
       bones: []
-      spriteID: cd9c05475e3285880800000000000000
-      internalID: -8622102018194880036
+      spriteID: 249eee2073701c130800000000000000
+      internalID: 3585154711217432898
       vertices: []
       indices: 
       edges: []
@@ -121,7 +134,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c7f70e7027b0b984ab7baea18c42fe2c
+    spriteID: d92ff990ea44f604b80f603c08c2ac75
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +142,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-cutout-1block-away-2_0: -8622102018194880036
+      garbage_0: 3585154711217432898
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

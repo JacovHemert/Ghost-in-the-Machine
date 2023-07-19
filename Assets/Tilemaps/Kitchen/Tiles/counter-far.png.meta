@@ -101,16 +101,20 @@ TextureImporter:
       name: counter-far_0
       rect:
         serializedVersion: 2
-        x: 599
-        y: 307
-        width: 433
-        height: 381
+        x: 518
+        y: 243
+        width: 514
+        height: 444
       alignment: 9
-      pivot: {x: 0.42725173, y: 0.38845146}
+      pivot: {x: 0.5239753, y: 0.4831081}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 36, y: -175}
+        - {x: 137, y: -107}
+        - {x: -15, y: -8}
+        - {x: -127, y: -68}
+      tessellationDetail: 0
       bones: []
       spriteID: b6ace8e90e6793a70800000000000000
       internalID: 8807201253404625515
@@ -130,6 +134,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       counter-far_0: 8807201253404625515
+      counter-far_1: 879933821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

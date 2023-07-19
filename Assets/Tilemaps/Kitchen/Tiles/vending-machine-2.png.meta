@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9ad1750d8ed3a934791c30c67ad48b60
+guid: d36a34acdf57c7243bd70e9cf13a92d5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8622102018194880036
-    second: wall-basic-cutout-1block-away-2_0
+      213: 2999234073559367159
+    second: vending-machine-2_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,22 +98,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-cutout-1block-away-2_0
+      name: vending-machine-2_0
       rect:
         serializedVersion: 2
-        x: 387
-        y: 338
-        width: 214
-        height: 842
+        x: 285
+        y: 581
+        width: 400
+        height: 705
       alignment: 9
-      pivot: {x: 0.6588785, y: 0.15083136}
+      pivot: {x: 0.355, y: 0.33049643}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -200, y: -207.5}
+        - {x: 52, y: -352.5}
+        - {x: 200, y: -273.5}
+        - {x: -61, y: -131.5}
+      tessellationDetail: 0
       bones: []
-      spriteID: cd9c05475e3285880800000000000000
-      internalID: -8622102018194880036
+      spriteID: 7fdf0c0df7b6f9920800000000000000
+      internalID: 2999234073559367159
       vertices: []
       indices: 
       edges: []
@@ -121,7 +125,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c7f70e7027b0b984ab7baea18c42fe2c
+    spriteID: 86969eae6dee5cc40a3843a63805d4f1
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-cutout-1block-away-2_0: -8622102018194880036
+      vending-machine-2_0: 2999234073559367159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9ad1750d8ed3a934791c30c67ad48b60
+guid: aef1108bbfe52a040a8cc093cff3bf75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8622102018194880036
-    second: wall-basic-cutout-1block-away-2_0
+      213: -8841490917199087839
+    second: table_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,22 +98,39 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-cutout-1block-away-2_0
+      name: table_0
       rect:
         serializedVersion: 2
-        x: 387
-        y: 338
-        width: 214
-        height: 842
+        x: 381
+        y: 532
+        width: 556
+        height: 452
       alignment: 9
-      pivot: {x: 0.6588785, y: 0.15083136}
+      pivot: {x: 0.25, y: 0.5243363}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -190, y: 60}
+        - {x: -190, y: -41}
+        - {x: -183, y: -114}
+        - {x: -161, y: -151}
+        - {x: -101, y: -174}
+        - {x: -37, y: -190}
+        - {x: 37, y: -191}
+        - {x: 111, y: -153}
+        - {x: 160, y: -96}
+        - {x: 160, y: -34}
+        - {x: 166, y: 70}
+        - {x: 141, y: 108}
+        - {x: 96, y: 128}
+        - {x: 35, y: 149}
+        - {x: -25, y: 149}
+        - {x: -81, y: 141}
+        - {x: -131, y: 112}
+      tessellationDetail: 0
       bones: []
-      spriteID: cd9c05475e3285880800000000000000
-      internalID: -8622102018194880036
+      spriteID: 1277183ead6bc4580800000000000000
+      internalID: -8841490917199087839
       vertices: []
       indices: 
       edges: []
@@ -121,7 +138,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c7f70e7027b0b984ab7baea18c42fe2c
+    spriteID: 9f316f1ea6ecf0443ba7ae428879f6b8
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +146,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-cutout-1block-away-2_0: -8622102018194880036
+      table_0: -8841490917199087839
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

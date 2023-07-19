@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9ad1750d8ed3a934791c30c67ad48b60
+guid: ce13cdac030c6754f86d11cc4109c86c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8622102018194880036
-    second: wall-basic-cutout-1block-away-2_0
+      213: -3273898489429154895
+    second: potate_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 264
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,22 +98,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-cutout-1block-away-2_0
+      name: potate_0
       rect:
         serializedVersion: 2
-        x: 387
-        y: 338
-        width: 214
-        height: 842
+        x: 1164
+        y: 714
+        width: 327
+        height: 356
       alignment: 9
-      pivot: {x: 0.6588785, y: 0.15083136}
+      pivot: {x: 0.4434251, y: 0.6151686}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 0.5, y: -126}
+        - {x: 121.5, y: -66}
+        - {x: -3.5, y: 8}
+        - {x: -122.5, y: -59}
+      tessellationDetail: 0
       bones: []
-      spriteID: cd9c05475e3285880800000000000000
-      internalID: -8622102018194880036
+      spriteID: 1b323e27ba6c092d0800000000000000
+      internalID: -3273898489429154895
       vertices: []
       indices: 
       edges: []
@@ -121,7 +125,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c7f70e7027b0b984ab7baea18c42fe2c
+    spriteID: 7766437b850563e47b50f1134f700f7a
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +133,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-cutout-1block-away-2_0: -8622102018194880036
+      potate_0: -3273898489429154895
+      potate_1: 2107035088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

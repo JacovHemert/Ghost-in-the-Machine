@@ -102,18 +102,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 787
-        y: 839
-        width: 299
-        height: 528
+        y: 808
+        width: 530
+        height: 684
       alignment: 9
-      pivot: {x: 0.44428205, y: 0.2782157}
+      pivot: {x: 0.25335848, y: 0.25406066}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -15.5, y: -259}
-        - {x: 141.5, y: -170}
-        - {x: 15.5, y: -102}
-        - {x: -143.5, y: -191}
+      - - {x: -104, y: -323}
+        - {x: 120, y: -197}
+        - {x: -35, y: -118}
+        - {x: -250, y: -239}
       tessellationDetail: 0
       bones: []
       spriteID: 25ff62a45b0cbd180800000000000000

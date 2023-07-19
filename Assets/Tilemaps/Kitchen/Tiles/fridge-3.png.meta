@@ -103,17 +103,17 @@ TextureImporter:
         serializedVersion: 2
         x: 950
         y: 815
-        width: 340
-        height: 552
+        width: 482
+        height: 661
       alignment: 9
-      pivot: {x: 0.39495203, y: 0.31481424}
+      pivot: {x: 0.27858922, y: 0.26288956}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -163, y: -178}
-        - {x: 8, y: -275}
-        - {x: 161, y: -182}
-        - {x: -4, y: -81}
+      - - {x: -233, y: -234.5}
+        - {x: -59, y: -328.5}
+        - {x: 193, y: -176.5}
+        - {x: 9, y: -86.5}
       tessellationDetail: 0
       bones: []
       spriteID: 8db2f3996219af060800000000000000

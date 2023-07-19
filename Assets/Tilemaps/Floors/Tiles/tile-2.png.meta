@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: 9ad1750d8ed3a934791c30c67ad48b60
+guid: 093102051b044884b83ad19124bc7d42
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8622102018194880036
-    second: wall-basic-cutout-1block-away-2_0
+      213: 5207628877263057725
+    second: tile-2_0
+  - first:
+      213: -8983731102767318278
+    second: tile-2_1
+  - first:
+      213: -4194116227523507000
+    second: tile-2_2
+  - first:
+      213: 4435887511732852275
+    second: tile-2_3
+  - first:
+      213: -2996631572294615710
+    second: tile-2_4
+  - first:
+      213: 81426173891160919
+    second: tile-2_5
+  - first:
+      213: 7216516104165227898
+    second: tile-2_6
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,22 +116,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-cutout-1block-away-2_0
+      name: tile-2_0
       rect:
         serializedVersion: 2
-        x: 387
-        y: 338
-        width: 214
-        height: 842
-      alignment: 9
-      pivot: {x: 0.6588785, y: 0.15083136}
+        x: 378
+        y: 911
+        width: 304
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd9c05475e3285880800000000000000
-      internalID: -8622102018194880036
+      spriteID: d33b4576fd6354840800000000000000
+      internalID: 5207628877263057725
       vertices: []
       indices: 
       edges: []
@@ -121,7 +139,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c7f70e7027b0b984ab7baea18c42fe2c
+    spriteID: e4b0bf34f024ebd40add62dc8708c19c
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +147,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-cutout-1block-away-2_0: -8622102018194880036
+      tile-2_0: 5207628877263057725
+      tile-2_1: -8983731102767318278
+      tile-2_2: -4194116227523507000
+      tile-2_3: 4435887511732852275
+      tile-2_4: -2996631572294615710
+      tile-2_5: 81426173891160919
+      tile-2_6: 7216516104165227898
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
