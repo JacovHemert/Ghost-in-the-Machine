@@ -10,12 +10,12 @@ using UnityEngine.UI;
 
 public class JournalManager : MonoBehaviour
 {
-    [SerializeField] private TextAsset journalData;
+    [SerializeField] private TextAsset journalDataFile;
     [SerializeField] private GameObject journalPanel;
     [SerializeField] private GameObject keywordsPage;
     [SerializeField] private Button keywordButton;
 
-    private Dictionary<string, KeywordEntry> keywordMap = new();
+    private JournalData journalData;
     private SortedSet<string> foundKeywords = new();
     private static JournalManager instance;
 
@@ -27,7 +27,7 @@ public class JournalManager : MonoBehaviour
         }
         instance = this;
 
-        LoadJournalData();
+        journalData = new JournalData(journalDataFile);
     }
 
 
@@ -68,7 +68,6 @@ public class JournalManager : MonoBehaviour
 
     public void AddKeywordButton(string keyword)
     {
-        //TODO: dynamically add buttons to the keywords panel
         var button = Instantiate(keywordButton, keywordsPage.transform);
         var buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
 
@@ -80,53 +79,6 @@ public class JournalManager : MonoBehaviour
     public void ButtonClicked(string keyword)
     {
         Debug.Log(keyword);
-    }
-
-    private void LoadJournalData()
-    {
-        string[] lines = journalData.text.Split('\n');
-        foreach (string line in lines)
-        {
-            string[] tokens = line.Split(',');
-
-            string keyword = tokens[(int) Field.Trigger];
-            string speaker = tokens[(int) Field.Speaker];
-            string fullText = tokens[(int) Field.FullDialogue];
-
-            if (string.IsNullOrEmpty(keyword) || string.IsNullOrEmpty(speaker))
-            {
-                Debug.LogWarning("Error parsing csv data: Missing keyword or speaker.");
-                continue;
-            }
-
-            if (string.IsNullOrEmpty(fullText)){
-                Debug.LogWarning($"Error parsing csv data: Dialogue for {keyword}_{speaker} is missing.");
-                continue;
-            }
-
-            int.TryParse(tokens[4], out int reqLucidity);
-            bool.TryParse(tokens[5], out bool advLucidity);
-
-            keywordMap.TryAdd(
-                $"{keyword}_{speaker}",
-                new KeywordEntry {
-                    Speaker = speaker,
-                    RequiredLucidity = reqLucidity,
-                    AdvanceLucidity = advLucidity,
-                    FullDialogue = fullText,
-                });
-        }
-    }
-
-    private enum Field
-    {
-        ID = 1,
-        Speaker = 2,
-        Info = 3,
-        ReqLucidity = 4,
-        AdvLucidity = 5,
-        Trigger = 6,
-        FullDialogue = 7,
     }
 }
 
