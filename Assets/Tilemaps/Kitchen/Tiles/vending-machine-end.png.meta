@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e1c6ccdf08e560e4fbea31034200d54e
+guid: 17b7b63b2a4db7a43a3913508dbd90b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8785223963555212637
-    second: fesh_0
+      213: -4177536891055618319
+    second: vending-machine-end_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,26 +98,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fesh_0
+      name: vending-machine-end_0
       rect:
         serializedVersion: 2
-        x: 918
-        y: 609
-        width: 276
-        height: 612
+        x: 506
+        y: 343
+        width: 565
+        height: 881
       alignment: 9
-      pivot: {x: 0.48871425, y: 0.24599831}
+      pivot: {x: 0.5150443, y: 0.30646992}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -134.5, y: -245.5}
+        - {x: 6.5, y: -332.5}
+        - {x: 154.5, y: -254.5}
+        - {x: 156.5, y: 231.5}
+        - {x: 10.5, y: 315.5}
+        - {x: -132.5, y: 231.5}
       physicsShape:
-      - - {x: 2, y: -306}
-        - {x: 138, y: -228}
-        - {x: 1, y: -149}
-        - {x: -138, y: -225}
+      - - {x: 14.5, y: -304.5}
+        - {x: 129.5, y: -239.5}
+        - {x: -7.5, y: -166.5}
+        - {x: -126.5, y: -225.5}
       tessellationDetail: 0
       bones: []
-      spriteID: d5d25f316a26be970800000000000000
-      internalID: 8785223963555212637
+      spriteID: 1f64a84c4586606c0800000000000000
+      internalID: -4177536891055618319
       vertices: []
       indices: 
       edges: []
@@ -125,7 +131,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8a0f377cb818b034f85d2564f0cff6e7
+    spriteID: 575a43009b3ddb2488aa3b87c875de16
     internalID: 0
     vertices: []
     indices: 
@@ -133,7 +139,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fesh_0: 8785223963555212637
+      vending-machine-end_0: -4177536891055618319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

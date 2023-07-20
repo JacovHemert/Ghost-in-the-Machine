@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e1c6ccdf08e560e4fbea31034200d54e
+guid: d5609c8419e9dc4429e77219e49c427e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8785223963555212637
-    second: fesh_0
+      213: 7290241327667744002
+    second: device.png_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,26 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fesh_0
+      name: device.png_0
       rect:
         serializedVersion: 2
-        x: 918
-        y: 609
-        width: 276
-        height: 612
+        x: 64
+        y: 0
+        width: 1556
+        height: 1495
       alignment: 9
-      pivot: {x: 0.48871425, y: 0.24599831}
+      pivot: {x: 0.3033419, y: 0.20936455}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 2, y: -306}
-        - {x: 138, y: -228}
-        - {x: 1, y: -149}
-        - {x: -138, y: -225}
-      tessellationDetail: 0
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: d5d25f316a26be970800000000000000
-      internalID: 8785223963555212637
+      spriteID: 20d0286bcd32c2560800000000000000
+      internalID: 7290241327667744002
       vertices: []
       indices: 
       edges: []
@@ -125,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8a0f377cb818b034f85d2564f0cff6e7
+    spriteID: 194544e00df422d42aae45b9a45f7ec1
     internalID: 0
     vertices: []
     indices: 
@@ -133,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fesh_0: 8785223963555212637
+      device.png_0: 7290241327667744002
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

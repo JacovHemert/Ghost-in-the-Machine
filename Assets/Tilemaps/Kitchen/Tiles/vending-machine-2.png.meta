@@ -101,19 +101,25 @@ TextureImporter:
       name: vending-machine-2_0
       rect:
         serializedVersion: 2
-        x: 285
-        y: 581
-        width: 400
-        height: 705
+        x: 0
+        y: 319
+        width: 750
+        height: 988
       alignment: 9
-      pivot: {x: 0.355, y: 0.33049643}
+      pivot: {x: 0.5470701, y: 0.50068647}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -257, y: 301}
+        - {x: -255, y: -126}
+        - {x: 31, y: -313}
+        - {x: 321, y: -152}
+        - {x: 322, y: 332}
+        - {x: 52, y: 485}
       physicsShape:
-      - - {x: -200, y: -207.5}
-        - {x: 52, y: -352.5}
-        - {x: 200, y: -273.5}
-        - {x: -61, y: -131.5}
+      - - {x: -104, y: -84}
+        - {x: 168, y: -244}
+        - {x: 322, y: -152}
+        - {x: 56, y: 5}
       tessellationDetail: 0
       bones: []
       spriteID: 7fdf0c0df7b6f9920800000000000000

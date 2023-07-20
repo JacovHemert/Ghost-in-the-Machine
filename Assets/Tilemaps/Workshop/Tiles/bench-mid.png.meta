@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e1c6ccdf08e560e4fbea31034200d54e
+guid: 5e2f111b8dcf3544da753cc54b777e82
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8785223963555212637
-    second: fesh_0
+      213: 3704176705383552121
+    second: bench-mid_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,26 +98,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fesh_0
+      name: bench-mid_0
       rect:
         serializedVersion: 2
-        x: 918
-        y: 609
-        width: 276
-        height: 612
+        x: 522
+        y: 493
+        width: 554
+        height: 635
       alignment: 9
-      pivot: {x: 0.48871425, y: 0.24599831}
+      pivot: {x: 0.51805055, y: 0.47244096}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: 2, y: -306}
-        - {x: 138, y: -228}
-        - {x: 1, y: -149}
-        - {x: -138, y: -225}
+      - - {x: -128, y: -128.5}
+        - {x: 1, y: -202.5}
+        - {x: 159, y: -93.5}
+        - {x: 30, y: -28.5}
       tessellationDetail: 0
       bones: []
-      spriteID: d5d25f316a26be970800000000000000
-      internalID: 8785223963555212637
+      spriteID: 974d9a58611e76330800000000000000
+      internalID: 3704176705383552121
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8a0f377cb818b034f85d2564f0cff6e7
+    spriteID: 5001ee7dcaa81cf46b0d7812c4f88664
     internalID: 0
     vertices: []
     indices: 
@@ -133,7 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fesh_0: 8785223963555212637
+      bench-mid_0: 3704176705383552121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

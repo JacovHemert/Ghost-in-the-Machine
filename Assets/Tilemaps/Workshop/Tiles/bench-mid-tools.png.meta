@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: e1c6ccdf08e560e4fbea31034200d54e
+guid: e3ba97c531c9c8448813c8e6107546b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8785223963555212637
-    second: fesh_0
+      213: 3767355135922867548
+    second: bench-mid-tools_0
+  - first:
+      213: 6101455052961186726
+    second: bench-mid-tools_1
+  - first:
+      213: 4350296314499420767
+    second: bench-mid-tools_2
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,26 +104,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fesh_0
+      name: bench-mid-tools_0
       rect:
         serializedVersion: 2
-        x: 918
-        y: 609
-        width: 276
-        height: 612
+        x: 396
+        y: 443
+        width: 876
+        height: 1052
       alignment: 9
-      pivot: {x: 0.48871425, y: 0.24599831}
+      pivot: {x: 0.48173514, y: 0.32794678}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -194, y: -320}
+        - {x: -29, y: -390}
+        - {x: 193, y: -270}
+        - {x: 180, y: 256}
+        - {x: -105, y: 390}
+        - {x: -195, y: 138}
       physicsShape:
-      - - {x: 2, y: -306}
-        - {x: 138, y: -228}
-        - {x: 1, y: -149}
-        - {x: -138, y: -225}
+      - - {x: -172, y: -280}
+        - {x: -42, y: -358}
+        - {x: 111, y: -244}
+        - {x: -12, y: -170}
       tessellationDetail: 0
       bones: []
-      spriteID: d5d25f316a26be970800000000000000
-      internalID: 8785223963555212637
+      spriteID: c5d0d6b2985584430800000000000000
+      internalID: 3767355135922867548
       vertices: []
       indices: 
       edges: []
@@ -125,7 +137,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8a0f377cb818b034f85d2564f0cff6e7
+    spriteID: 8c216ea50e7feae4c8873d40576f1af4
     internalID: 0
     vertices: []
     indices: 
@@ -133,7 +145,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fesh_0: 8785223963555212637
+      bench-mid-tools_0: 3767355135922867548
+      bench-mid-tools_1: 6101455052961186726
+      bench-mid-tools_2: 4350296314499420767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

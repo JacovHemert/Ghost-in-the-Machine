@@ -101,19 +101,25 @@ TextureImporter:
       name: water-cooler-2_0
       rect:
         serializedVersion: 2
-        x: 1376
-        y: 278
-        width: 219
-        height: 459
+        x: 1240
+        y: 185
+        width: 442
+        height: 782
       alignment: 9
-      pivot: {x: 0.4053264, y: 0.28803602}
+      pivot: {x: 0.5209942, y: 0.28419378}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -2, y: 189}
+        - {x: -127, y: 130}
+        - {x: -126, y: -238}
+        - {x: 10, y: -322}
+        - {x: 135, y: -243}
+        - {x: 135, y: 120}
       physicsShape:
-      - - {x: -109.5, y: -164.5}
-        - {x: 1.5, y: -228.5}
-        - {x: 107.5, y: -169.5}
-        - {x: -0.5, y: -103.5}
+      - - {x: -91, y: -237}
+        - {x: 26, y: -304}
+        - {x: 136, y: -240}
+        - {x: 24, y: -179}
       tessellationDetail: 0
       bones: []
       spriteID: a30ebc769f60b90a0800000000000000

@@ -101,16 +101,26 @@ TextureImporter:
       name: wall-basic-cutout-1block-away-2_0
       rect:
         serializedVersion: 2
-        x: 387
-        y: 338
-        width: 214
-        height: 842
+        x: 287
+        y: 233
+        width: 433
+        height: 1079
       alignment: 9
-      pivot: {x: 0.6588785, y: 0.15083136}
+      pivot: {x: 0.5612009, y: 0.21655837}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      outline:
+      - - {x: -104.5, y: -390.5}
+        - {x: 24.5, y: -476.5}
+        - {x: 147.5, y: -388.5}
+        - {x: 137.5, y: 373.5}
+        - {x: 18.5, y: 441.5}
+        - {x: -104.5, y: 374.5}
+      physicsShape:
+      - - {x: -51.5, y: -427.5}
+        - {x: 93.5, y: -344.5}
+        - {x: 20.5, y: -314.5}
+        - {x: -108.5, y: -390.5}
+      tessellationDetail: 0
       bones: []
       spriteID: cd9c05475e3285880800000000000000
       internalID: -8622102018194880036
