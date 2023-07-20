@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
             }           
 
             DialogueTrigger activeTrigger = NearestTrigger();
-            Debug.Log(activeTrigger.transform.parent.name);
+            //Debug.Log(activeTrigger.transform.parent.name);
             activeTrigger.visualCue.SetActive(true);
         }
         
@@ -126,6 +126,27 @@ public class PlayerController : MonoBehaviour
 
         rb.MovePosition(new Vector2(transform.position.x + desiredMove.x, transform.position.y + desiredMove.y));
 
+    }
+
+    public bool SpeakerClose(out InteractableObject speaker)
+    {
+        bool speakerClose = false;
+        //Debug.Log(NearestTrigger().name);// + " / " + NearestTrigger().GetComponentInParent<DialogueTrigger>().name);
+        speaker = null;
+
+        if (nearbyTriggers.Count > 0)
+        {
+            speaker = NearestTrigger().GetComponentInParent<DialogueTrigger>().objInformation;
+            if (speaker.LucidLevel > -1)
+            {
+                speakerClose = true;
+                
+            }
+        }
+
+        
+
+        return speakerClose;
     }
 
 }

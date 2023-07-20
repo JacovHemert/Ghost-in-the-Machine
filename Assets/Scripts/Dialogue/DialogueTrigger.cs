@@ -68,6 +68,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             playerInRange = false;
             collision.gameObject.GetComponent<PlayerController>().UnfocusTrigger(this);
+            visualCue.SetActive(false);
         }
     }
 }

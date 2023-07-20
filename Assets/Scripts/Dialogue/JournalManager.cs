@@ -14,13 +14,16 @@ public class JournalManager : MonoBehaviour
     [SerializeField] private GameObject journalPanel;
     [SerializeField] private GameObject keywordsPage;
     [SerializeField] private GameObject namesPage;
+    [SerializeField] private GameObject promptButton;
     [SerializeField] private Button keywordButton;
 
     private JournalData journalData;
     private SortedSet<string> foundKeywords = new();
     private static JournalManager instance;
 
-    private int selectedKeyword, selectedNPC;
+    [SerializeField] private PlayerController playerController;
+
+    private int selectedKeyword = 0, selectedNPC = 0;
     
     public static JournalManager GetInstance()
     {
@@ -42,21 +45,22 @@ public class JournalManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        journalPanel.SetActive(false);
-
-        //TODO: this is just for testing, remove later
         AddKeyword("Hume");
         AddKeyword("Bertrand");
+        SelectButtons();
+        journalPanel.SetActive(false);
+
+
+
+        //TODO: this is just for testing, remove later
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            keywordsPage.transform.GetChild(1).GetComponent<Button>().Select();
-        }
+        
     }
 
     public void OnActivateJournal(InputAction.CallbackContext context)
@@ -70,6 +74,21 @@ public class JournalManager : MonoBehaviour
     private void ToggleJournal()
     {
         journalPanel.SetActive(!journalPanel.activeSelf);
+        RefreshPromptButton();
+    }
+
+    private void RefreshPromptButton()
+    {
+        if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker))
+        {
+            promptButton.GetComponentInChildren<TMP_Text>().text = "Prompt " + speaker.ObjName
+                + " with keyword \"" + keywordsPage.transform.GetChild(selectedKeyword).name.Substring(9, keywordsPage.transform.GetChild(selectedKeyword).name.Length - 9) + "\"";
+            promptButton.SetActive(true);
+        }
+        else
+        {
+            promptButton.SetActive(false);
+        }
     }
 
     public void AddKeyword(string keyword)
@@ -90,6 +109,8 @@ public class JournalManager : MonoBehaviour
 
     private void SelectButtons()
     {
+        RefreshPromptButton();
+
         for (int i = 0; i < keywordsPage.transform.childCount; i++)
         {
             keywordsPage.transform.GetChild(i).GetComponent<Image>().color = Color.white;
@@ -101,16 +122,11 @@ public class JournalManager : MonoBehaviour
         }
 
 
-        //keywordsPage.transform.GetChild(selectedKeyword).GetComponent<Button>().Select();
-        Debug.Log("Before: " + keywordsPage.transform.GetChild(selectedKeyword).GetComponent<Image>().color);
         keywordsPage.transform.GetChild(selectedKeyword).GetComponent<Image>().color = Color.cyan;
-        Debug.Log("After: " + keywordsPage.transform.GetChild(selectedKeyword).GetComponent<Image>().color);
-
-        //namesPage.transform.GetChild(selectedNPC).GetComponent<Button>().Select();
-
+        
 
         namesPage.transform.GetChild(selectedNPC).GetComponent<Image>().color = Color.cyan;
-        //Debug.Log(namesPage.transform.GetChild(selectedNPC).name);
+        
         
     }
 
@@ -118,7 +134,7 @@ public class JournalManager : MonoBehaviour
     {
         selectedKeyword = buttonID;
         SelectButtons();
-        Debug.Log("keyword: " + keyword + " / " + buttonID);
+        Debug.Log("keyword: " + keyword + " / " + buttonID);        
     }
 
     public void NameButtonClicked(int buttonID)
