@@ -18,12 +18,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void PrintStuff()
-    {
-        Debug.Log("PRASDFADS");
-    }
-
-
     public void OnMove(InputAction.CallbackContext context)
     {
 
@@ -58,25 +52,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Add a DialogueTrigger to the list of active triggers
     public bool FocusTrigger(DialogueTrigger trigger)
     {
         return nearbyTriggers.Add(trigger);
     }
 
+    // Remove a DialogueTrigger from the list of active triggers
     public bool UnfocusTrigger(DialogueTrigger trigger)
     {
         return nearbyTriggers.Remove(trigger);
     }
 
+
+
+    /// <summary>
+    /// Returns the nearest DialogueTrigger to the player within interactable range, or null if no triggers are within range.
+    /// </summary>
     private DialogueTrigger NearestTrigger()
     {
-        //Debug.Log("----");
-        //foreach(var trigger in nearbyTriggers)
-        //{
-        //    Debug.Log(trigger.transform.parent.name + " /// " + Mathf.Abs(Distance(trigger.gameObject)));
-        //}
-        //Debug.Log(nearbyTriggers.OrderBy(t => Mathf.Abs(Distance(t.gameObject))).LastOrDefault().transform.parent.name);
-        return nearbyTriggers.OrderBy(t => Mathf.Abs(Distance(t.gameObject))).LastOrDefault();//FirstOrDefault();
+        return nearbyTriggers.OrderBy(t => Mathf.Abs(Distance(t.gameObject))).LastOrDefault();
     }
 
 
@@ -96,6 +91,30 @@ public class PlayerController : MonoBehaviour
         }
         
         return distance;
+    }
+
+
+    /// <summary>
+    /// Returns true if the player is in range of an NPC. Otherwise returns false.
+    /// </summary>
+    /// <param name="speaker"></param>
+    /// <returns></returns>
+    public bool SpeakerClose(out InteractableObject speaker)
+    {
+        bool speakerClose = false;
+        speaker = null;
+
+        if (nearbyTriggers.Count > 0)
+        {
+            speaker = NearestTrigger().GetComponentInParent<DialogueTrigger>().objInformation;
+            if (speaker.LucidLevel > -1)
+            {
+                speakerClose = true;
+
+            }
+        }
+
+        return speakerClose;
     }
 
 
@@ -125,28 +144,5 @@ public class PlayerController : MonoBehaviour
         }
 
         rb.MovePosition(new Vector2(transform.position.x + desiredMove.x, transform.position.y + desiredMove.y));
-
     }
-
-    public bool SpeakerClose(out InteractableObject speaker)
-    {
-        bool speakerClose = false;
-        //Debug.Log(NearestTrigger().name);// + " / " + NearestTrigger().GetComponentInParent<DialogueTrigger>().name);
-        speaker = null;
-
-        if (nearbyTriggers.Count > 0)
-        {
-            speaker = NearestTrigger().GetComponentInParent<DialogueTrigger>().objInformation;
-            if (speaker.LucidLevel > -1)
-            {
-                speakerClose = true;
-                
-            }
-        }
-
-        
-
-        return speakerClose;
-    }
-
 }

@@ -85,8 +85,6 @@ public class DialogueManager : MonoBehaviour
             portraitObj.SetActive(true);
         }
 
-        
-
         ContinueStory();
     }
 
@@ -108,8 +106,6 @@ public class DialogueManager : MonoBehaviour
             objImage.GetComponent<Image>().sprite = NPC.ObjImage;
             objImage.SetActive(true);
         }
-
-
 
         ContinueStory();
     }

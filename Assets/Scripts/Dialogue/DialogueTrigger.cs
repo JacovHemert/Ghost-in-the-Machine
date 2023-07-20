@@ -17,28 +17,9 @@ public class DialogueTrigger : MonoBehaviour
     public InteractableObject objInformation;
 
 
-    private bool playerInRange;
-
-    //[SerializeField] public string objName;
-    //[SerializeField] public int lucidLevel;
-    //[SerializeField] public Sprite image;
-
     private void Awake()
     {
-        playerInRange = false;
         visualCue.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if (playerInRange && !DialogueManager.GetInstance().DialogueIsPlaying)
-        {
-            //visualCue.SetActive(true);
-        }
-        else
-        {
-            //visualCue.SetActive(false);
-        }
     }
 
     public void InitiateDialogue()
@@ -52,12 +33,10 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerInRange = true;
             collision.gameObject.GetComponent<PlayerController>().FocusTrigger(this);
         }
     }
@@ -66,7 +45,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerInRange = false;
             collision.gameObject.GetComponent<PlayerController>().UnfocusTrigger(this);
             visualCue.SetActive(false);
         }

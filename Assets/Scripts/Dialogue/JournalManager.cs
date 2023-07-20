@@ -45,16 +45,12 @@ public class JournalManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //TODO: this is just for testing, remove later
         AddKeyword("Hume");
         AddKeyword("Bertrand");
+
         SelectButtons();
         journalPanel.SetActive(false);
-
-
-
-        //TODO: this is just for testing, remove later
-        
-        
     }
 
     // Update is called once per frame
