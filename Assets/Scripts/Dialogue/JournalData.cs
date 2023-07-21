@@ -53,7 +53,7 @@ public class JournalData
         {
             if (confusedAnswers.TryGetValue(npc.ObjName, out var answers))
             {
-                // Unity's random number generator is upper bound inclusive for some reason so the multiplyer has to be slightly less than an integer amount
+                // Unity's random number generator is upper bound inclusive for some reason so the multiplier has to be slightly less than an integer amount
                 int randomValue = (int)(Random.value * (answers.Count - 0.001));
                 text = answers[randomValue];
             }
@@ -113,7 +113,7 @@ public class JournalData
 
             if (string.IsNullOrEmpty(fullText))
             {
-                Debug.LogWarning($"Error parsing csv data: Dialogue for {keyword}_{speaker} is missing.");
+                Debug.LogWarning($"Error parsing csv data: Dialogue for {speaker}:{keyword} is missing.");
                 continue;
             }
 

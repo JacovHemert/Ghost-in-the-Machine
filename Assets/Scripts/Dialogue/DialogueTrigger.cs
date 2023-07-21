@@ -27,10 +27,7 @@ public class DialogueTrigger : MonoBehaviour
         //DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         interactionEvent.Invoke();
 
-        if (!string.IsNullOrEmpty(associatedKeyword))
-        {
-            JournalManager.GetInstance().AddKeyword(associatedKeyword);
-        }
+        JournalManager.GetInstance().AddKeyword(associatedKeyword);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

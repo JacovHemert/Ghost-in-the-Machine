@@ -91,9 +91,12 @@ public class JournalManager : MonoBehaviour
     }
 
     public void AddKeyword(string keyword)
-    {        
-        foundKeywords.Add(keyword);
-        AddKeywordButton(keyword);
+    {   
+        if (!string.IsNullOrEmpty(keyword) && !foundKeywords.Contains(keyword))
+        {
+            foundKeywords.Add(keyword);
+            AddKeywordButton(keyword);
+        }
     }
 
     private void AddKeywordButton(string keyword)
