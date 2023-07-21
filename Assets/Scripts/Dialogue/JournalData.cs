@@ -26,29 +26,20 @@ public class JournalData
         LoadJournalData(csvData);
     }
 
-    public Dictionary<ValueTuple<string, string>, KeywordEntry> KeywordMap()
-    {
-        return keywordMap;
-    }
-
-    public Dictionary<string, List<string>> ConfusedAnswers()
-    {
-        return confusedAnswers;
-    }
-
-
+    /// <summary>
+    /// Returns the dialogue for a given character about a given keyword topic.
+    /// </summary>
     public string AskNPCAbout(InteractableObject npc, string keyword)
     {
         string text;
-        
-        if (npc == null || keyword == null)
-        {
-            return string.Empty;
-        }
 
         bool entryExists = keywordMap.TryGetValue((keyword, npc.ObjName), out var journalEntry);
 
-        if (entryExists && journalEntry.RequiredLucidity <= npc.LucidLevel)
+        if (!entryExists) {
+            Debug.LogWarning($"Dialogue for {npc.ObjName} with keyword {keyword} is missing.");
+            text = "[MISSING]";
+        }
+        else if (journalEntry.RequiredLucidity <= npc.LucidLevel)
         {
             text = journalEntry.FullDialogue;
             journalEntry.Found = true;
@@ -58,7 +49,7 @@ public class JournalData
                 npc.LucidLevel++;
             }
         }
-        else if (entryExists) //If the character can't give a coherent response yet, randomly select one of the confused responses.
+        else //If the character can't give a coherent response yet, randomly select one of the confused responses.
         {
             if (confusedAnswers.TryGetValue(npc.ObjName, out var answers))
             {
@@ -69,19 +60,17 @@ public class JournalData
             else
             {
                 Debug.LogWarning($"Fallback dialogue for {npc.ObjName} is missing.");
-                text = string.Empty;
+                text = "[MISSING]";
             }
             journalEntry.ConfusedResponseFound = true;
-        }
-        else
-        {
-            Debug.LogWarning($"Dialogue for {npc.ObjName} with keyword {keyword} is missing.");
-            text = string.Empty;
         }
 
         return text;
     }
 
+    /// <summary>
+    /// Returns information about a previous conversation to be shown in the journal.
+    /// </summary>
     public string GetDialogueForJournal(InteractableObject npc, string keyword)
     {
         if (npc == null || keyword == null)
@@ -104,7 +93,6 @@ public class JournalData
             return "";
         }
     }
-
 
     private void LoadJournalData(TextAsset data)
     {

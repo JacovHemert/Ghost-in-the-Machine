@@ -70,8 +70,9 @@ public class DialogueManager : MonoBehaviour
         submitAction.Enable();
 
         // Since the dialogue isn't precompiled json data, we have to compile at runtime.
-        // We should probably try to rework everything to not use the INK plugin since we aren't really using any of it's features,
+        // We should maybe try to rework everything to not use the INK plugin since we aren't really using any of its features,
         // but this is okay for now.
+        //TODO: Add logic to split up large text. I think we just need to insert line breaks to get the Ink compiler to split up the dialogue.
         currentStory = new Ink.Compiler(dialogueText).Compile(); 
 
         DialogueIsPlaying = true;

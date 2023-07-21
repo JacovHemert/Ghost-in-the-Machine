@@ -106,6 +106,9 @@ public class JournalManager : MonoBehaviour
         button.onClick.AddListener(() => KeywordButtonClicked(keyword, button));
     }
 
+    /// <summary>
+    /// Set highlight colours for selected keyword/NPC buttons
+    /// </summary>
     private void SelectButtons()
     {
         RefreshPromptButton();
@@ -151,7 +154,7 @@ public class JournalManager : MonoBehaviour
         SetJournalText();
     }
 
-    public void InitiateDialogue()
+    public void PromptButtonClicked()
     {
         journalPanel.SetActive(false);
 
