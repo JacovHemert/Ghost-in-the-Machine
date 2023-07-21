@@ -40,6 +40,12 @@ public class JournalData
     public string AskNPCAbout(InteractableObject npc, string keyword)
     {
         string text;
+        
+        if (npc == null || keyword == null)
+        {
+            return string.Empty;
+        }
+
         bool entryExists = keywordMap.TryGetValue((keyword, npc.ObjName), out var journalEntry);
 
         if (entryExists && journalEntry.RequiredLucidity <= npc.LucidLevel)
@@ -52,12 +58,25 @@ public class JournalData
                 npc.LucidLevel++;
             }
         }
-        else //If the character can't give a coherent response, randomly select one of the confused responses.
+        else if (entryExists) //If the character can't give a coherent response yet, randomly select one of the confused responses.
         {
-            // multiply by 2.99 instead of 3 because Unity's random number generator is upper bound inclusive for some reason
-            int randomValue = (int)(Random.value * 2.99);
-            text = confusedAnswers[npc.ObjName][randomValue];
+            if (confusedAnswers.TryGetValue(npc.ObjName, out var answers))
+            {
+                // Unity's random number generator is upper bound inclusive for some reason so the multiplyer has to be slightly less than an integer amount
+                int randomValue = (int)(Random.value * (answers.Count - 0.001));
+                text = answers[randomValue];
+            }
+            else
+            {
+                Debug.LogWarning($"Fallback dialogue for {npc.ObjName} is missing.");
+                text = string.Empty;
+            }
             journalEntry.ConfusedResponseFound = true;
+        }
+        else
+        {
+            Debug.LogWarning($"Dialogue for {npc.ObjName} with keyword {keyword} is missing.");
+            text = string.Empty;
         }
 
         return text;
@@ -65,23 +84,25 @@ public class JournalData
 
     public string GetDialogueForJournal(InteractableObject npc, string keyword)
     {
-        string text;
+        if (npc == null || keyword == null)
+        {
+            return string.Empty;
+        }
+
         bool entryExists = keywordMap.TryGetValue((keyword, npc.ObjName), out var journalEntry);
 
         if (entryExists && journalEntry.Found)
         {
-            text = journalEntry.FullDialogue;
+            return journalEntry.FullDialogue;
         }
         else if (entryExists && journalEntry.ConfusedResponseFound)
         {
-            text = "I asked about this, but couldn't get a clear answer. Maybe I should try asking again later.";
+            return "I asked about this, but couldn't get a clear answer. Maybe I should try asking again later.";
         }
         else
         {
-            text = "";
+            return "";
         }
-
-        return text;
     }
 
 

@@ -11,13 +11,13 @@ using Random = UnityEngine.Random;
 
 public class JournalManager : MonoBehaviour
 {
-    [SerializeField] private TextAsset journalDataFile;
-    [SerializeField] private GameObject journalPanel;
-    private TextMeshProUGUI textPanel;
-    [SerializeField] private GameObject keywordsPage;
-    [SerializeField] private GameObject namesPage;
-    [SerializeField] private GameObject promptButton;
-    [SerializeField] private Button keywordButton;
+    [SerializeField] private TextAsset journalDataFile; // CSV file containing the dialogue for interactions
+    [SerializeField] private GameObject journalPanel;   // The UI panel for the player's journal
+    [SerializeField] private GameObject namesPage;      // UI panel in the journal containing NPC name buttons
+    [SerializeField] private GameObject keywordsPage;   // UI panel in the journal containing keyword buttons
+    [SerializeField] private GameObject promptButton;   // Button for asking NPCs about things
+    [SerializeField] private Button keywordButton;      // Prefab for keyword buttons in the journal
+    private TextMeshProUGUI textPanel;                  // UI panel in the journal for dispalying dialogue text
 
     private JournalData journalData;
     private SortedSet<string> foundKeywords = new();
@@ -79,8 +79,9 @@ public class JournalManager : MonoBehaviour
     {
         if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker))
         {
-            promptButton.GetComponentInChildren<TMP_Text>().text = "Prompt " + speaker.ObjName
-                + " with keyword \"" + selectedKeyword + "\"";
+            promptButton.GetComponentInChildren<TMP_Text>().text = 
+                $"Prompt {speaker.ObjName} with keyword \"{selectedKeyword}\"";
+
             promptButton.SetActive(true);
         }
         else
@@ -109,14 +110,14 @@ public class JournalManager : MonoBehaviour
     {
         RefreshPromptButton();
 
-        for (int i = 0; i < keywordsPage.transform.childCount; i++)
+        foreach (Transform buttonTransform in keywordsPage.transform)
         {
-            keywordsPage.transform.GetChild(i).GetComponent<Image>().color = Color.white;
+            buttonTransform.GetComponent<Image>().color = Color.white;
         }
 
-        for (int i = 0; i < namesPage.transform.childCount; i++)
+        foreach (Transform buttonTransform in namesPage.transform)
         {
-            namesPage.transform.GetChild(i).GetComponent<Image>().color = Color.white;
+            buttonTransform.GetComponent<Image>().color = Color.white;
         }
 
         if (selectedKeywordButton != null)
@@ -136,7 +137,7 @@ public class JournalManager : MonoBehaviour
         selectedKeyword = keyword;
 
         SelectButtons();
-        SetJournalText(selectedKeyword, selectedNPC);
+        SetJournalText();
     }
 
     public void NameButtonClicked(Button button)
@@ -147,14 +148,25 @@ public class JournalManager : MonoBehaviour
         }
 
         SelectButtons();
+        SetJournalText();
     }
 
-    private void SetJournalText(string keyword, InteractableObject npc)
+    public void InitiateDialogue()
     {
-        
-        textPanel.text = journalData.GetDialogueForJournal(npc, keyword);
+        journalPanel.SetActive(false);
+
+
+        if (GameObject.FindWithTag("Player").GetComponent<PlayerController>().SpeakerClose(out var speaker))
+        {
+            string text = journalData.AskNPCAbout(speaker, selectedKeyword);
+            DialogueManager.GetInstance().EnterDialogueMode(speaker, text);
+        }
     }
 
+    private void SetJournalText()
+    {
+        textPanel.text = journalData.GetDialogueForJournal(selectedNPC, selectedKeyword);
+    }
 
 }
 

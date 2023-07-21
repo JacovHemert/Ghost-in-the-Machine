@@ -1,3 +1,4 @@
+using Ink;
 using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
@@ -64,7 +65,30 @@ public class DialogueManager : MonoBehaviour
         return instance;
     }
 
+    public void EnterDialogueMode(InteractableObject NPC, string dialogueText)
+    {
+        submitAction.Enable();
 
+        // Since the dialogue isn't precompiled json data, we have to compile at runtime.
+        // We should probably try to rework everything to not use the INK plugin since we aren't really using any of it's features,
+        // but this is okay for now.
+        currentStory = new Ink.Compiler(dialogueText).Compile(); 
+
+        DialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+        if (NPC.ObjName != "")
+        {
+            namePanel.GetComponentInChildren<TMP_Text>().text = NPC.ObjName;
+            namePanel.SetActive(true);
+        }
+        if (NPC.ObjImage != null)
+        {
+            portraitObj.GetComponent<Image>().sprite = NPC.ObjImage;
+            portraitObj.SetActive(true);
+        }
+
+        ContinueStory();
+    }
 
     public void EnterDialogueMode(GameObject NPCObj)
     {

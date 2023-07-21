@@ -25526,8 +25526,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1865689478}
         m_TargetAssemblyTypeName: JournalManager, Assembly-CSharp
-        m_MethodName: NameButtonClicked
-        m_Mode: 3
+        m_MethodName: InitiateDialogue
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -28776,10 +28776,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d2c351a6226064793fd50ffcdaaa81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  journalDataFile: {fileID: 4900000, guid: 8868508282c9e3a4d8f3adce5726b24b, type: 3}
+  journalDataFile: {fileID: 4900000, guid: 34db10449d83d164bafdbb28d7c3be7d, type: 3}
   journalPanel: {fileID: 1133415714}
-  keywordsPage: {fileID: 212767804}
   namesPage: {fileID: 727255885}
+  keywordsPage: {fileID: 212767804}
   promptButton: {fileID: 941440560}
   keywordButton: {fileID: 7645640898916268315, guid: cc3752833a91e484eb61b07f111d5d99, type: 3}
   playerController: {fileID: 0}
