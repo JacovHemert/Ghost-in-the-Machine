@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class JournalData
 {
-    private Dictionary<string, KeywordEntry> keywordMap = new();
+    private Dictionary<ValueTuple<string, string>, KeywordEntry> keywordMap = new();
     private Dictionary<string, List<string>> confusedAnswers = new();
 
     private string confusedAnswer = "When given a keyword they can't yet give an answer to";
@@ -25,7 +26,7 @@ public class JournalData
         LoadJournalData(csvData);
     }
 
-    public Dictionary<string, KeywordEntry> KeywordMap()
+    public Dictionary<ValueTuple<string, string>, KeywordEntry> KeywordMap()
     {
         return keywordMap;
     }
@@ -34,6 +35,55 @@ public class JournalData
     {
         return confusedAnswers;
     }
+
+
+    public string AskNPCAbout(InteractableObject npc, string keyword)
+    {
+        string text;
+        bool entryExists = keywordMap.TryGetValue((keyword, npc.ObjName), out var journalEntry);
+
+        if (entryExists && journalEntry.RequiredLucidity <= npc.LucidLevel)
+        {
+            text = journalEntry.FullDialogue;
+            journalEntry.Found = true;
+
+            if (!journalEntry.Found && journalEntry.AdvanceLucidity)
+            {
+                npc.LucidLevel++;
+            }
+        }
+        else //If the character can't give a coherent response, randomly select one of the confused responses.
+        {
+            // multiply by 2.99 instead of 3 because Unity's random number generator is upper bound inclusive for some reason
+            int randomValue = (int)(Random.value * 2.99);
+            text = confusedAnswers[npc.ObjName][randomValue];
+            journalEntry.ConfusedResponseFound = true;
+        }
+
+        return text;
+    }
+
+    public string GetDialogueForJournal(InteractableObject npc, string keyword)
+    {
+        string text;
+        bool entryExists = keywordMap.TryGetValue((keyword, npc.ObjName), out var journalEntry);
+
+        if (entryExists && journalEntry.Found)
+        {
+            text = journalEntry.FullDialogue;
+        }
+        else if (entryExists && journalEntry.ConfusedResponseFound)
+        {
+            text = "I asked about this, but couldn't get a clear answer. Maybe I should try asking again later.";
+        }
+        else
+        {
+            text = "";
+        }
+
+        return text;
+    }
+
 
     private void LoadJournalData(TextAsset data)
     {
@@ -58,23 +108,26 @@ public class JournalData
                 continue;
             }
 
+            // handle the fallback "confused" dialogue separately
             if (keyword.Equals(confusedAnswer))
             {
                 AddConfusedAnswer(speaker, fullText);
             }
+            else
+            {
+                int.TryParse(tokens[4], out int reqLucidity);
+                bool.TryParse(tokens[5], out bool advLucidity);
 
-            int.TryParse(tokens[4], out int reqLucidity);
-            bool.TryParse(tokens[5], out bool advLucidity);
-
-            keywordMap.TryAdd(
-                $"{keyword}_{speaker}",
-                new KeywordEntry
-                {
-                    Speaker = speaker,
-                    RequiredLucidity = reqLucidity,
-                    AdvanceLucidity = advLucidity,
-                    FullDialogue = fullText,
-                });
+                keywordMap.TryAdd(
+                    (keyword, speaker),
+                    new KeywordEntry
+                    {
+                        Speaker = speaker,
+                        RequiredLucidity = reqLucidity,
+                        AdvanceLucidity = advLucidity,
+                        FullDialogue = fullText,
+                    });
+            }
         }
     }
 

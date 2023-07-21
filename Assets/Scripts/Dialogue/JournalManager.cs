@@ -7,11 +7,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class JournalManager : MonoBehaviour
 {
     [SerializeField] private TextAsset journalDataFile;
     [SerializeField] private GameObject journalPanel;
+    private TextMeshProUGUI textPanel;
     [SerializeField] private GameObject keywordsPage;
     [SerializeField] private GameObject namesPage;
     [SerializeField] private GameObject promptButton;
@@ -23,7 +25,11 @@ public class JournalManager : MonoBehaviour
 
     [SerializeField] private PlayerController playerController;
 
-    private int selectedKeyword = 0, selectedNPC = 0;
+    private Button selectedKeywordButton;
+    private Button selectedNPCButton;
+
+    private string selectedKeyword;
+    private InteractableObject selectedNPC;
     
     public static JournalManager GetInstance()
     {
@@ -45,18 +51,14 @@ public class JournalManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        textPanel = journalPanel.transform.Find("Info Panel/Dialogue Text").GetComponent<TextMeshProUGUI>();
+
         //TODO: this is just for testing, remove later
         AddKeyword("Hume");
         AddKeyword("Bertrand");
 
         SelectButtons();
         journalPanel.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnActivateJournal(InputAction.CallbackContext context)
@@ -78,7 +80,7 @@ public class JournalManager : MonoBehaviour
         if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker))
         {
             promptButton.GetComponentInChildren<TMP_Text>().text = "Prompt " + speaker.ObjName
-                + " with keyword \"" + keywordsPage.transform.GetChild(selectedKeyword).name.Substring(9, keywordsPage.transform.GetChild(selectedKeyword).name.Length - 9) + "\"";
+                + " with keyword \"" + selectedKeyword + "\"";
             promptButton.SetActive(true);
         }
         else
@@ -93,14 +95,14 @@ public class JournalManager : MonoBehaviour
         AddKeywordButton(keyword);
     }
 
-    public void AddKeywordButton(string keyword)
+    private void AddKeywordButton(string keyword)
     {
         var button = Instantiate(keywordButton, keywordsPage.transform);
         var buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
 
         buttonText.text = keyword;
         button.name = $"Keyword: {keyword}";        
-        button.onClick.AddListener(() => KeywordButtonClicked(keyword, button.transform.GetSiblingIndex()));
+        button.onClick.AddListener(() => KeywordButtonClicked(keyword, button));
     }
 
     private void SelectButtons()
@@ -117,26 +119,40 @@ public class JournalManager : MonoBehaviour
             namesPage.transform.GetChild(i).GetComponent<Image>().color = Color.white;
         }
 
+        if (selectedKeywordButton != null)
+        {
+            selectedKeywordButton.GetComponent<Image>().color = Color.cyan;
+        }
 
-        keywordsPage.transform.GetChild(selectedKeyword).GetComponent<Image>().color = Color.cyan;
-        
-
-        namesPage.transform.GetChild(selectedNPC).GetComponent<Image>().color = Color.cyan;
-        
-        
+        if (selectedNPCButton != null)
+        {
+            selectedNPCButton.GetComponent<Image>().color = Color.cyan;
+        }
     }
 
-    public void KeywordButtonClicked(string keyword, int buttonID)
+    public void KeywordButtonClicked(string keyword, Button button)
     {
-        selectedKeyword = buttonID;
+        selectedKeywordButton = button;
+        selectedKeyword = keyword;
+
         SelectButtons();
-        Debug.Log("keyword: " + keyword + " / " + buttonID);        
+        SetJournalText(selectedKeyword, selectedNPC);
     }
 
-    public void NameButtonClicked(int buttonID)
+    public void NameButtonClicked(Button button)
     {
-        selectedNPC = buttonID;
+        selectedNPCButton = button;
+        if (button.TryGetComponent<CharacterAssociation>(out var npc)) { 
+            selectedNPC = npc.Info; 
+        }
+
         SelectButtons();
+    }
+
+    private void SetJournalText(string keyword, InteractableObject npc)
+    {
+        
+        textPanel.text = journalData.GetDialogueForJournal(npc, keyword);
     }
 
 
