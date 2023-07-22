@@ -22,16 +22,16 @@ public class PlayerController : MonoBehaviour
     {
 
         desiredMove = context.ReadValue<Vector2>();
-        Debug.Log(desiredMove);
+        //Debug.Log(desiredMove);
         if (Mathf.Abs(desiredMove.x) > 0.1f && Mathf.Abs(desiredMove.y) >= 0.1f)
         {
-            Debug.Log("DIAGONAL");
+            //Debug.Log("DIAGONAL");
             //desiredMove = new Vector2(desiredMove.x * 1.7f, desiredMove.y);
             desiredMove = new Vector2(desiredMove.x* 1.4f, desiredMove.y * 0.80f);
         }
             
         desiredMove *= Time.fixedDeltaTime * speed;
-        Debug.Log(desiredMove);
+        //Debug.Log(desiredMove);
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -99,15 +99,15 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     /// <param name="speaker"></param>
     /// <returns></returns>
-    public bool SpeakerClose(out InteractableObject speaker)
+    public bool SpeakerClose(out GameObject speaker) //Changed this to a GameObject out; originally to do something else, but now just in case we need more info than just the ObjInfo.
     {
         bool speakerClose = false;
         speaker = null;
 
         if (nearbyTriggers.Count > 0)
         {
-            speaker = NearestTrigger().GetComponentInParent<DialogueTrigger>().objInformation;
-            if (speaker.LucidLevel > -1)
+            speaker = NearestTrigger().gameObject;
+            if (speaker.GetComponentInParent<DialogueTrigger>().objInformation.LucidLevel > -1)
             {
                 speakerClose = true;
 

@@ -24,10 +24,19 @@ public class DialogueTrigger : MonoBehaviour
 
     public void InitiateDialogue()
     {
+        //stores the associated keyword in DialogueManager so it can be used by the ExitDialogueMode method after the dialogue finishes.
+        if (associatedKeyword != "")
+        {
+            DialogueManager.GetInstance().keywordToAdd = associatedKeyword;
+        }
+
+
         //DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         interactionEvent.Invoke();
 
-        JournalManager.GetInstance().AddKeyword(associatedKeyword);
+        
+        //commenting this out because I'm adding it in the ExitDialogueMode method in Dialogue Manager so a popup can appear (see addition above)
+        //JournalManager.GetInstance().AddKeyword(associatedKeyword);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

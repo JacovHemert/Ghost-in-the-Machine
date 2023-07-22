@@ -19,7 +19,7 @@ public class JournalManager : MonoBehaviour
     [SerializeField] private Button keywordButton;      // Prefab for keyword buttons in the journal
     private TextMeshProUGUI textPanel;                  // UI panel in the journal for dispalying dialogue text
 
-    private JournalData journalData;
+    public JournalData journalData; // made public so I can access this for NPC dialogue with E (in DialogueManager) for the Lucid0-6 entries
     private SortedSet<string> foundKeywords = new();
     private static JournalManager instance;
 
@@ -54,8 +54,10 @@ public class JournalManager : MonoBehaviour
         textPanel = journalPanel.transform.Find("Info Panel/Dialogue Text").GetComponent<TextMeshProUGUI>();
 
         //TODO: this is just for testing, remove later
-        AddKeyword("Hume");
-        AddKeyword("Bertrand");
+        AddKeyword("Hume", out var added1);
+        AddKeyword("Bertrand", out var added2);
+        AddKeyword("Immanuel", out var added3);
+        AddKeyword("Rene", out var added4);
 
         SelectButtons();
         journalPanel.SetActive(false);
@@ -80,7 +82,7 @@ public class JournalManager : MonoBehaviour
         if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker))
         {
             promptButton.GetComponentInChildren<TMP_Text>().text = 
-                $"Prompt {speaker.ObjName} with keyword \"{selectedKeyword}\"";
+                $"Prompt {speaker.GetComponentInParent<DialogueTrigger>().objInformation.ObjName} with keyword \"{selectedKeyword}\"";
 
             promptButton.SetActive(true);
         }
@@ -90,12 +92,17 @@ public class JournalManager : MonoBehaviour
         }
     }
 
-    public void AddKeyword(string keyword)
-    {   
+    public void AddKeyword(string keyword, out bool added) // added out variable so I could show popup only when entry actually gets added for the first time.
+    {
+        added = true;
         if (!string.IsNullOrEmpty(keyword) && !foundKeywords.Contains(keyword))
         {
             foundKeywords.Add(keyword);
             AddKeywordButton(keyword);
+        }
+        else
+        {
+            added = false;
         }
     }
 
@@ -164,8 +171,8 @@ public class JournalManager : MonoBehaviour
 
         if (GameObject.FindWithTag("Player").GetComponent<PlayerController>().SpeakerClose(out var speaker))
         {
-            string text = journalData.AskNPCAbout(speaker, selectedKeyword);
-            DialogueManager.GetInstance().EnterDialogueMode(speaker, text);
+            KeywordEntry entry = journalData.AskNPCAbout(speaker.GetComponentInParent<DialogueTrigger>().objInformation, selectedKeyword);
+            DialogueManager.GetInstance().EnterDialogueMode(speaker.GetComponentInParent<DialogueTrigger>().objInformation, entry);
         }
     }
 

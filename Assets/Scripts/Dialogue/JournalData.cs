@@ -19,6 +19,7 @@ public class JournalData
         AdvLucidity = 5,
         Trigger = 6,
         FullDialogue = 7,
+        AddedKeyword = 9 //added this for extra column that holds added keywords linked to specific dialogue
     }
 
     public JournalData(TextAsset csvData)
@@ -29,22 +30,22 @@ public class JournalData
     /// <summary>
     /// Returns the dialogue for a given character about a given keyword topic.
     /// </summary>
-    public string AskNPCAbout(InteractableObject npc, string keyword)
+    public KeywordEntry AskNPCAbout(InteractableObject npc, string keyword) // changed this to KeywordEntry because we need some of the information later on the line
     {
-        string text;
-
+        KeywordEntry entry = new KeywordEntry();
+        
         bool entryExists = keywordMap.TryGetValue((keyword, npc.ObjName), out var journalEntry);
 
         if (!entryExists) {
             Debug.LogWarning($"Dialogue for {npc.ObjName} with keyword {keyword} is missing.");
-            text = "[MISSING]";
+            entry.FullDialogue = "[MISSING]";
         }
         else if (journalEntry.RequiredLucidity <= npc.LucidLevel)
         {
-            text = journalEntry.FullDialogue;
+            entry = journalEntry; 
             journalEntry.Found = true;
 
-            if (!journalEntry.Found && journalEntry.AdvanceLucidity)
+            if (journalEntry.AdvanceLucidity) //!journalEntry.Found && journalEntry.AdvanceLucidity)  {We make journalEntry.Found true, and then check whether it's false, so this never runs}
             {
                 npc.LucidLevel++;
             }
@@ -55,17 +56,17 @@ public class JournalData
             {
                 // Unity's random number generator is upper bound inclusive for some reason so the multiplier has to be slightly less than an integer amount
                 int randomValue = (int)(Random.value * (answers.Count - 0.001));
-                text = answers[randomValue];
+                entry.FullDialogue = answers[randomValue]; 
             }
             else
             {
                 Debug.LogWarning($"Fallback dialogue for {npc.ObjName} is missing.");
-                text = "[MISSING]";
+                entry.FullDialogue = "[MISSING]";
             }
             journalEntry.ConfusedResponseFound = true;
         }
 
-        return text;
+        return entry;
     }
 
     /// <summary>
@@ -104,6 +105,9 @@ public class JournalData
             string keyword = tokens[(int)Field.Trigger];
             string speaker = tokens[(int)Field.Speaker];
             string fullText = tokens[(int)Field.FullDialogue];
+            string addedKeyword = tokens[(int)Field.AddedKeyword];
+
+            string advanceLucidityStr = tokens[(int)Field.AdvLucidity];
 
             if (string.IsNullOrEmpty(keyword) || string.IsNullOrEmpty(speaker))
             {
@@ -127,6 +131,13 @@ public class JournalData
                 int.TryParse(tokens[4], out int reqLucidity);
                 bool.TryParse(tokens[5], out bool advLucidity);
 
+                if (advanceLucidityStr == "Y")
+                    advLucidity = true;
+                else
+                    advLucidity = false;
+
+
+
                 keywordMap.TryAdd(
                     (keyword, speaker),
                     new KeywordEntry
@@ -135,6 +146,7 @@ public class JournalData
                         RequiredLucidity = reqLucidity,
                         AdvanceLucidity = advLucidity,
                         FullDialogue = fullText,
+                        AddedKeyword = addedKeyword
                     });
             }
         }
