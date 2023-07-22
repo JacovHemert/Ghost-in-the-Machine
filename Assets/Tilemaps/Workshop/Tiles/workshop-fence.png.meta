@@ -101,16 +101,26 @@ TextureImporter:
       name: workshop-fence_0
       rect:
         serializedVersion: 2
-        x: 483
-        y: 436
-        width: 270
-        height: 639
+        x: 334
+        y: 301
+        width: 578
+        height: 885
       alignment: 9
-      pivot: {x: 0.25925925, y: 0.19248827}
+      pivot: {x: 0.38062286, y: 0.29152542}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      outline:
+      - - {x: -183, y: -279.5}
+        - {x: -79, y: -331.5}
+        - {x: 170, y: -171.5}
+        - {x: 172, y: 317.5}
+        - {x: 76, y: 353.5}
+        - {x: -183, y: 201.5}
+      physicsShape:
+      - - {x: -82, y: -329.5}
+        - {x: 168, y: -169.5}
+        - {x: 56, y: -129.5}
+        - {x: -194, y: -275.5}
+      tessellationDetail: 0
       bones: []
       spriteID: 33bb4d5e3252dfbf0800000000000000
       internalID: -289033964971836621

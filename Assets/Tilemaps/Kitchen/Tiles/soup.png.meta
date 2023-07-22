@@ -101,12 +101,12 @@ TextureImporter:
       name: soup_0
       rect:
         serializedVersion: 2
-        x: 507
-        y: 1279
-        width: 97
-        height: 114
+        x: 447
+        y: 1082
+        width: 234
+        height: 311
       alignment: 9
-      pivot: {x: 1.7525773, y: -0.77192986}
+      pivot: {x: 0.4059829, y: 0.12861736}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
