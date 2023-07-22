@@ -100,7 +100,7 @@ public class JournalData
         string[] lines = data.text.Split('\n');
         foreach (string line in lines)
         {
-            string[] tokens = line.Split(',');
+            string[] tokens = SplitCSVLine(line);
 
             string keyword = tokens[(int)Field.Trigger];
             string speaker = tokens[(int)Field.Speaker];
@@ -150,6 +150,38 @@ public class JournalData
                     });
             }
         }
+    }
+
+    // Splits a line of a CSV file into separate fields
+    // The method here is a bit naive but it should be fine for our purposes
+    private string[] SplitCSVLine(string line)
+    {
+        List<string> output = new();
+        // Adding a comma to the end of the line simplifies the logic a bit
+        string remainder = line + ',';
+
+        while (remainder.Length > 0)
+        {
+            if (remainder[0] == '"') 
+            {
+                var tokens = remainder.Split("\",", 2);
+
+                // remove leading double-quote
+                output.Add(tokens[0].Substring(1));
+
+                remainder = tokens[1];
+            }
+            else
+            {
+                var tokens = remainder.Split(",", 2);
+
+                output.Add(tokens[0]);
+
+                remainder = tokens[1];
+            }
+        }
+
+        return output.ToArray();
     }
 
     private void AddConfusedAnswer(string speaker, string fullText)
