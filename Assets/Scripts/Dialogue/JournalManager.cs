@@ -138,7 +138,6 @@ public class JournalManager : MonoBehaviour
     /// </summary>
     private void SelectButtons()
     {
-        SetJournalText();
         RefreshPromptButton();
 
         foreach (Transform buttonTransform in keywordsPage.transform)
@@ -196,10 +195,7 @@ public class JournalManager : MonoBehaviour
 
     private void SetJournalText()
     {
-        string journalText = journalData.GetDialogueForJournal(selectedNPC, selectedKeyword);
-        if (journalText == "" && selectedKeyword != null)
-            journalText = "I haven't asked ";// + selectedNPC.ObjName + " about this yet.";
-        textPanel.text = journalText;
+        textPanel.text = journalData.GetDialogueForJournal(selectedNPC, selectedKeyword);
     }
 
 }

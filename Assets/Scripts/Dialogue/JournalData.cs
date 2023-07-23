@@ -83,18 +83,23 @@ public class JournalData
         }
 
         bool entryExists = keywordMap.TryGetValue((keyword, npc.ObjName), out var journalEntry);
-
-        if (entryExists && journalEntry.Found)
+        
+        if (!entryExists)
+        {
+            Debug.LogWarning($"Dialogue for {npc.ObjName} with keyword {keyword} is missing.");
+            return "[MISSING]";
+        }
+        else if (journalEntry.Found)
         {
             return journalEntry.FullDialogue;
         }
-        else if (entryExists && journalEntry.ConfusedResponseFound)
+        else if (journalEntry.ConfusedResponseFound)
         {
             return "I asked about this, but couldn't get a clear answer. Maybe I should try asking again later.";
         }
         else
         {
-            return "";
+            return $"I haven't asked {npc.ObjName} about this yet.";
         }
     }
 
