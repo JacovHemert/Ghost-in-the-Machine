@@ -88,6 +88,7 @@ public class JournalManager : MonoBehaviour
         journalPanel.SetActive(!journalPanel.activeSelf);
         SelectButtons();
         //RefreshPromptButton();
+        SetJournalText();
     }
 
     private void RefreshPromptButton()
