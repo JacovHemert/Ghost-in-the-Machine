@@ -153,10 +153,8 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         
         // If there is one, this displays the found keyword in a popup after the dialogue completes
-        if (keywordToAdd != "")
+        if (string.IsNullOrEmpty(keywordToAdd))
         {
-            
-
             bool added = JournalManager.GetInstance().AddKeyword(keywordToAdd);
             if (added)
             {
@@ -165,7 +163,7 @@ public class DialogueManager : MonoBehaviour
                 foundKeywordPanel.GetComponent<Animator>().SetTrigger("Show");
             }
             
-            keywordToAdd = "";
+            keywordToAdd = string.Empty;
         }
     }
 
