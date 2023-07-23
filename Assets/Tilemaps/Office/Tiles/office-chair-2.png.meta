@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 22549acf381eec04a9d5de23a86c26b6
+guid: 20504c879e465304995212397ecaf2fb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4370717858398380493
-    second: flower-by-anjru_0
+      213: 3063637005653362150
+    second: office-chair-2_0
+  - first:
+      213: -1576092051652033825
+    second: office-chair-2_1
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,26 +101,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flower-by-anjru_0
+      name: office-chair-2_0
       rect:
         serializedVersion: 2
-        x: 559
-        y: 803
-        width: 411
-        height: 402
+        x: 692
+        y: 659
+        width: 502
+        height: 502
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -65.5, y: -201}
-        - {x: 101.5, y: -201}
-        - {x: 101.5, y: 16}
-        - {x: -65.5, y: 16}
-      physicsShape: []
+      outline: []
+      physicsShape:
+      - - {x: -20, y: -193}
+        - {x: 122, y: -95}
+        - {x: -5, y: -13}
+        - {x: -149, y: -93}
       tessellationDetail: 0
       bones: []
-      spriteID: dc1aa433cb8e7ac30800000000000000
-      internalID: 4370717858398380493
+      spriteID: 6e5c5b2ff99348a20800000000000000
+      internalID: 3063637005653362150
       vertices: []
       indices: 
       edges: []
@@ -125,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0749a1191f768f74c9e205db2a234003
+    spriteID: 75f6501d5f568114d928432e12ee6ae7
     internalID: 0
     vertices: []
     indices: 
@@ -133,7 +136,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      flower-by-anjru_0: 4370717858398380493
+      office-chair-2_0: 3063637005653362150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

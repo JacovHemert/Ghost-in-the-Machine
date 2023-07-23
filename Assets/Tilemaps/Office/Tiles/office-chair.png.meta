@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 40087214f46489c4187418cbc5cd827b
+guid: d414835b9858e134685187741a5db1dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5365468899576407222
-    second: door-device-half-near_0
+      213: -4305900517069182829
+    second: office-chair_0
   - first:
-      213: 5070226624246442303
-    second: door-device-half-near_1
+      213: -9058630236767090174
+    second: office-chair_1
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,22 +101,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door-device-half-near_1
+      name: office-chair_0
       rect:
         serializedVersion: 2
-        x: 174
-        y: 107
-        width: 558
-        height: 970
-      alignment: 9
-      pivot: {x: 0.7167395, y: 0.17720465}
+        x: 829
+        y: 699
+        width: 220
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f39efe460401d5640800000000000000
-      internalID: 5070226624246442303
+      spriteID: 398abe91b4e5e34c0800000000000000
+      internalID: -4305900517069182829
       vertices: []
       indices: 
       edges: []
@@ -124,7 +124,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 309a230035643cb43a29a6156f831cfa
+    spriteID: dbe14876f7f15a34bbf4b36e3d244f20
     internalID: 0
     vertices: []
     indices: 
@@ -132,8 +132,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      door-device-half-near_0: 5365468899576407222
-      door-device-half-near_1: 5070226624246442303
+      office-chair_0: -4305900517069182829
+      office-chair_1: -9058630236767090174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

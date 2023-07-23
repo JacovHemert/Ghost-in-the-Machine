@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 40087214f46489c4187418cbc5cd827b
+guid: 301d6a808a9bcb646b25fb42306eee66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5365468899576407222
-    second: door-device-half-near_0
-  - first:
-      213: 5070226624246442303
-    second: door-device-half-near_1
+      213: 4196430195353630241
+    second: conspiracy-board_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 264
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,22 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door-device-half-near_1
+      name: conspiracy-board_0
       rect:
         serializedVersion: 2
-        x: 174
-        y: 107
-        width: 558
-        height: 970
-      alignment: 9
-      pivot: {x: 0.7167395, y: 0.17720465}
+        x: 512
+        y: 913
+        width: 290
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f39efe460401d5640800000000000000
-      internalID: 5070226624246442303
+      spriteID: 126b6ce6707bc3a30800000000000000
+      internalID: 4196430195353630241
       vertices: []
       indices: 
       edges: []
@@ -124,16 +121,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 309a230035643cb43a29a6156f831cfa
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      door-device-half-near_0: 5365468899576407222
-      door-device-half-near_1: 5070226624246442303
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

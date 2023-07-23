@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 40087214f46489c4187418cbc5cd827b
+guid: 9215926f2f7ee38468d7213943acd8f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5365468899576407222
-    second: door-device-half-near_0
-  - first:
-      213: 5070226624246442303
-    second: door-device-half-near_1
+      213: -3615487120820185014
+    second: blood-pool_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,22 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door-device-half-near_1
+      name: blood-pool_0
       rect:
         serializedVersion: 2
-        x: 174
-        y: 107
-        width: 558
-        height: 970
-      alignment: 9
-      pivot: {x: 0.7167395, y: 0.17720465}
+        x: 713
+        y: 783
+        width: 159
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f39efe460401d5640800000000000000
-      internalID: 5070226624246442303
+      spriteID: a4853898e9533ddc0800000000000000
+      internalID: -3615487120820185014
       vertices: []
       indices: 
       edges: []
@@ -124,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 309a230035643cb43a29a6156f831cfa
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -132,8 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      door-device-half-near_0: 5365468899576407222
-      door-device-half-near_1: 5070226624246442303
+      blood-pool_0: -3615487120820185014
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
