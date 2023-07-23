@@ -1,13 +1,8 @@
-using Ink.Parsed;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class JournalManager : MonoBehaviour
 {
@@ -20,7 +15,7 @@ public class JournalManager : MonoBehaviour
     private TextMeshProUGUI textPanel;                  // UI panel in the journal for dispalying dialogue text
 
     public JournalData journalData; // made public so I can access this for NPC dialogue with E (in DialogueManager) for the Lucid0-6 entries
-    private SortedSet<string> foundKeywords = new();
+    private HashSet<string> foundKeywords = new();
     private static JournalManager instance;
 
     [SerializeField] private PlayerController playerController;

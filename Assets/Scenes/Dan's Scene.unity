@@ -15922,7 +15922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f4c5b7102e0d8439396ff9f13a312d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  associatedNPC: {fileID: 1472251593}
+  associatedNPC: {fileID: 664377517}
 --- !u!1 &380478591
 GameObject:
   m_ObjectHideFlags: 0
@@ -23098,6 +23098,7 @@ MonoBehaviour:
   objImage: {fileID: 1441543777}
   foundKeywordPanel: {fileID: 864197456}
   dialogueText: {fileID: 1461760962}
+  textboxCharacterLimit: 360
   playerControls: {fileID: -944628639613478452, guid: 117aeab2afd446b47af1b9af542198ab, type: 3}
 --- !u!4 &817940381
 Transform:
