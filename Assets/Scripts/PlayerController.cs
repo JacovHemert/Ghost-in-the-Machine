@@ -7,6 +7,8 @@ using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject buttonPromptPanel, journalPanel;
+
     private Rigidbody2D rb;
     private Vector2 desiredMove;
     private HashSet<DialogueTrigger> nearbyTriggers = new();
@@ -54,13 +56,14 @@ public class PlayerController : MonoBehaviour
 
     // Add a DialogueTrigger to the list of active triggers
     public bool FocusTrigger(DialogueTrigger trigger)
-    {
+    {  
         return nearbyTriggers.Add(trigger);
     }
 
     // Remove a DialogueTrigger from the list of active triggers
     public bool UnfocusTrigger(DialogueTrigger trigger)
     {
+        
         return nearbyTriggers.Remove(trigger);
     }
 
@@ -130,15 +133,39 @@ public class PlayerController : MonoBehaviour
             DialogueTrigger activeTrigger = NearestTrigger();
             //Debug.Log(activeTrigger.transform.parent.name);
             activeTrigger.visualCue.SetActive(true);
+
+            if (!DialogueManager.GetInstance().DialogueIsPlaying && !journalPanel.activeSelf)
+                ShowButtonPrompt(activeTrigger.objInformation.LucidLevel);
+            else HideButtonPrompt();
         }
-        
+        else
+        {
+            HideButtonPrompt();
+        }
 
     }
+
+    private void ShowButtonPrompt(int lucidLevel)
+    {
+        buttonPromptPanel.SetActive(true);
+        int childNum = 0;
+        if (lucidLevel > -1)
+            childNum = 1;
+        buttonPromptPanel.transform.GetChild(childNum).gameObject.SetActive(true);
+    }
+
+    private void HideButtonPrompt()
+    {
+        buttonPromptPanel.SetActive(false);
+        buttonPromptPanel.transform.GetChild(0).gameObject.SetActive(false);
+        buttonPromptPanel.transform.GetChild(1).gameObject.SetActive(false);
+    }
+
 
     private void FixedUpdate()
     {
         // Stop the player's movement during dialogue
-        if (DialogueManager.GetInstance().DialogueIsPlaying)
+        if (DialogueManager.GetInstance().DialogueIsPlaying || journalPanel.activeSelf)
         {
             return;
         }

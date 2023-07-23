@@ -59,6 +59,18 @@ public class JournalManager : MonoBehaviour
         AddKeyword("Immanuel", out var added3);
         AddKeyword("Rene", out var added4);
 
+        selectedNPCButton = namesPage.transform.GetChild(0).GetComponent<Button>();
+        if (selectedNPCButton.TryGetComponent<CharacterAssociation>(out var npc))
+        {
+            selectedNPC = npc.Info;
+        }
+
+        if (foundKeywords.Count > 0)
+        {            
+            //selectedKeywordButton = keywordsPage.transform.GetChild(0).GetComponent<Button>();
+        }
+
+        
         SelectButtons();
         journalPanel.SetActive(false);
     }
@@ -74,12 +86,13 @@ public class JournalManager : MonoBehaviour
     private void ToggleJournal()
     {
         journalPanel.SetActive(!journalPanel.activeSelf);
-        RefreshPromptButton();
+        SelectButtons();
+        //RefreshPromptButton();
     }
 
     private void RefreshPromptButton()
     {
-        if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker))
+        if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker) && selectedKeyword != "")
         {
             promptButton.GetComponentInChildren<TMP_Text>().text = 
                 $"Prompt {speaker.GetComponentInParent<DialogueTrigger>().objInformation.ObjName} with keyword \"{selectedKeyword}\"";
@@ -121,6 +134,7 @@ public class JournalManager : MonoBehaviour
     /// </summary>
     private void SelectButtons()
     {
+        SetJournalText();
         RefreshPromptButton();
 
         foreach (Transform buttonTransform in keywordsPage.transform)
@@ -178,7 +192,10 @@ public class JournalManager : MonoBehaviour
 
     private void SetJournalText()
     {
-        textPanel.text = journalData.GetDialogueForJournal(selectedNPC, selectedKeyword);
+        string journalText = journalData.GetDialogueForJournal(selectedNPC, selectedKeyword);
+        if (journalText == "" && selectedKeyword != null)
+            journalText = "I haven't asked ";// + selectedNPC.ObjName + " about this yet.";
+        textPanel.text = journalText;
     }
 
 }

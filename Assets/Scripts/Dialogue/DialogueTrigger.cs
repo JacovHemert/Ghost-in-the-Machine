@@ -23,7 +23,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     public void InitiateDialogue()
-    {
+    {        
         //stores the associated keyword in DialogueManager so it can be used by the ExitDialogueMode method after the dialogue finishes.
         if (associatedKeyword != "")
         {
