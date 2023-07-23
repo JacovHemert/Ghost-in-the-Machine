@@ -7,6 +7,8 @@ using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject buttonPromptPanel, journalPanel;
+
     private Rigidbody2D rb;
     private Vector2 desiredMove;
     private HashSet<DialogueTrigger> nearbyTriggers = new();
@@ -18,26 +20,20 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void PrintStuff()
-    {
-        Debug.Log("PRASDFADS");
-    }
-
-
     public void OnMove(InputAction.CallbackContext context)
     {
 
         desiredMove = context.ReadValue<Vector2>();
-        Debug.Log(desiredMove);
+        //Debug.Log(desiredMove);
         if (Mathf.Abs(desiredMove.x) > 0.1f && Mathf.Abs(desiredMove.y) >= 0.1f)
         {
-            Debug.Log("DIAGONAL");
+            //Debug.Log("DIAGONAL");
             //desiredMove = new Vector2(desiredMove.x * 1.7f, desiredMove.y);
             desiredMove = new Vector2(desiredMove.x* 1.4f, desiredMove.y * 0.80f);
         }
             
         desiredMove *= Time.fixedDeltaTime * speed;
-        Debug.Log(desiredMove);
+        //Debug.Log(desiredMove);
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -58,25 +54,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Add a DialogueTrigger to the list of active triggers
     public bool FocusTrigger(DialogueTrigger trigger)
-    {
+    {  
         return nearbyTriggers.Add(trigger);
     }
 
+    // Remove a DialogueTrigger from the list of active triggers
     public bool UnfocusTrigger(DialogueTrigger trigger)
     {
+        
         return nearbyTriggers.Remove(trigger);
     }
 
+
+
+    /// <summary>
+    /// Returns the nearest DialogueTrigger to the player within interactable range, or null if no triggers are within range.
+    /// </summary>
     private DialogueTrigger NearestTrigger()
     {
-        //Debug.Log("----");
-        //foreach(var trigger in nearbyTriggers)
-        //{
-        //    Debug.Log(trigger.transform.parent.name + " /// " + Mathf.Abs(Distance(trigger.gameObject)));
-        //}
-        //Debug.Log(nearbyTriggers.OrderBy(t => Mathf.Abs(Distance(t.gameObject))).LastOrDefault().transform.parent.name);
-        return nearbyTriggers.OrderBy(t => Mathf.Abs(Distance(t.gameObject))).LastOrDefault();//FirstOrDefault();
+        return nearbyTriggers.OrderBy(t => Mathf.Abs(Distance(t.gameObject))).LastOrDefault();
     }
 
 
@@ -99,6 +97,30 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Returns true if the player is in range of an NPC. Otherwise returns false.
+    /// </summary>
+    /// <param name="speaker"></param>
+    /// <returns></returns>
+    public bool SpeakerClose(out GameObject speaker) //Changed this to a GameObject out; originally to do something else, but now just in case we need more info than just the ObjInfo.
+    {
+        bool speakerClose = false;
+        speaker = null;
+
+        if (nearbyTriggers.Count > 0)
+        {
+            speaker = NearestTrigger().gameObject;
+            if (speaker.GetComponentInParent<DialogueTrigger>().objInformation.LucidLevel > -1)
+            {
+                speakerClose = true;
+
+            }
+        }
+
+        return speakerClose;
+    }
+
+
     private void Update()
     {
         if (nearbyTriggers.Count > 0)
@@ -106,24 +128,48 @@ public class PlayerController : MonoBehaviour
             foreach(DialogueTrigger trigger in nearbyTriggers)
             {
                 trigger.visualCue.SetActive(false);
-            }
+            }           
+
             DialogueTrigger activeTrigger = NearestTrigger();
+            //Debug.Log(activeTrigger.transform.parent.name);
             activeTrigger.visualCue.SetActive(true);
+
+            if (!DialogueManager.GetInstance().DialogueIsPlaying && !journalPanel.activeSelf)
+                ShowButtonPrompt(activeTrigger.objInformation.LucidLevel);
+            else HideButtonPrompt();
         }
-        
+        else
+        {
+            HideButtonPrompt();
+        }
 
     }
+
+    private void ShowButtonPrompt(int lucidLevel)
+    {
+        buttonPromptPanel.SetActive(true);
+        int childNum = 0;
+        if (lucidLevel > -1)
+            childNum = 1;
+        buttonPromptPanel.transform.GetChild(childNum).gameObject.SetActive(true);
+    }
+
+    private void HideButtonPrompt()
+    {
+        buttonPromptPanel.SetActive(false);
+        buttonPromptPanel.transform.GetChild(0).gameObject.SetActive(false);
+        buttonPromptPanel.transform.GetChild(1).gameObject.SetActive(false);
+    }
+
 
     private void FixedUpdate()
     {
         // Stop the player's movement during dialogue
-        if (DialogueManager.GetInstance().DialogueIsPlaying)
+        if (DialogueManager.GetInstance().DialogueIsPlaying || journalPanel.activeSelf)
         {
             return;
         }
 
         rb.MovePosition(new Vector2(transform.position.x + desiredMove.x, transform.position.y + desiredMove.y));
-
     }
-
 }

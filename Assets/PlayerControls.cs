@@ -62,6 +62,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Journal"",
+                    ""type"": ""Button"",
+                    ""id"": ""7739177c-2b12-49e4-ade5-5c9a4caaeb96"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -121,6 +130,61 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""dd976e3c-05ac-4a4e-abf1-40ebda815b49"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""be4ff35f-ff1a-43ee-b068-329f2ba68d7c"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Movement"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""c314a75f-734b-4f6e-b0dd-07aa156ddb74"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Movement"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""f7db961b-134e-4bc5-ab0a-5002601fe37c"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Movement"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""f15558d6-06d7-4a3e-8a65-0770a659e6cc"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Movement"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""ea888fb0-98d9-422c-8f7e-5bd7f22a852d"",
                     ""path"": ""<Keyboard>/space"",
@@ -163,6 +227,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Advance Dialogue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e39444b-8610-4d80-a9cd-ba3d469fabe1"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Journal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +262,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_jump = m_Player.FindAction("jump", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_AdvanceDialogue = m_Player.FindAction("Advance Dialogue", throwIfNotFound: true);
+        m_Player_Journal = m_Player.FindAction("Journal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -252,6 +328,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_jump;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_AdvanceDialogue;
+    private readonly InputAction m_Player_Journal;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -260,6 +337,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @jump => m_Wrapper.m_Player_jump;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @AdvanceDialogue => m_Wrapper.m_Player_AdvanceDialogue;
+        public InputAction @Journal => m_Wrapper.m_Player_Journal;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -281,6 +359,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @AdvanceDialogue.started += instance.OnAdvanceDialogue;
             @AdvanceDialogue.performed += instance.OnAdvanceDialogue;
             @AdvanceDialogue.canceled += instance.OnAdvanceDialogue;
+            @Journal.started += instance.OnJournal;
+            @Journal.performed += instance.OnJournal;
+            @Journal.canceled += instance.OnJournal;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -297,6 +378,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @AdvanceDialogue.started -= instance.OnAdvanceDialogue;
             @AdvanceDialogue.performed -= instance.OnAdvanceDialogue;
             @AdvanceDialogue.canceled -= instance.OnAdvanceDialogue;
+            @Journal.started -= instance.OnJournal;
+            @Journal.performed -= instance.OnJournal;
+            @Journal.canceled -= instance.OnJournal;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -329,5 +413,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnAdvanceDialogue(InputAction.CallbackContext context);
+        void OnJournal(InputAction.CallbackContext context);
     }
 }

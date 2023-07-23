@@ -6,56 +6,43 @@ using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    //[Header("Visual Cue")]
     [SerializeField] public GameObject visualCue;
-
-    //[Header("Ink JSON")]
     [SerializeField] public TextAsset inkJSON;
+
+    [SerializeField] public string associatedKeyword;
 
     [SerializeField] private UnityEvent interactionEvent;
 
-    private bool playerInRange;
-
     [Header("NPC/Object information")]
     public InteractableObject objInformation;
-    
-    //[SerializeField] public string objName;
-    //[SerializeField] public int lucidLevel;
-    //[SerializeField] public Sprite image;
 
-
-    
 
     private void Awake()
     {
-        playerInRange = false;
         visualCue.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (playerInRange && !DialogueManager.GetInstance().DialogueIsPlaying)
-        {
-            visualCue.SetActive(true);
-        }
-        else
-        {
-            visualCue.SetActive(false);
-        }
-    }
-
     public void InitiateDialogue()
-    {
+    {        
+        //stores the associated keyword in DialogueManager so it can be used by the ExitDialogueMode method after the dialogue finishes.
+        if (associatedKeyword != "")
+        {
+            DialogueManager.GetInstance().keywordToAdd = associatedKeyword;
+        }
+
+
         //DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         interactionEvent.Invoke();
-    }
 
+        
+        //commenting this out because I'm adding it in the ExitDialogueMode method in Dialogue Manager so a popup can appear (see addition above)
+        //JournalManager.GetInstance().AddKeyword(associatedKeyword);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerInRange = true;
             collision.gameObject.GetComponent<PlayerController>().FocusTrigger(this);
         }
     }
@@ -64,8 +51,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerInRange = false;
             collision.gameObject.GetComponent<PlayerController>().UnfocusTrigger(this);
+            visualCue.SetActive(false);
         }
     }
 }
