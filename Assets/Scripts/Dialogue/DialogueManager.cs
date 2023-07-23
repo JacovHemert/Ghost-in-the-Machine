@@ -139,7 +139,7 @@ public class DialogueManager : MonoBehaviour
         {
             
 
-            JournalManager.GetInstance().AddKeyword(keywordToAdd, out bool added);
+            bool added = JournalManager.GetInstance().AddKeyword(keywordToAdd);
             if (added)
             {
                 foundKeywordPanel.SetActive(true);

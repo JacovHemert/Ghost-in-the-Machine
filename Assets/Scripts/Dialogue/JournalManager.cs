@@ -54,10 +54,10 @@ public class JournalManager : MonoBehaviour
         textPanel = journalPanel.transform.Find("Info Panel/Dialogue Text").GetComponent<TextMeshProUGUI>();
 
         //TODO: this is just for testing, remove later
-        AddKeyword("Hume", out var added1);
-        AddKeyword("Bertrand", out var added2);
-        AddKeyword("Immanuel", out var added3);
-        AddKeyword("Rene", out var added4);
+        AddKeyword("Hume");
+        AddKeyword("Bertrand");
+        AddKeyword("Immanuel");
+        AddKeyword("Rene");
 
         selectedNPCButton = namesPage.transform.GetChild(0).GetComponent<Button>();
         if (selectedNPCButton.TryGetComponent<CharacterAssociation>(out var npc))
@@ -105,17 +105,21 @@ public class JournalManager : MonoBehaviour
         }
     }
 
-    public void AddKeyword(string keyword, out bool added) // added out variable so I could show popup only when entry actually gets added for the first time.
+    /// <summary>
+    /// Adds a keyword to the notebook/journal. 
+    /// </summary>
+    /// <returns>True if the keyword is new, false if it is already known.</returns>
+    public bool AddKeyword(string keyword) 
     {
-        added = true;
         if (!string.IsNullOrEmpty(keyword) && !foundKeywords.Contains(keyword))
         {
             foundKeywords.Add(keyword);
             AddKeywordButton(keyword);
+            return true;
         }
         else
         {
-            added = false;
+            return false;
         }
     }
 
