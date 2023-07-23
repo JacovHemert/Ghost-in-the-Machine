@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject namePanel, portraitObj, objImage, foundKeywordPanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [Space(10)]
+    [SerializeField] private int textboxCharacterLimit = 360;
     [SerializeField] private InputActionAsset playerControls;
 
     private InputAction submitAction;
@@ -60,6 +62,26 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void OnSubmitPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Submit");
+            submitPressed = true;
+        }
+        else if (context.canceled)
+        {
+            submitPressed = false;
+        }
+    }
+
+    public bool GetSubmitPressed()
+    {
+        bool result = submitPressed;
+        submitPressed = false;
+        return result;
+    }
+
     public static DialogueManager GetInstance()
     {
         return instance;
@@ -72,11 +94,7 @@ public class DialogueManager : MonoBehaviour
     {
         keywordToAdd = entry.AddedKeyword;
 
-        // Since the dialogue isn't precompiled json data, we have to compile at runtime.
-        // We should maybe try to rework everything to not use the INK plugin since we aren't really using any of its features,
-        // but this is okay for now.
-        //TODO: Add logic to split up large text. I think we just need to insert line breaks to get the Ink compiler to split up the dialogue.
-        currentStory = new Ink.Compiler(entry.FullDialogue).Compile();
+        currentStory = CompileDialogue(entry.FullDialogue);
 
         StartDialogueMode(NPC);
     }
@@ -89,7 +107,7 @@ public class DialogueManager : MonoBehaviour
         InteractableObject NPC = NPCObj.GetComponent<DialogueTrigger>().objInformation;
                 
         KeywordEntry entry = JournalManager.GetInstance().journalData.AskNPCAbout(NPC, "Lucid" + NPC.LucidLevel);
-        currentStory = new Ink.Compiler(entry.FullDialogue).Compile();
+        currentStory = CompileDialogue(entry.FullDialogue);
 
         StartDialogueMode(NPC);
     }
@@ -164,23 +182,30 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void OnSubmitPressed(InputAction.CallbackContext context)
+    // Converts the string representation of a dialogue into an Ink Story object.
+    // Text that is too long to fit into the text box will be split into segments that can be displayed in sequence.
+    private Story CompileDialogue(string text)
     {
-        if (context.performed)
-        {
-            Debug.Log("Submit");
-            submitPressed = true;
-        }
-        else if (context.canceled)
-        {
-            submitPressed = false;
-        }
-    }
+        int index = textboxCharacterLimit;
 
-    public bool GetSubmitPressed()
-    {
-        bool result = submitPressed;
-        submitPressed = false;
-        return result;
+        while (text.Length > index)
+        {
+            int splitPosition = text.LastIndexOf(". ", index, textboxCharacterLimit);
+
+            // I we don't find a period to split on, set the splitPosition to the current index
+            // so it cuts the text off at the limit but doesn't overrun the textbox.
+            if (splitPosition < 0)
+            {
+                splitPosition = index;
+            }
+
+            // Replace the space after the period with a line break. 
+            text = text.Remove(splitPosition + 1, 1);
+            text = text.Insert(splitPosition + 1, "\n");
+
+            index = textboxCharacterLimit + splitPosition + 2; // +2 for the period and newline characters
+        }
+
+        return new Ink.Compiler(text).Compile();
     }
 }
