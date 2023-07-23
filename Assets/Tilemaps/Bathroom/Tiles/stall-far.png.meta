@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 1aafa6630335a3b4a84bc656f462dcb9
+guid: 81073b182c406574fb5eb9672c8f7a48
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 66967981993294777
-    second: wall-basic-tile_0
+      213: -1300263314626111920
+    second: stall-far_0
   - first:
-      213: 4504845925510169696
-    second: wall-basic-tile_1
+      213: -5621345733702435337
+    second: stall-far_1
+  - first:
+      213: -5717496745526677514
+    second: stall-far_2
+  - first:
+      213: 5822147298616949801
+    second: stall-far_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,26 +107,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-tile_0
+      name: stall-far_0
       rect:
         serializedVersion: 2
-        x: 1114
-        y: 427
-        width: 214
-        height: 874
+        x: 555
+        y: 772
+        width: 366
+        height: 652
       alignment: 9
-      pivot: {x: 0.37850466, y: 0.13386726}
+      pivot: {x: 0.64890575, y: 0.25493672}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -99, y: -230}
+        - {x: 11, y: -292}
+        - {x: 103, y: -223}
+        - {x: 99, y: 250}
+        - {x: 8, y: 313}
+        - {x: -94, y: 250}
       physicsShape:
-      - - {x: -89, y: -354}
-        - {x: 52, y: -437}
-        - {x: 107, y: -401}
-        - {x: -28, y: -320}
+      - - {x: -60, y: -254}
+        - {x: 63, y: -187}
+        - {x: 24, y: -158}
+        - {x: -91, y: -211}
       tessellationDetail: 0
       bones: []
-      spriteID: 9bbf80a560bede000800000000000000
-      internalID: 66967981993294777
+      spriteID: 0561d39876984fde0800000000000000
+      internalID: -1300263314626111920
       vertices: []
       indices: 
       edges: []
@@ -128,7 +140,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6ca02e45e6a13374c84c7a4c7d3a7f08
+    spriteID: d047097889bf46e4ab08740254755398
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +148,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-tile_0: 66967981993294777
-      wall-basic-tile_1: 4504845925510169696
+      stall-far_0: -1300263314626111920
+      stall-far_1: -5621345733702435337
+      stall-far_2: -5717496745526677514
+      stall-far_3: 5822147298616949801
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

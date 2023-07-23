@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 1aafa6630335a3b4a84bc656f462dcb9
+guid: 1c1b763883eeece4290ee302838049a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 66967981993294777
-    second: wall-basic-tile_0
-  - first:
-      213: 4504845925510169696
-    second: wall-basic-tile_1
+      213: -5995471471272887009
+    second: pantry-shelf_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,26 +98,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-tile_0
+      name: pantry-shelf_0
       rect:
         serializedVersion: 2
-        x: 1114
-        y: 427
-        width: 214
-        height: 874
+        x: 502
+        y: 313
+        width: 596
+        height: 905
       alignment: 9
-      pivot: {x: 0.37850466, y: 0.13386726}
+      pivot: {x: 0.4920175, y: 0.34404472}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -139, y: -232.5}
+        - {x: -1, y: -305.5}
+        - {x: 122, y: -232.5}
+        - {x: 122, y: 221.5}
+        - {x: -3, y: 299.5}
+        - {x: -139, y: 221.5}
       physicsShape:
-      - - {x: -89, y: -354}
-        - {x: 52, y: -437}
-        - {x: 107, y: -401}
-        - {x: -28, y: -320}
+      - - {x: -6, y: -306.5}
+        - {x: 138, y: -214.5}
+        - {x: -9, y: -131.5}
+        - {x: -154, y: -216.5}
       tessellationDetail: 0
       bones: []
-      spriteID: 9bbf80a560bede000800000000000000
-      internalID: 66967981993294777
+      spriteID: f1d7ac5567ecbcca0800000000000000
+      internalID: -5995471471272887009
       vertices: []
       indices: 
       edges: []
@@ -128,7 +131,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6ca02e45e6a13374c84c7a4c7d3a7f08
+    spriteID: 50ffe45cee583ec47bff2976f3bb5aea
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +139,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-tile_0: 66967981993294777
-      wall-basic-tile_1: 4504845925510169696
+      pantry-shelf_0: -5995471471272887009
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

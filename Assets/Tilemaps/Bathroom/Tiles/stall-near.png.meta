@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 1aafa6630335a3b4a84bc656f462dcb9
+guid: c7b33d28e8121c34395d9e97b3534164
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 66967981993294777
-    second: wall-basic-tile_0
+      213: 3645682302437986834
+    second: stall-near_0
   - first:
-      213: 4504845925510169696
-    second: wall-basic-tile_1
+      213: -6474735300635371445
+    second: stall-near_1
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,26 +101,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-tile_0
+      name: stall-near_0
       rect:
         serializedVersion: 2
-        x: 1114
-        y: 427
-        width: 214
-        height: 874
+        x: 477
+        y: 682
+        width: 351
+        height: 672
       alignment: 9
-      pivot: {x: 0.37850466, y: 0.13386726}
+      pivot: {x: 0.5168514, y: 0.2667439}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -124.5, y: -245}
+        - {x: 10.5, y: -329}
+        - {x: 116.5, y: -245}
+        - {x: 116.5, y: 188}
+        - {x: 11.5, y: 268}
+        - {x: -124.5, y: 188}
       physicsShape:
-      - - {x: -89, y: -354}
-        - {x: 52, y: -437}
-        - {x: 107, y: -401}
-        - {x: -28, y: -320}
+      - - {x: -131.5, y: -234}
+        - {x: -91.5, y: -258}
+        - {x: 45.5, y: -190}
+        - {x: 5.5, y: -167}
       tessellationDetail: 0
       bones: []
-      spriteID: 9bbf80a560bede000800000000000000
-      internalID: 66967981993294777
+      spriteID: 2129eb80db0189230800000000000000
+      internalID: 3645682302437986834
       vertices: []
       indices: 
       edges: []
@@ -128,7 +134,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6ca02e45e6a13374c84c7a4c7d3a7f08
+    spriteID: 15da9c845e758864a8e80ae445df4a75
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +142,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-tile_0: 66967981993294777
-      wall-basic-tile_1: 4504845925510169696
+      stall-near_0: 3645682302437986834
+      stall-near_1: -6474735300635371445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

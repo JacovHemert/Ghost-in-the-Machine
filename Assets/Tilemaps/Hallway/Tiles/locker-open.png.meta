@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 1aafa6630335a3b4a84bc656f462dcb9
+guid: 7dd7160f8c6c6004098ce2f879f93f64
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 66967981993294777
-    second: wall-basic-tile_0
-  - first:
-      213: 4504845925510169696
-    second: wall-basic-tile_1
+      213: 8896997811760350604
+    second: locker-open_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,26 +98,35 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-tile_0
+      name: locker-open_0
       rect:
         serializedVersion: 2
-        x: 1114
-        y: 427
-        width: 214
-        height: 874
+        x: 547
+        y: 540
+        width: 475
+        height: 777
       alignment: 9
-      pivot: {x: 0.37850466, y: 0.13386726}
+      pivot: {x: 0.52773696, y: 0.28642637}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -116.5, y: -251.5}
+        - {x: 28.5, y: -328.5}
+        - {x: 144.5, y: -243.5}
+        - {x: 151.5, y: 216.5}
+        - {x: 10.5, y: 302.5}
+        - {x: -108.5, y: 226.5}
       physicsShape:
-      - - {x: -89, y: -354}
-        - {x: 52, y: -437}
-        - {x: 107, y: -401}
-        - {x: -28, y: -320}
+      - - {x: -58.90558, y: -215.0318}
+        - {x: 65.5, y: -289.5}
+        - {x: 149.5, y: -240.5}
+        - {x: 6.5, y: -158.5}
+        - {x: -90.5, y: -181.5}
+        - {x: -105.5, y: -182.5}
+        - {x: -105.5, y: -251.5}
       tessellationDetail: 0
       bones: []
-      spriteID: 9bbf80a560bede000800000000000000
-      internalID: 66967981993294777
+      spriteID: c8547691f5c787b70800000000000000
+      internalID: 8896997811760350604
       vertices: []
       indices: 
       edges: []
@@ -128,7 +134,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6ca02e45e6a13374c84c7a4c7d3a7f08
+    spriteID: fa6f7f29b364443429248987c826a1b4
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +142,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-tile_0: 66967981993294777
-      wall-basic-tile_1: 4504845925510169696
+      locker-open_0: 8896997811760350604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

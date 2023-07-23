@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 1aafa6630335a3b4a84bc656f462dcb9
+guid: 00e3fee82cd86a14f83363bd87a0cfb6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 66967981993294777
-    second: wall-basic-tile_0
-  - first:
-      213: 4504845925510169696
-    second: wall-basic-tile_1
+      213: -7402502242322513387
+    second: stall-mid_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 264
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,26 +98,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-basic-tile_0
+      name: stall-mid_0
       rect:
         serializedVersion: 2
-        x: 1114
-        y: 427
-        width: 214
-        height: 874
+        x: 372
+        y: 656
+        width: 493
+        height: 739
       alignment: 9
-      pivot: {x: 0.37850466, y: 0.13386726}
+      pivot: {x: 0.5808471, y: 0.29103917}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -89, y: -354}
-        - {x: 52, y: -437}
-        - {x: 107, y: -401}
-        - {x: -28, y: -320}
+      - - {x: -97.5, y: -319.5}
+        - {x: 62.5, y: -224.5}
+        - {x: 59.5, y: -174.5}
+        - {x: -100.5, y: -264.5}
       tessellationDetail: 0
       bones: []
-      spriteID: 9bbf80a560bede000800000000000000
-      internalID: 66967981993294777
+      spriteID: 51285554e67054990800000000000000
+      internalID: -7402502242322513387
       vertices: []
       indices: 
       edges: []
@@ -128,7 +125,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6ca02e45e6a13374c84c7a4c7d3a7f08
+    spriteID: fc0e19f9c9516fc45850cb89e2259cc3
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-basic-tile_0: 66967981993294777
-      wall-basic-tile_1: 4504845925510169696
+      stall-mid_0: -7402502242322513387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
