@@ -42,13 +42,16 @@ public class JournalData
         }
         else if (journalEntry.RequiredLucidity <= npc.LucidLevel)
         {
-            entry = journalEntry; 
-            journalEntry.Found = true;
+            entry = journalEntry;
 
-            if (journalEntry.AdvanceLucidity) //!journalEntry.Found && journalEntry.AdvanceLucidity)  {We make journalEntry.Found true, and then check whether it's false, so this never runs}
+            // We need to check that the journal entry hasn't been found before so the same keyword can't raise lucidity multiple times
+            // but yes, make sure to do it *before* flagging Found as true :P
+            if (!journalEntry.Found && journalEntry.AdvanceLucidity) 
             {
                 npc.LucidLevel++;
             }
+
+            journalEntry.Found = true;
         }
         else //If the character can't give a coherent response yet, randomly select one of the confused responses.
         {
