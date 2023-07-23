@@ -124,7 +124,7 @@ TextureImporter:
       physicsShape:
       - - {x: 17.5, y: -153.5}
         - {x: 80.5, y: -114.5}
-        - {x: -57.5, y: -37.5}
+        - {x: -57.5, y: -36.5}
         - {x: -117.5, y: -73.5}
       tessellationDetail: 0
       bones: []

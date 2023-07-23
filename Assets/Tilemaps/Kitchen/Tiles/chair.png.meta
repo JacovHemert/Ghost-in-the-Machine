@@ -110,11 +110,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -10, y: -183.5}
-        - {x: 85, y: -123.5}
-        - {x: 9, y: 104.5}
-        - {x: -93, y: 48.5}
-        - {x: -106, y: -126.5}
+      - - {x: -13, y: -175.5}
+        - {x: 77, y: -124.5}
+        - {x: -7, y: -72.5}
+        - {x: -95, y: -127.5}
       tessellationDetail: 0
       bones: []
       spriteID: eb5715572e566f400800000000000000
