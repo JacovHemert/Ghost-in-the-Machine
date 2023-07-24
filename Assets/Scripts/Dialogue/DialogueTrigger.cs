@@ -30,6 +30,15 @@ public class DialogueTrigger : MonoBehaviour
             objInformation.ObjImage = transform.parent.GetComponentInChildren<SpriteRenderer>().sprite;
     }
 
+    private void Update()
+    {
+        if (objInformation.LucidLevel == 8)
+        {
+            transform.parent.gameObject.SetActive(false);
+        }
+    }
+
+
     public void InitiateDialogue()
     {        
         //stores the associated keyword in DialogueManager so it can be used by the ExitDialogueMode method after the dialogue finishes.
