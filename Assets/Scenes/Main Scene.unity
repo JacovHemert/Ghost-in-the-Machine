@@ -29924,7 +29924,7 @@ MonoBehaviour:
   objInformation:
     ObjName: Bench
     JobTitle: 
-    LucidLevel: 0
+    LucidLevel: -1
     ObjImage: {fileID: -5393949342150720945, guid: e51a00ab571081c468cc5f5fa852e479, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1102351376
@@ -34784,6 +34784,12 @@ MonoBehaviour:
   dialogueText: {fileID: 2123160444}
   textboxCharacterLimit: 360
   playerControls: {fileID: -944628639613478452, guid: 117aeab2afd446b47af1b9af542198ab, type: 3}
+  ryle:
+    ObjName: Ryle
+    JobTitle: Ghost Bottler
+    LucidLevel: 1000000
+    ObjImage: {fileID: -6639794934594664251, guid: c75b3fcffa64cb64cb9bcf02ddd25ac0, type: 3}
+    inkJSON: {fileID: 4900000, guid: 7c39aa4d3b9d87e43ba4350cd2f7ec1f, type: 3}
 --- !u!4 &1644621632
 Transform:
   m_ObjectHideFlags: 0

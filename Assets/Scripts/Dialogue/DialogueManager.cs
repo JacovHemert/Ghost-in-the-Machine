@@ -15,11 +15,15 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private int textboxCharacterLimit = 360;
     [SerializeField] private InputActionAsset playerControls;
 
+    [Header("Ryle")]
+    public InteractableObject ryle;
+
     private InputAction submitAction;
     private Story currentStory;
     private bool submitPressed;
 
     [NonSerialized] public string keywordToAdd = "";
+    private bool showResponseFromRyle = false;
 
     public bool DialogueIsPlaying { get; private set; }
 
@@ -93,9 +97,14 @@ public class DialogueManager : MonoBehaviour
     public void EnterDialogueMode(InteractableObject NPC, KeywordEntry entry) // updated second variable to keep the more complete information
     {
         keywordToAdd = entry.AddedKeyword;
-        
 
         currentStory = CompileDialogue(entry.FullDialogue);
+
+        // This is a bit ugly but we can use this to check if the current response is a confused answer
+        if (!entry.Found && entry.ConfusedResponseFound)
+        {
+            showResponseFromRyle = true;
+        }
 
         StartDialogueMode(NPC);
     }
@@ -124,6 +133,13 @@ public class DialogueManager : MonoBehaviour
         StartDialogueMode(itemActor);
     }
 
+    // Show response from Ryle after a ghost gives a confused answer
+    private void StartResponse()
+    {
+        currentStory = new Story(ryle.inkJSON.text);
+        StartDialogueMode(ryle);
+    }
+
     private void StartDialogueMode(InteractableObject actor)
     {
         submitAction.Enable();
@@ -147,6 +163,13 @@ public class DialogueManager : MonoBehaviour
 
     private void ExitDialogueMode()
     {
+        if (showResponseFromRyle)
+        {
+            showResponseFromRyle = false;
+            StartResponse();
+            return;
+        }
+
         submitAction.Disable();
         DialogueIsPlaying = false;
         dialoguePanel.SetActive(false);

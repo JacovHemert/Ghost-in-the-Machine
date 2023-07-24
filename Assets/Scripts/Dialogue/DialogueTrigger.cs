@@ -32,13 +32,8 @@ public class DialogueTrigger : MonoBehaviour
             DialogueManager.GetInstance().keywordToAdd = associatedKeyword;
         }
 
-
         //DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         interactionEvent.Invoke();
-
-        
-        //commenting this out because I'm adding it in the ExitDialogueMode method in Dialogue Manager so a popup can appear (see addition above)
-        //JournalManager.GetInstance().AddKeyword(associatedKeyword);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

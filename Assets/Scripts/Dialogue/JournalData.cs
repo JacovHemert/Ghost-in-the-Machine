@@ -59,6 +59,7 @@ public class JournalData
                 // Unity's random number generator is upper bound inclusive for some reason so the multiplier has to be slightly less than an integer amount
                 int randomValue = (int)(Random.value * (answers.Count - 0.001));
                 entry.FullDialogue = answers[randomValue]; 
+                entry.ConfusedResponseFound = true;
             }
             else
             {
