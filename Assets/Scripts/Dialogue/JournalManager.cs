@@ -86,7 +86,11 @@ public class JournalManager : MonoBehaviour
         {
             for (int i = 0; i < namesPage.transform.childCount; i++)
             {
-                //if (namesPage.transform.GetChild(i).GetComponent<CharacterAssociation>().associatedNPC.objInformation.ObjName
+                if (namesPage.transform.GetChild(i).GetComponent<CharacterAssociation>().associatedNPC.objInformation.ObjName == speaker.GetComponent<DialogueTrigger>().objInformation.ObjName)
+                {
+                    selectedNPCButton = namesPage.transform.GetChild(i).GetComponent<Button>();
+                    selectedNPC = namesPage.transform.GetChild(i).GetComponent<CharacterAssociation>().associatedNPC.objInformation;
+                }
             }
             
             
