@@ -152,6 +152,7 @@ public class JournalManager : MonoBehaviour
 
         var buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
         buttonText.text = keyword;
+        button.GetComponent<Image>().color = Color.green; //Highlight new keyword buttons, which will last until they are clicked
         button.name = $"Keyword: {keyword}";        
         button.onClick.AddListener(() =>
         {
@@ -166,11 +167,6 @@ public class JournalManager : MonoBehaviour
     private void SelectButtons()
     {
         RefreshPromptButton();
-
-        foreach (Transform buttonTransform in keywordsPage.transform)
-        {
-            buttonTransform.GetComponent<Image>().color = Color.white;
-        }
 
         foreach (Transform buttonTransform in namesPage.transform)
         {
@@ -190,6 +186,9 @@ public class JournalManager : MonoBehaviour
 
     public void KeywordButtonClicked(string keyword, Button button)
     {
+        if (selectedKeywordButton != null)
+            selectedKeywordButton.GetComponent<Image>().color = Color.white;
+
         selectedKeywordButton = button;
         selectedKeyword = keyword;
 
@@ -225,5 +224,10 @@ public class JournalManager : MonoBehaviour
         textPanel.text = journalData.GetDialogueForJournal(selectedNPC, selectedKeyword);
     }
 
+
+    public KeywordEntry GetKeywordEntry(InteractableObject actor, string keyword)
+    {
+        return journalData.AskNPCAbout(actor, keyword);
+    }
 }
 

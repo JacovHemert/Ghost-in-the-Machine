@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     private HashSet<DialogueTrigger> nearbyTriggers = new();
 
     [SerializeField] private float speed;
+    [SerializeField] private List<AudioClip> footsteps = new List<AudioClip>();
+    private bool footstepOne = false;
+    private float footstepCounter = 0;
 
     private void Start()
     {
@@ -34,7 +37,52 @@ public class PlayerController : MonoBehaviour
             
         desiredMove *= Time.fixedDeltaTime * speed;
         //Debug.Log(desiredMove);
+
+        UpdateMovementSprites(desiredMove);
     }
+
+    private void UpdateMovementSprites(Vector2 desiredMove)
+    {
+        
+        Animator anim = GetComponent<Animator>();
+
+        if (Mathf.Approximately(desiredMove.x, 0f))
+            anim.SetBool("XZero", true);
+        else
+            anim.SetBool("XZero", false);
+
+        if (Mathf.Approximately(desiredMove.y, 0f))
+            anim.SetBool("YZero", true);
+        else
+            anim.SetBool("YZero", false);
+
+        anim.SetFloat("X", desiredMove.x);
+        anim.SetFloat("Y", desiredMove.y);
+
+        footstepCounter += Time.deltaTime;
+
+        if (footstepCounter >= 0.5f)
+        {
+            if (footstepOne)
+            {
+                GetComponent<AudioSource>().clip = footsteps[0];
+            }
+            else
+            {
+                GetComponent<AudioSource>().clip = footsteps[1];
+            }
+            GetComponent<AudioSource>().Play();
+
+            footstepOne = !footstepOne;
+            footstepCounter = 0;
+        }
+
+        if (Mathf.Approximately(desiredMove.x, 0f) && Mathf.Approximately(desiredMove.y, 0f))
+        {
+            footstepCounter = 0;
+        }
+    }
+
 
     public void OnInteract(InputAction.CallbackContext context)
     {
@@ -143,6 +191,8 @@ public class PlayerController : MonoBehaviour
             HideButtonPrompt();
         }
 
+        UpdateMovementSprites(desiredMove);
+
     }
 
     private void ShowButtonPrompt(int lucidLevel)
@@ -171,5 +221,12 @@ public class PlayerController : MonoBehaviour
         }
 
         rb.MovePosition(new Vector2(transform.position.x + desiredMove.x, transform.position.y + desiredMove.y));
+    }
+
+
+
+    public void MatchSpriteMask()
+    {
+        GetComponentInChildren<SpriteMask>().sprite = GetComponentInChildren<SpriteRenderer>().sprite;
     }
 }
