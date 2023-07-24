@@ -18,6 +18,7 @@ public class PanelIcons : MonoBehaviour
     [SerializeField] private Image rousseauIcon;
 
     private Dictionary<string, Image> iconMap = new();
+    private Dictionary<string, Image> keywordIconMap = new();
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +31,26 @@ public class PanelIcons : MonoBehaviour
         iconMap.Add("Rousseau", rousseauIcon);
     }
 
+    public void AddNewKeywordIconMap(string keyword, Image iconImageComponent)
+    {
+        Debug.Log(keyword + " / " + iconImageComponent);
+        keywordIconMap.Add(keyword, iconImageComponent);
+    }
 
-    public void RefreshStatusIcons(string keyword)
+    public void RefreshKeywordStatusIcons(string NPCname)
+    {
+        Debug.Log(NPCname);
+        
+        foreach (string keyword in keywordIconMap.Keys)
+        {
+            keywordIconMap[keyword].sprite = GetIcon(NPCname, keyword);
+        }
+        
+    }
+
+
+
+    public void RefreshNPCStatusIcons(string keyword)
     {
         foreach (string name in iconMap.Keys)
         {

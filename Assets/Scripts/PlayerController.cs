@@ -32,9 +32,9 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("DIAGONAL");
             //desiredMove = new Vector2(desiredMove.x * 1.7f, desiredMove.y);
-            desiredMove = new Vector2(desiredMove.x* 1.4f, desiredMove.y * 0.80f);
+            desiredMove = new Vector2(desiredMove.x * 1.4f, desiredMove.y * 0.80f);
         }
-            
+
         desiredMove *= Time.fixedDeltaTime * speed;
         //Debug.Log(desiredMove);
 
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMovementSprites(Vector2 desiredMove)
     {
-        
+
         Animator anim = GetComponent<Animator>();
 
         if (Mathf.Approximately(desiredMove.x, 0f))
@@ -84,6 +84,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    public void OnActivateSprint(InputAction.CallbackContext context)
+    {
+        if (speed == 4)
+            speed = 8;
+        else
+            speed = 4;
+
+    }
+
+
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -104,14 +114,14 @@ public class PlayerController : MonoBehaviour
 
     // Add a DialogueTrigger to the list of active triggers
     public bool FocusTrigger(DialogueTrigger trigger)
-    {  
+    {
         return nearbyTriggers.Add(trigger);
     }
 
     // Remove a DialogueTrigger from the list of active triggers
     public bool UnfocusTrigger(DialogueTrigger trigger)
     {
-        
+
         return nearbyTriggers.Remove(trigger);
     }
 
@@ -132,15 +142,15 @@ public class PlayerController : MonoBehaviour
     private float Distance(GameObject obj)
     {
         float distance = float.PositiveInfinity;
-        
+
         if (obj.TryGetComponent<Collider2D>(out var collider))
         {
-           var distanceInfo = rb.Distance(collider);
+            var distanceInfo = rb.Distance(collider);
 
             if (distanceInfo.isValid)
                 distance = distanceInfo.distance;
         }
-        
+
         return distance;
     }
 
@@ -172,11 +182,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (nearbyTriggers.Count > 0)
-        {            
-            foreach(DialogueTrigger trigger in nearbyTriggers)
+        {
+            foreach (DialogueTrigger trigger in nearbyTriggers)
             {
                 trigger.visualCue.SetActive(false);
-            }           
+            }
 
             DialogueTrigger activeTrigger = NearestTrigger();
             //Debug.Log(activeTrigger.transform.parent.name);
@@ -230,4 +240,6 @@ public class PlayerController : MonoBehaviour
     {
         GetComponentInChildren<SpriteMask>().sprite = GetComponentInChildren<SpriteRenderer>().sprite;
     }
+
+
 }

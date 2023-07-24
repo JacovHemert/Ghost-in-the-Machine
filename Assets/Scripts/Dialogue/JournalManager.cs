@@ -53,6 +53,8 @@ public class JournalManager : MonoBehaviour
         AddKeyword("Bertrand");
         AddKeyword("Immanuel");
         AddKeyword("Rene");
+        AddKeyword("Rousseau");
+        AddKeyword("Locke");
 
         selectedNPCButton = namesPage.transform.GetChild(0).GetComponent<Button>();
         if (selectedNPCButton.TryGetComponent<CharacterAssociation>(out var npc))
@@ -104,7 +106,9 @@ public class JournalManager : MonoBehaviour
 
         SelectButtons();
         //RefreshPromptButton();
-        panelIcons.RefreshStatusIcons(selectedKeyword);
+        panelIcons.RefreshNPCStatusIcons(selectedKeyword);
+        panelIcons.RefreshKeywordStatusIcons(selectedNPC.ObjName);
+
         SetJournalText();
     }
 
@@ -153,11 +157,12 @@ public class JournalManager : MonoBehaviour
         var buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
         buttonText.text = keyword;
         button.GetComponent<Image>().color = Color.green; //Highlight new keyword buttons, which will last until they are clicked
-        button.name = $"Keyword: {keyword}";        
+        button.name = $"Keyword: {keyword}";
+        panelIcons.AddNewKeywordIconMap(keyword, button.transform.GetChild(1).GetChild(0).GetComponent<Image>());
         button.onClick.AddListener(() =>
         {
             KeywordButtonClicked(keyword, button);
-            panelIcons.RefreshStatusIcons(keyword);
+            panelIcons.RefreshNPCStatusIcons(keyword);
         });
     }
 
