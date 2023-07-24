@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f8a8ca0b9c5881545aa83f7ee736fc8b
+guid: 519ab0411e8c3c34a9a5ee3918b9fa0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1316765231943988746
-    second: ded-rene_0
+      213: 5105180068615751765
+    second: carpet-pink-edge-3_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,22 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ded-rene_0
+      name: carpet-pink-edge-3_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 499
-        width: 429
-        height: 271
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 929
+        y: 625
+        width: 323
+        height: 257
+      alignment: 9
+      pivot: {x: 0.44147542, y: 0.31564152}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f9c4618ff8e9bde0800000000000000
-      internalID: -1316765231943988746
+      spriteID: 5580f38593e39d640800000000000000
+      internalID: 5105180068615751765
       vertices: []
       indices: 
       edges: []
@@ -121,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 97f0a6ddc51ea4e4883e96cb33143cde
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ded-rene_0: -1316765231943988746
+      carpet-pink-edge-3_0: 5105180068615751765
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

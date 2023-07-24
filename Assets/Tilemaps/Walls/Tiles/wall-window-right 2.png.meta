@@ -104,19 +104,19 @@ TextureImporter:
       name: wall-window-right_0
       rect:
         serializedVersion: 2
-        x: 602
-        y: 534
-        width: 218
-        height: 874
+        x: 508
+        y: 479
+        width: 424
+        height: 975
       alignment: 9
-      pivot: {x: 0.28463998, y: 0.17734554}
+      pivot: {x: 0.37014842, y: 0.21574005}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -46, y: -437}
-        - {x: 84, y: -359}
-        - {x: 24, y: -323}
-        - {x: -107, y: -400}
+      - - {x: -52, y: -442.5}
+        - {x: 97, y: -353.5}
+        - {x: 6, y: -294.5}
+        - {x: -144, y: -382.5}
       tessellationDetail: 0
       bones: []
       spriteID: c83f2f6f5da758fc0800000000000000

@@ -101,12 +101,12 @@ TextureImporter:
       name: halfwall-corner-right-1_0
       rect:
         serializedVersion: 2
-        x: 995
-        y: 302
-        width: 190
-        height: 306
+        x: 937
+        y: 246
+        width: 338
+        height: 412
       alignment: 9
-      pivot: {x: 0.32813013, y: 0.51205915}
+      pivot: {x: 0.35656053, y: 0.51205754}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -79, y: 153}
@@ -120,10 +120,10 @@ TextureImporter:
         - {x: -14, y: 153}
       physicsShape:
       - - {x: -78, y: -116}
-        - {x: -38, y: -153}
-        - {x: 93, y: -76}
-        - {x: -33, y: 6}
-        - {x: -81, y: -26}
+        - {x: -32, y: -155}
+        - {x: 106, y: -71}
+        - {x: -35, y: 7}
+        - {x: -90, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: fb50cf3321da84bc0800000000000000

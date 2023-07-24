@@ -101,21 +101,21 @@ TextureImporter:
       name: halfwall-corner-inner_0
       rect:
         serializedVersion: 2
-        x: 795
-        y: 264
-        width: 261
-        height: 265
+        x: 754
+        y: 219
+        width: 354
+        height: 358
       alignment: 9
-      pivot: {x: 0.49042144, y: 0.43773586}
+      pivot: {x: 0.48328534, y: 0.45315337}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -75.5, y: -130.5}
-        - {x: -0.5, y: -86.5}
-        - {x: 76.5, y: -132.5}
-        - {x: 127.5, y: -90.5}
-        - {x: -1.5, y: -16.5}
-        - {x: -130.5, y: -90.5}
+      - - {x: -72, y: -150}
+        - {x: -5, y: -105}
+        - {x: 74, y: -149}
+        - {x: 147.5, y: -87.5}
+        - {x: -4.5, y: 2.5}
+        - {x: -149, y: -85}
       tessellationDetail: 0
       bones: []
       spriteID: 262d8a61c300d7c30800000000000000

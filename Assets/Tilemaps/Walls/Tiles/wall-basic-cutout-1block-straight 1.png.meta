@@ -104,19 +104,19 @@ TextureImporter:
       name: wall-basic-cutout-1block-straight_0
       rect:
         serializedVersion: 2
-        x: 67
-        y: 249
-        width: 219
-        height: 874
+        x: 25
+        y: 195
+        width: 318
+        height: 981
       alignment: 9
-      pivot: {x: 0.3607306, y: 0.1361556}
+      pivot: {x: 0.37765095, y: 0.17606191}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: 48.5, y: -437}
-        - {x: 105.5, y: -400}
-        - {x: -33.5, y: -321}
-        - {x: -89.5, y: -356}
+      - - {x: 39, y: -444.5}
+        - {x: 117, y: -396.5}
+        - {x: -37, y: -308.5}
+        - {x: -107, y: -359.5}
       tessellationDetail: 0
       bones: []
       spriteID: 4184d082dc4cb7640800000000000000

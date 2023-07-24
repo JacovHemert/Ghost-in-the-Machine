@@ -107,19 +107,25 @@ TextureImporter:
       name: halfwall-near-light_2
       rect:
         serializedVersion: 2
-        x: 396
-        y: 252
-        width: 201
-        height: 268
+        x: 259
+        y: 179
+        width: 484
+        height: 496
       alignment: 9
-      pivot: {x: 0.31343284, y: 0.43656716}
+      pivot: {x: 0.41386476, y: 0.38421798}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -173, y: -136}
+        - {x: -38, y: -215}
+        - {x: 103, y: -139}
+        - {x: 97, y: 14}
+        - {x: -48, y: 101}
+        - {x: -176, y: 25}
       physicsShape:
-      - - {x: -40.5, y: -15}
-        - {x: -100.5, y: -55}
-        - {x: 35.5, y: -134}
-        - {x: 99.5, y: -97}
+      - - {x: -44, y: -35}
+        - {x: -139, y: -95}
+        - {x: 22, y: -187}
+        - {x: 121, y: -130}
       tessellationDetail: 0
       bones: []
       spriteID: ac1ed79984aff4d60800000000000000

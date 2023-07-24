@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aede60062b1beb24b9efe429d2167cb3
+guid: 4b563516b701aad498fcb0049a545efa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7110661353197993187
-    second: ryle-test_0
+      213: -5005990984189769374
+    second: poison_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,22 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ryle-test_0
+      name: poison_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 735
-        width: 232
-        height: 536
-      alignment: 9
-      pivot: {x: 0.4924073, y: 0.18450415}
+        x: 813
+        y: 512
+        width: 67
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1309845c2bd15d90800000000000000
-      internalID: -7110661353197993187
+      spriteID: 2698f8609b5278ab0800000000000000
+      internalID: -5005990984189769374
       vertices: []
       indices: 
       edges: []
@@ -121,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b18a0efdff8b3c9418059c6991034dfe
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ryle-test_0: -7110661353197993187
+      poison_0: -5005990984189769374
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

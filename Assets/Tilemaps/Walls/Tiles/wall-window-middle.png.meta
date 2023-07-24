@@ -114,9 +114,9 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -38, y: -439}
-        - {x: 93, y: -359}
-        - {x: 42, y: -322}
-        - {x: -86, y: -397}
+        - {x: 96, y: -360}
+        - {x: 18, y: -312}
+        - {x: -110, y: -387}
       tessellationDetail: 0
       bones: []
       spriteID: 5ad2d18761434c5b0800000000000000

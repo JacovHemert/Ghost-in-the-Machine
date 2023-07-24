@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 51a8e62e92a35bb40ab9c7ec085b0800
+guid: 4f8f270086cc9474dbbf59aa33cc6d36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8778680634041001606
-    second: ryle-test-2_0
-  - first:
-      213: 3377375946161391539
-    second: ryle-test-2_1
+      213: 3999397069644963835
+    second: ryle-up-right-2_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,22 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ryle-test-2_0
+      name: ryle-up-right-2_0
       rect:
         serializedVersion: 2
-        x: 317
-        y: 711
-        width: 231
-        height: 555
+        x: 944
+        y: 655
+        width: 174
+        height: 581
       alignment: 9
-      pivot: {x: 0.49999988, y: 0.1965496}
+      pivot: {x: 0.48157018, y: 0.22954892}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a79926b897cdb2680800000000000000
-      internalID: -8778680634041001606
+      spriteID: bff1de3f176b08730800000000000000
+      internalID: 3999397069644963835
       vertices: []
       indices: 
       edges: []
@@ -124,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cc2fb896439c1c0438f68c4ea5f9fff6
+    spriteID: e4dc89429ed72124cacd2e42238bf2d9
     internalID: 0
     vertices: []
     indices: 
@@ -132,8 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ryle-test-2_0: -8778680634041001606
-      ryle-test-2_1: 3377375946161391539
+      ryle-up-right-2_0: 3999397069644963835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
