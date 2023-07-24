@@ -11,14 +11,16 @@ public class JournalManager : MonoBehaviour
     [SerializeField] private GameObject namesPage;      // UI panel in the journal containing NPC name buttons
     [SerializeField] private GameObject keywordsPage;   // UI panel in the journal containing keyword buttons
     [SerializeField] private GameObject promptButton;   // Button for asking NPCs about things
+    [SerializeField] private PanelIcons panelIcons;     // Panel for showing status icons for a given keyword
+    [SerializeField] private TextMeshProUGUI textPanel; // UI panel in the journal for dispalying dialogue text
     [SerializeField] private Button keywordButton;      // Prefab for keyword buttons in the journal
-    private TextMeshProUGUI textPanel;                  // UI panel in the journal for dispalying dialogue text
+    
+    [SerializeField] private PlayerController playerController;
 
     public JournalData journalData; // made public so I can access this for NPC dialogue with E (in DialogueManager) for the Lucid0-6 entries
     private List<string> foundKeywords = new();
     private static JournalManager instance;
 
-    [SerializeField] private PlayerController playerController;
 
     private Button selectedKeywordButton;
     private Button selectedNPCButton;
@@ -46,8 +48,6 @@ public class JournalManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textPanel = journalPanel.transform.Find("Info Panel/Dialogue Text").GetComponent<TextMeshProUGUI>();
-
         //TODO: this is just for testing, remove later
         AddKeyword("Hume");
         AddKeyword("Bertrand");
@@ -82,6 +82,11 @@ public class JournalManager : MonoBehaviour
     {
         journalPanel.SetActive(!journalPanel.activeSelf);
 
+        if (!journalPanel.activeSelf)
+        {
+            return;
+        }
+
         if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker))
         {
             for (int i = 0; i < namesPage.transform.childCount; i++)
@@ -97,8 +102,9 @@ public class JournalManager : MonoBehaviour
         }
 
 
-        SelectButtons();        
+        SelectButtons();
         //RefreshPromptButton();
+        panelIcons.RefreshStatusIcons(selectedKeyword);
         SetJournalText();
     }
 
@@ -147,7 +153,11 @@ public class JournalManager : MonoBehaviour
         var buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
         buttonText.text = keyword;
         button.name = $"Keyword: {keyword}";        
-        button.onClick.AddListener(() => KeywordButtonClicked(keyword, button));
+        button.onClick.AddListener(() =>
+        {
+            KeywordButtonClicked(keyword, button);
+            panelIcons.RefreshStatusIcons(keyword);
+        });
     }
 
     /// <summary>

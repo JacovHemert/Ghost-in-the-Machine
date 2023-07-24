@@ -102,6 +102,20 @@ public class JournalData
         }
     }
 
+    public KeywordEntry GetKeywordEntry(string name, string keyword)
+    {
+        bool entryExists = keywordMap.TryGetValue((keyword, name), out var journalEntry);
+
+        if (entryExists)
+        {
+            return journalEntry;
+        }
+        else
+        {
+            return new KeywordEntry();
+        }
+    }
+
     private void LoadJournalData(TextAsset data)
     {
         string[] lines = data.text.Split("\r\n");

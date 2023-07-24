@@ -3746,6 +3746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 383723242}
+  - component: {fileID: 383723246}
   - component: {fileID: 383723245}
   - component: {fileID: 383723244}
   - component: {fileID: 383723243}
@@ -3846,6 +3847,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383723241}
   m_CullTransparentMesh: 1
+--- !u!114 &383723246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383723241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77edc9d02a99a2440b1133a2084cf540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkMark: {fileID: 2780540300400067551, guid: 17a12bb052249584ab84b5ae9ffd5367, type: 3}
+  questionMark: {fileID: 2840336364714655594, guid: 624d3842e3973444d9ec449d0bc8c532, type: 3}
+  bertrandIcon: {fileID: 1707702092}
+  humeIcon: {fileID: 845366775}
+  immanuelIcon: {fileID: 1089660592}
+  lockeIcon: {fileID: 1299464959}
+  reneIcon: {fileID: 861835864}
+  rousseauIcon: {fileID: 1810046991}
 --- !u!1 &400095720
 GameObject:
   m_ObjectHideFlags: 0
@@ -27648,6 +27669,8 @@ MonoBehaviour:
   namesPage: {fileID: 1667214196}
   keywordsPage: {fileID: 1006396175}
   promptButton: {fileID: 133834487}
+  panelIcons: {fileID: 383723246}
+  textPanel: {fileID: 1836584412}
   keywordButton: {fileID: 7645640898916268315, guid: cc3752833a91e484eb61b07f111d5d99, type: 3}
   playerController: {fileID: 1338813044}
 --- !u!4 &902095992
