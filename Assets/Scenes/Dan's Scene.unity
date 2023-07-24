@@ -15477,11 +15477,11 @@ RectTransform:
   m_Father: {fileID: 1211636780}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9442, y: 0.000015258789}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &212767806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15511,10 +15511,10 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 3
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 1
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -17103,6 +17103,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Soup
+    JobTitle: 
     LucidLevel: -1
     ObjImage: {fileID: 5739897283171119737, guid: 451bbb28536053644bbfa49943552e12, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
@@ -22453,6 +22454,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Rousseau
+    JobTitle: 
     LucidLevel: 0
     ObjImage: {fileID: 2690530216635778537, guid: 83e5d6e7692396446b69c61cc8c8683b, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
@@ -24366,6 +24368,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Bench
+    JobTitle: 
     LucidLevel: -1
     ObjImage: {fileID: -5393949342150720945, guid: e51a00ab571081c468cc5f5fa852e479, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
@@ -29456,6 +29459,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Immanuel
+    JobTitle: 
     LucidLevel: 0
     ObjImage: {fileID: 6672344474629477297, guid: d6482e8898590ab41b74c6c161349233, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
