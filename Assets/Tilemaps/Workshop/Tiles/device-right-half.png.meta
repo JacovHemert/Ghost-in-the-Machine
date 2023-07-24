@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 42b03ca4c76891c45872d37a7bc9995e
+guid: 64e94235df4d7c64590889950a410354
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3493250876566211700
-    second: wall-window-right_0
+      213: -1063899513744817490
+    second: device-right-half_0
   - first:
-      213: 3706199719370391695
-    second: wall-window-right_1
+      213: -6708129749655584537
+    second: device-right-half_1
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,26 +101,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-window-right_0
+      name: device-right-half_0
       rect:
         serializedVersion: 2
-        x: 508
-        y: 479
-        width: 424
-        height: 975
+        x: 887
+        y: 302
+        width: 609
+        height: 1093
       alignment: 9
-      pivot: {x: 0.37014842, y: 0.21574005}
+      pivot: {x: 0.4909688, y: 0.21043001}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -53, y: -440.5}
-        - {x: 96, y: -351.5}
-        - {x: 25, y: -302.5}
-        - {x: -125, y: -390.5}
+      - - {x: 36.5, y: -491.5}
+        - {x: 180.5, y: -405.5}
+        - {x: -2.5, y: -302.5}
+        - {x: -156.5, y: -392.5}
       tessellationDetail: 0
       bones: []
-      spriteID: c83f2f6f5da758fc0800000000000000
-      internalID: -3493250876566211700
+      spriteID: ea2878e67054c31f0800000000000000
+      internalID: -1063899513744817490
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 794ba5bee1795c641992e74bc1d6eb77
+    spriteID: be9615fd3ad43d145a5b38f39679d217
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +136,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-window-right_0: -3493250876566211700
-      wall-window-right_1: 3706199719370391695
+      device-right-half_0: -1063899513744817490
+      device-right-half_1: -6708129749655584537
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

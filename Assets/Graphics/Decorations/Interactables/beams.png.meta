@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 42b03ca4c76891c45872d37a7bc9995e
+guid: 22b5c2bc58209ba4a803399a82acb433
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3493250876566211700
-    second: wall-window-right_0
-  - first:
-      213: 3706199719370391695
-    second: wall-window-right_1
+      213: 8813226132166169265
+    second: beams_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,26 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall-window-right_0
+      name: beams_0
       rect:
         serializedVersion: 2
-        x: 508
-        y: 479
-        width: 424
-        height: 975
-      alignment: 9
-      pivot: {x: 0.37014842, y: 0.21574005}
+        x: 874
+        y: 362
+        width: 420
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -53, y: -440.5}
-        - {x: 96, y: -351.5}
-        - {x: 25, y: -302.5}
-        - {x: -125, y: -390.5}
-      tessellationDetail: 0
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: c83f2f6f5da758fc0800000000000000
-      internalID: -3493250876566211700
+      spriteID: 1b254f4097ede4a70800000000000000
+      internalID: 8813226132166169265
       vertices: []
       indices: 
       edges: []
@@ -128,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 794ba5bee1795c641992e74bc1d6eb77
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wall-window-right_0: -3493250876566211700
-      wall-window-right_1: 3706199719370391695
+      beams_0: 8813226132166169265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
