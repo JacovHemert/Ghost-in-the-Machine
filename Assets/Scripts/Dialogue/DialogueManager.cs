@@ -40,15 +40,17 @@ public class DialogueManager : MonoBehaviour
 
         submitAction = playerControls.FindActionMap("Player").FindAction("Advance Dialogue");
         submitAction.Disable();
-    }
 
-    private void Start()
-    {
         DialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         namePanel.SetActive(false);
         portraitObj.SetActive(false);
         objImage.SetActive(false);
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void Update()
@@ -99,7 +101,7 @@ public class DialogueManager : MonoBehaviour
         keywordToAdd = entry.AddedKeyword;
 
         currentStory = CompileDialogue(entry.FullDialogue);
-
+        
         // This is a bit ugly but we can use this to check if the current response is a confused answer
         if (!entry.Found && entry.ConfusedResponseFound)
         {
@@ -142,9 +144,13 @@ public class DialogueManager : MonoBehaviour
 
     private void StartDialogueMode(InteractableObject actor)
     {
+        GetComponent<AudioSource>().clip = actor.VoiceNormal;
+        GetComponent<AudioSource>().Play();
+
         submitAction.Enable();
         DialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        
         if (actor.ObjName != "")
         {
             namePanel.transform.GetChild(0).GetComponent<TMP_Text>().text = actor.ObjName;
@@ -155,6 +161,13 @@ public class DialogueManager : MonoBehaviour
         {
             objImage.GetComponent<Image>().sprite = actor.ObjImage;
             objImage.GetComponent<Image>().SetNativeSize();
+
+            if (actor.LucidLevel == -1)            
+                objImage.transform.localScale = new Vector3(3, 3, 3);
+            else
+                objImage.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+
+
             objImage.SetActive(true);
         }
 
@@ -192,11 +205,14 @@ public class DialogueManager : MonoBehaviour
             
             keywordToAdd = string.Empty;
         }
+
+        if (StoryManager.GetInstance().ContinueStory)
+            StoryManager.GetInstance().ShowStorySegment();
     }
 
     private void ContinueStory()
     {
-        Debug.Log("Continue story");
+        Debug.Log("Continue story - " + currentStory.canContinue);
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();

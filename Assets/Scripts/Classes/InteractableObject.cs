@@ -10,6 +10,7 @@ public class InteractableObject
     public string JobTitle;
     public int LucidLevel;
     public Sprite ObjImage;
+    public AudioClip VoiceNormal;
     public TextAsset inkJSON;
 
     public InteractableObject()
@@ -18,15 +19,17 @@ public class InteractableObject
         JobTitle = null;
         LucidLevel = -1;
         ObjImage = null;
+        VoiceNormal = null;
         inkJSON = null;
     }
 
-    public InteractableObject(string objName, string jobTitle, int lucidLevel, Sprite objImage, TextAsset _inkJSON)
+    public InteractableObject(string objName, string jobTitle, int lucidLevel, Sprite objImage, AudioClip voiceNormal, TextAsset _inkJSON)
     {
         ObjName = objName;
         JobTitle = jobTitle;
         LucidLevel = lucidLevel;
         ObjImage = objImage;
+        VoiceNormal = voiceNormal;
         inkJSON = _inkJSON;
     }
 

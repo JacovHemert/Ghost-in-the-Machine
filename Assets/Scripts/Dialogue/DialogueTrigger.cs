@@ -24,6 +24,12 @@ public class DialogueTrigger : MonoBehaviour
         visualCue.SetActive(false);
     }
 
+    private void Start()
+    {
+        if (objInformation.LucidLevel == -1)
+            objInformation.ObjImage = transform.parent.GetComponentInChildren<SpriteRenderer>().sprite;
+    }
+
     public void InitiateDialogue()
     {        
         //stores the associated keyword in DialogueManager so it can be used by the ExitDialogueMode method after the dialogue finishes.
