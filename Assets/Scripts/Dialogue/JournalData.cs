@@ -105,7 +105,7 @@ public class JournalData
 
     private void LoadJournalData(TextAsset data)
     {
-        string[] lines = data.text.Split('\n');
+        string[] lines = data.text.Split("\r\n");
         foreach (string line in lines)
         {
             string[] tokens = SplitCSVLine(line);
