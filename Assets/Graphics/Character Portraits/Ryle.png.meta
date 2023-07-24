@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ryle_0: -6639794934594664251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
