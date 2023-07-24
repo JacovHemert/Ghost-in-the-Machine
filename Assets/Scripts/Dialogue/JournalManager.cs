@@ -86,9 +86,9 @@ public class JournalManager : MonoBehaviour
         {
             for (int i = 0; i < namesPage.transform.childCount; i++)
             {
-
+                //if (namesPage.transform.GetChild(i).GetComponent<CharacterAssociation>().associatedNPC.objInformation.ObjName
             }
-            //namesPage.transform.GetChild()
+            
             
         }
 
