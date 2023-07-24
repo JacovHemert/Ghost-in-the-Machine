@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 56229199058a31f40b5d7187196b00eb
+guid: 2868693083cbeee428dd7909ed614182
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6927853554453790597
-    second: glass-corner-4_0
-  - first:
-      213: -19287860223572436
-    second: glass-corner-4_1
+      213: 3269750329586238294
+    second: plant-1_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -101,26 +98,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glass-corner-4_0
+      name: plant-1_0
       rect:
         serializedVersion: 2
-        x: 964
-        y: 215
-        width: 526
-        height: 1200
-      alignment: 9
-      pivot: {x: 0.45709646, y: 0.26983073}
+        x: 590
+        y: 602
+        width: 429
+        height: 808
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -43, y: -447}
-        - {x: 107, y: -359}
-        - {x: -41, y: -247}
-        - {x: -37, y: -352}
+      - - {x: -190.5, y: -269}
+        - {x: -3.5, y: -385}
+        - {x: 174.5, y: -288}
+        - {x: 0.5, y: -175}
       tessellationDetail: 0
       bones: []
-      spriteID: 58f35293a1ea42060800000000000000
-      internalID: 6927853554453790597
+      spriteID: 6534433d99c706d20800000000000000
+      internalID: 3269750329586238294
       vertices: []
       indices: 
       edges: []
@@ -128,7 +125,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 12dc6fd9a85f2934b91e09bbfea49607
+    spriteID: 0da6480706d32e14cb8cf3a131275f92
     internalID: 0
     vertices: []
     indices: 
@@ -136,8 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      glass-corner-4_0: 6927853554453790597
-      glass-corner-4_1: -19287860223572436
+      plant-1_0: 3269750329586238294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
