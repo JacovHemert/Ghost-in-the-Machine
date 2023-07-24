@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -78,8 +76,6 @@ public class JournalData
     /// </summary>
     public string GetDialogueForJournal(InteractableObject npc, string keyword)
     {
-        Debug.Log("set journal " + npc.JobTitle + " " + keyword);
-
         if (npc == null || keyword == null)
         {
             return string.Empty;
@@ -113,13 +109,12 @@ public class JournalData
         {
             string[] tokens = SplitCSVLine(line);
 
-            string keyword = tokens[(int)Field.Trigger];
-            string speaker = tokens[(int)Field.Speaker];
-            string fullText = tokens[(int)Field.FullDialogue];
-            
-            string addedKeyword = tokens[(int)Field.AddedKeyword];
-
-            string advanceLucidityStr = tokens[(int)Field.AdvLucidity];
+            string keyword = tokens[(int)Field.Trigger].Trim();
+            string speaker = tokens[(int)Field.Speaker].Trim();
+            string fullText = tokens[(int)Field.FullDialogue].Trim();
+            string addedKeyword = tokens[(int)Field.AddedKeyword].Trim();
+            string reqLucidityStr = tokens[(int)Field.ReqLucidity].Trim();
+            string advanceLucidityStr = tokens[(int)Field.AdvLucidity].Trim();
 
             if (string.IsNullOrEmpty(keyword) || string.IsNullOrEmpty(speaker))
             {
@@ -140,15 +135,8 @@ public class JournalData
             }
             else
             {
-                int.TryParse(tokens[4], out int reqLucidity);
-                bool.TryParse(tokens[5], out bool advLucidity);
-
-                if (advanceLucidityStr == "Y")
-                    advLucidity = true;
-                else
-                    advLucidity = false;
-
-
+                int.TryParse(reqLucidityStr, out int reqLucidity);
+                bool advLucidity = advanceLucidityStr == "Y";
 
                 keywordMap.TryAdd(
                     (keyword, speaker),

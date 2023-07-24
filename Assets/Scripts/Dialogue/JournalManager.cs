@@ -15,7 +15,7 @@ public class JournalManager : MonoBehaviour
     private TextMeshProUGUI textPanel;                  // UI panel in the journal for dispalying dialogue text
 
     public JournalData journalData; // made public so I can access this for NPC dialogue with E (in DialogueManager) for the Lucid0-6 entries
-    private HashSet<string> foundKeywords = new();
+    private List<string> foundKeywords = new();
     private static JournalManager instance;
 
     [SerializeField] private PlayerController playerController;
@@ -138,8 +138,13 @@ public class JournalManager : MonoBehaviour
     private void AddKeywordButton(string keyword)
     {
         var button = Instantiate(keywordButton, keywordsPage.transform);
-        var buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
 
+        // Set the sibling index of the buttton so it's in proper sorted order
+        foundKeywords.Sort();
+        int index = foundKeywords.IndexOf(keyword);
+        button.transform.SetSiblingIndex(index);
+
+        var buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
         buttonText.text = keyword;
         button.name = $"Keyword: {keyword}";        
         button.onClick.AddListener(() => KeywordButtonClicked(keyword, button));
