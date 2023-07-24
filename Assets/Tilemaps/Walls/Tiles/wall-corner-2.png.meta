@@ -1,10 +1,40 @@
 fileFormatVersion: 2
-guid: e1c6ccdf08e560e4fbea31034200d54e
+guid: 92a5cf85f84e6b148a0527aa61396ad2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8785223963555212637
-    second: fesh_0
+      213: -6708185843581872459
+    second: wall-corner-2_0
+  - first:
+      213: 2726553013863996171
+    second: wall-corner-2_1
+  - first:
+      213: -2613798532875786595
+    second: wall-corner-2_2
+  - first:
+      213: -1148165921508131893
+    second: wall-corner-2_3
+  - first:
+      213: 7628199487393035892
+    second: wall-corner-2_4
+  - first:
+      213: 1917562288120670262
+    second: wall-corner-2_5
+  - first:
+      213: 3983463562350012513
+    second: wall-corner-2_6
+  - first:
+      213: 5903960455712312111
+    second: wall-corner-2_7
+  - first:
+      213: -3910100068043631408
+    second: wall-corner-2_8
+  - first:
+      213: -1805490174896400994
+    second: wall-corner-2_9
+  - first:
+      213: -2214265718441913551
+    second: wall-corner-2_10
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,32 +128,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fesh_0
+      name: wall-corner-2_2
       rect:
         serializedVersion: 2
-        x: 806
-        y: 566
-        width: 506
-        height: 781
+        x: 735
+        y: 410
+        width: 384
+        height: 985
       alignment: 9
-      pivot: {x: 0.48871425, y: 0.24599831}
+      pivot: {x: 0.35276493, y: 0.20657997}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -144, y: -274.5}
-        - {x: -2, y: -357.5}
-        - {x: 144, y: -274.5}
-        - {x: 144, y: 196.5}
-        - {x: -2, y: 277.5}
-        - {x: -144, y: 196.5}
-      physicsShape:
-      - - {x: 2, y: -306}
-        - {x: 138, y: -228}
-        - {x: 1, y: -149}
-        - {x: -138, y: -225}
-      tessellationDetail: 0
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: d5d25f316a26be970800000000000000
-      internalID: 8785223963555212637
+      spriteID: d966085351ce9bbd0800000000000000
+      internalID: -2613798532875786595
       vertices: []
       indices: 
       edges: []
@@ -131,7 +151,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8a0f377cb818b034f85d2564f0cff6e7
+    spriteID: 0f6007efedd5a5a4d924dc5bddfd9835
     internalID: 0
     vertices: []
     indices: 
@@ -139,7 +159,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fesh_0: 8785223963555212637
+      wall-corner-2_2: -2613798532875786595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
