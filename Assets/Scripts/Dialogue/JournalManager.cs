@@ -81,7 +81,23 @@ public class JournalManager : MonoBehaviour
     private void ToggleJournal()
     {
         journalPanel.SetActive(!journalPanel.activeSelf);
-        SelectButtons();
+
+        if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker))
+        {
+            for (int i = 0; i < namesPage.transform.childCount; i++)
+            {
+                if (namesPage.transform.GetChild(i).GetComponent<CharacterAssociation>().associatedNPC.objInformation.ObjName == speaker.GetComponent<DialogueTrigger>().objInformation.ObjName)
+                {
+                    selectedNPCButton = namesPage.transform.GetChild(i).GetComponent<Button>();
+                    selectedNPC = namesPage.transform.GetChild(i).GetComponent<CharacterAssociation>().associatedNPC.objInformation;
+                }
+            }
+            
+            
+        }
+
+
+        SelectButtons();        
         //RefreshPromptButton();
         SetJournalText();
     }

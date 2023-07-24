@@ -116,9 +116,7 @@ public class JournalData
             string keyword = tokens[(int)Field.Trigger];
             string speaker = tokens[(int)Field.Speaker];
             string fullText = tokens[(int)Field.FullDialogue];
-
-            fullText = new string(fullText.Where(c => char.IsLetter(c) || char.IsDigit(c)).ToArray());
-
+            
             string addedKeyword = tokens[(int)Field.AddedKeyword];
 
             string advanceLucidityStr = tokens[(int)Field.AdvLucidity];
