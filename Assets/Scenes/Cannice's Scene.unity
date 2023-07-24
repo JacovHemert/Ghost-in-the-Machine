@@ -42802,7 +42802,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.48871425, y: 0.24599831}
-    oldSize: {x: 1.0454545, y: 2.3181818}
+    oldSize: {x: 1.9166666, y: 2.9583333}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -42810,10 +42810,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.019374501, y: -0.5702688}
-      - {x: 0.53452605, y: -0.27481428}
-      - {x: 0.015586622, y: 0.024428166}
-      - {x: -0.5109286, y: -0.26345062}
+    - - {x: 0.019374501, y: -0.8842525}
+      - {x: 1.0220268, y: -0.27481428}
+      - {x: 0.866735, y: 0.062102795}
+      - {x: 0.54116106, y: 0.36671734}
+      - {x: 0.032111414, y: 0.42930153}
+      - {x: -0.5409374, y: 0.3376341}
+      - {x: -0.8852978, y: 0.01894021}
+      - {x: -1.0066919, y: -0.23866224}
   m_UseDelaunayMesh: 0
 --- !u!1 &1267991472
 GameObject:
@@ -54776,9 +54780,6 @@ Transform:
   m_Children:
   - {fileID: 840124986}
   - {fileID: 705538023}
-  - {fileID: 1906219678}
-  - {fileID: 1794545192}
-  - {fileID: 481401001}
   - {fileID: 1730217631}
   - {fileID: 890854558}
   - {fileID: 1265437197}
@@ -54789,6 +54790,9 @@ Transform:
   - {fileID: 1099036719}
   - {fileID: 164969459}
   - {fileID: 1152193448}
+  - {fileID: 1906219678}
+  - {fileID: 1794545192}
+  - {fileID: 481401001}
   m_Father: {fileID: 2123869021}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
