@@ -80,13 +80,14 @@ public class MainMenuController : MonoBehaviour
 
     private float FloatToDb(float value)
     {
-        float db = 75 * Mathf.Log10(value * 20 + 1) - 80;
+        // Don't ask where these coefficients came from
+        float db = 50 * Mathf.Log10(value * 100 + 1) - 80;
         return Mathf.Clamp(db, -80, 20);
     }
 
     private float DbToFloat(float db)
     {
-        float value = (Mathf.Pow(10, (db + 80)/75) - 1) / 20;
+        float value = (Mathf.Pow(10, (db + 80)/50) - 1) / 100;
         return Mathf.Clamp(value, 0, 1);
     }
 }
