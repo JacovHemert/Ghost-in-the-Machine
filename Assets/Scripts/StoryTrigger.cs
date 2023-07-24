@@ -10,7 +10,7 @@ public class StoryTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            StoryManager.GetInstance().ShowStorySegment();
+            StoryManager.GetInstance().ShowIntroStorySegment();
             this.gameObject.SetActive(false);
         }
     }

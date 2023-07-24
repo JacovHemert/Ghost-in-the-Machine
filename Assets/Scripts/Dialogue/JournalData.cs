@@ -48,6 +48,13 @@ public class JournalData
             if (!journalEntry.Found && journalEntry.AdvanceLucidity) 
             {
                 npc.LucidLevel++;
+
+                if (npc.LucidLevel == 7)
+                {
+                    StoryManager.GetInstance().bottlingStoryCounter = 0;
+                    StoryManager.GetInstance().ghostInfo = npc;
+                    StoryManager.GetInstance().ContinueBottlingStory = true;
+                }
             }
 
             journalEntry.Found = true;
