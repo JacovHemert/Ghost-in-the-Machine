@@ -29,6 +29,8 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
+    public InteractableObject currentNPC;
+
 
     private void Awake()
     {
@@ -153,7 +155,7 @@ public class DialogueManager : MonoBehaviour
     private void StartDialogueMode(InteractableObject actor)
     {
         GetComponent<AudioSource>().clip = actor.VoiceNormal;
-        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().Play();        
 
         submitAction.Enable();
         DialogueIsPlaying = true;
@@ -214,8 +216,13 @@ public class DialogueManager : MonoBehaviour
             keywordToAdd = string.Empty;
         }
 
-        if (StoryManager.GetInstance().ContinueStory)
-            StoryManager.GetInstance().ShowStorySegment();
+        if (StoryManager.GetInstance().ContinueIntroStory)
+            StoryManager.GetInstance().ShowIntroStorySegment();
+        else if (StoryManager.GetInstance().ContinueBottlingStory)
+            StoryManager.GetInstance().ShowBottlingStorySegment();
+
+        
+
     }
 
     private void ContinueStory()

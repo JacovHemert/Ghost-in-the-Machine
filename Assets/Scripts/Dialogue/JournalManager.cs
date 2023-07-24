@@ -219,14 +219,96 @@ public class JournalManager : MonoBehaviour
 
         if (GameObject.FindWithTag("Player").GetComponent<PlayerController>().SpeakerClose(out var speaker))
         {
-            KeywordEntry entry = journalData.AskNPCAbout(speaker.GetComponentInParent<DialogueTrigger>().objInformation, selectedKeyword);
-            DialogueManager.GetInstance().EnterDialogueMode(speaker.GetComponentInParent<DialogueTrigger>().objInformation, entry);
+            string NPCName = speaker.GetComponentInParent<DialogueTrigger>().objInformation.ObjName;
+
+            if (SafeToContinue(NPCName, selectedKeyword))
+            {
+                KeywordEntry entry = journalData.AskNPCAbout(speaker.GetComponentInParent<DialogueTrigger>().objInformation, selectedKeyword);
+                DialogueManager.GetInstance().EnterDialogueMode(speaker.GetComponentInParent<DialogueTrigger>().objInformation, entry);
+            }
+            else
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(StoryManager.GetInstance().EmptyInfo, GetKeywordEntry(StoryManager.GetInstance().EmptyInfo, "Not done"));
+            }
         }
     }
 
     private void SetJournalText()
     {        
         textPanel.text = journalData.GetDialogueForJournal(selectedNPC, selectedKeyword);
+    }
+
+    private bool SafeToContinue(string speaker, string keyword)
+    {
+        bool safe = false;
+        if (speaker == "Rene")
+        {
+            if (keyword == "MotherVOID")
+            {
+                if (foundKeywords.Contains("Office") && foundKeywords.Contains("Computer") && foundKeywords.Contains("Hologram"))
+                    safe = true;
+            }
+            else
+                safe = true;            
+        }
+        else if (speaker == "Rousseau")
+        {
+            if (keyword == "Resignation")
+            {
+                if (foundKeywords.Contains("GRAPS") && foundKeywords.Contains("Company") && foundKeywords.Contains("Hologram") && foundKeywords.Contains("Bathroom stall"))
+                    safe = true;
+            }
+            else
+                safe = true;
+                
+        }
+        else if (speaker == "Locke")
+        {
+            if (keyword == "Update")
+            {
+                if (foundKeywords.Contains("Hologram") && foundKeywords.Contains("Office") && foundKeywords.Contains("Bathroom stall") && foundKeywords.Contains("Pantry") && foundKeywords.Contains("Computer"))
+                    safe = true;
+            }
+            else
+                safe = true;
+            
+        }
+        else if (speaker == "Immanuel")
+        {
+            if (keyword == "Birdie")
+            {
+                if (foundKeywords.Contains("Extinction event") && foundKeywords.Contains("Company") && foundKeywords.Contains("GRAPS"))
+                    safe = true;
+            }
+            else
+                safe = true;
+            
+        }
+        else if (speaker == "Hume")
+        {
+            if (keyword == "Photo")
+            {
+                if (foundKeywords.Contains("GRAPS") && foundKeywords.Contains("Pantry") && foundKeywords.Contains("Computer") && foundKeywords.Contains("Lunch"))
+                    safe = true;
+            }
+            else
+                safe = true;
+            
+        }
+        else if (speaker == "Bertrand")
+        {
+            if (keyword == "Hologram")
+            {
+                if (foundKeywords.Contains("Pantry") && foundKeywords.Contains("Lunch"))
+                    safe = true;
+            }
+            else
+                safe = true;
+            
+        }
+
+
+        return safe;
     }
 
 
