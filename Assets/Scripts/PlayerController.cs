@@ -197,6 +197,7 @@ public class PlayerController : MonoBehaviour
 
     private void ShowButtonPrompt(int lucidLevel)
     {
+        HideButtonPrompt();
         buttonPromptPanel.SetActive(true);
         int childNum = 0;
         if (lucidLevel > -1)

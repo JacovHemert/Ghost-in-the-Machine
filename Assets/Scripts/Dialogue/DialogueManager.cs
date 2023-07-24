@@ -130,7 +130,15 @@ public class DialogueManager : MonoBehaviour
     public void EnterInspectionMode(GameObject NPCObj)
     {
         InteractableObject itemActor = NPCObj.GetComponent<DialogueTrigger>().objInformation;
-        currentStory = new Story(itemActor.inkJSON.text);
+        
+
+        KeywordEntry entry = JournalManager.GetInstance().journalData.AskNPCAbout(itemActor, itemActor.JobTitle);
+
+        keywordToAdd = entry.AddedKeyword;
+
+        currentStory = CompileDialogue(entry.FullDialogue);
+
+        //currentStory = new Story(itemActor.inkJSON.text);
 
         StartDialogueMode(itemActor);
     }
