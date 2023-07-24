@@ -88,7 +88,7 @@ public class JournalManager : MonoBehaviour
 
     private void RefreshPromptButton()
     {
-        if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker) && selectedKeyword != "")
+        if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker) && selectedKeyword != null)
         {
             promptButton.GetComponentInChildren<TMP_Text>().text = 
                 $"Prompt {speaker.GetComponentInParent<DialogueTrigger>().objInformation.ObjName} with keyword \"{selectedKeyword}\"";
@@ -190,7 +190,7 @@ public class JournalManager : MonoBehaviour
     }
 
     private void SetJournalText()
-    {
+    {        
         textPanel.text = journalData.GetDialogueForJournal(selectedNPC, selectedKeyword);
     }
 

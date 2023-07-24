@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -77,6 +78,8 @@ public class JournalData
     /// </summary>
     public string GetDialogueForJournal(InteractableObject npc, string keyword)
     {
+        Debug.Log("set journal " + npc.JobTitle + " " + keyword);
+
         if (npc == null || keyword == null)
         {
             return string.Empty;
@@ -113,6 +116,9 @@ public class JournalData
             string keyword = tokens[(int)Field.Trigger];
             string speaker = tokens[(int)Field.Speaker];
             string fullText = tokens[(int)Field.FullDialogue];
+
+            fullText = new string(fullText.Where(c => char.IsLetter(c) || char.IsDigit(c)).ToArray());
+
             string addedKeyword = tokens[(int)Field.AddedKeyword];
 
             string advanceLucidityStr = tokens[(int)Field.AdvLucidity];

@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            // Don't allow the player to interact with dialogue triggers when dialogue is already playing
-            if (DialogueManager.GetInstance().DialogueIsPlaying)
+            // Don't allow the player to interact with dialogue triggers when dialogue is already playing or when the journal is open
+            if (DialogueManager.GetInstance().DialogueIsPlaying || journalPanel.activeSelf)
             {
                 return;
             }
@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Stop the player's movement during dialogue
+        // Stop the player's movement during dialogue and while the journal is open
         if (DialogueManager.GetInstance().DialogueIsPlaying || journalPanel.activeSelf)
         {
             return;

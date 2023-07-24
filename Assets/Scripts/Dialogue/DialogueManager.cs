@@ -93,6 +93,7 @@ public class DialogueManager : MonoBehaviour
     public void EnterDialogueMode(InteractableObject NPC, KeywordEntry entry) // updated second variable to keep the more complete information
     {
         keywordToAdd = entry.AddedKeyword;
+        
 
         currentStory = CompileDialogue(entry.FullDialogue);
 
@@ -130,12 +131,14 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         if (actor.ObjName != "")
         {
-            namePanel.GetComponentInChildren<TMP_Text>().text = actor.ObjName;
+            namePanel.transform.GetChild(0).GetComponent<TMP_Text>().text = actor.ObjName;
+            namePanel.transform.GetChild(1).GetComponent<TMP_Text>().text = actor.JobTitle;
             namePanel.SetActive(true);
         }
         if (actor.ObjImage != null)
         {
             objImage.GetComponent<Image>().sprite = actor.ObjImage;
+            objImage.GetComponent<Image>().SetNativeSize();
             objImage.SetActive(true);
         }
 
@@ -151,9 +154,12 @@ public class DialogueManager : MonoBehaviour
         portraitObj.SetActive(false);
         objImage.SetActive(false);
         dialogueText.text = "";
-        
+
+        Debug.Log(string.IsNullOrWhiteSpace(keywordToAdd));
+        Debug.Log("keyword added? " + keywordToAdd + "!");
+
         // If there is one, this displays the found keyword in a popup after the dialogue completes
-        if (string.IsNullOrEmpty(keywordToAdd))
+        if (!string.IsNullOrWhiteSpace(keywordToAdd))
         {
             bool added = JournalManager.GetInstance().AddKeyword(keywordToAdd);
             if (added)
