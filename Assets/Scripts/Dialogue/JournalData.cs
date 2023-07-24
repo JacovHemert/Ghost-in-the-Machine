@@ -162,6 +162,8 @@ public class JournalData
 
         while (remainder.Length > 0)
         {
+            // If the remaining text begins with a double quote, the next field must be enclosed with quotes
+            // and we look for a double quote followed by a comma to find the end of the field
             if (remainder[0] == '"') 
             {
                 var tokens = remainder.Split("\",", 2);
@@ -171,6 +173,7 @@ public class JournalData
 
                 remainder = tokens[1];
             }
+            // If the text does not begin with quotes, the next field is delimited by a comma
             else
             {
                 var tokens = remainder.Split(",", 2);
