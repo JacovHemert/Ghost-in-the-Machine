@@ -155,9 +155,7 @@ public class DialogueManager : MonoBehaviour
         objImage.SetActive(false);
         dialogueText.text = "";
 
-        Debug.Log(string.IsNullOrWhiteSpace(keywordToAdd));
-        Debug.Log("keyword added? " + keywordToAdd + "!");
-
+        
         // If there is one, this displays the found keyword in a popup after the dialogue completes
         if (!string.IsNullOrWhiteSpace(keywordToAdd))
         {

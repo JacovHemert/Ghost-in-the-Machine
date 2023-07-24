@@ -81,7 +81,19 @@ public class JournalManager : MonoBehaviour
     private void ToggleJournal()
     {
         journalPanel.SetActive(!journalPanel.activeSelf);
-        SelectButtons();
+
+        if (FindAnyObjectByType<PlayerController>().SpeakerClose(out var speaker))
+        {
+            for (int i = 0; i < namesPage.transform.childCount; i++)
+            {
+
+            }
+            //namesPage.transform.GetChild()
+            
+        }
+
+
+        SelectButtons();        
         //RefreshPromptButton();
         SetJournalText();
     }

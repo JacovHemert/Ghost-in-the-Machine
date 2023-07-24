@@ -3455,7 +3455,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Locke
-    JobTitle: Security Officer
+    JobTitle: 
     LucidLevel: 0
     ObjImage: {fileID: -1261399482810378049, guid: 01e62cb7980398744b76f366310fb6e7, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
@@ -11503,7 +11503,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Hume
-    JobTitle: Engineer
+    JobTitle: 
     LucidLevel: 0
     ObjImage: {fileID: 6027847117033493058, guid: 75f435286b6cc3748aa8e91997803daf, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
@@ -26080,7 +26080,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Rousseau
-    JobTitle: Ghost Technician
+    JobTitle: 
     LucidLevel: 0
     ObjImage: {fileID: -5939720050745528477, guid: 685f535d72c0b0f44aff9fd2e0964519, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
@@ -26534,7 +26534,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Immanuel
-    JobTitle: Janitor
+    JobTitle: 
     LucidLevel: 0
     ObjImage: {fileID: -8486653472850773519, guid: bdcbeef52c1a3b5428e87911322c88b0, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
@@ -32179,7 +32179,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Bertrand
-    JobTitle: Cook
+    JobTitle: 
     LucidLevel: 0
     ObjImage: {fileID: 706894096880840946, guid: 64b6ea44fc0824b42aed5f3ed2ba0110, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
@@ -34877,7 +34877,7 @@ MonoBehaviour:
         m_CallState: 2
   objInformation:
     ObjName: Rene
-    JobTitle: Exec. Sr. Corp. Production Manager
+    JobTitle: 
     LucidLevel: 0
     ObjImage: {fileID: -2524249475613619267, guid: e05fb3397f7e0b54a86d583914428631, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
