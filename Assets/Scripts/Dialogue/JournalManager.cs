@@ -82,7 +82,10 @@ public class JournalManager : MonoBehaviour
 
     private void ToggleJournal()
     {
-        journalPanel.SetActive(!journalPanel.activeSelf);
+        if (!DialogueManager.GetInstance().DialogueIsPlaying)
+        {
+            journalPanel.SetActive(!journalPanel.activeSelf);
+        }
 
         if (!journalPanel.activeSelf)
         {
