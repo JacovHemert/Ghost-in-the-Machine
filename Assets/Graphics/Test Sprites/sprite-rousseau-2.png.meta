@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b6f5ad1a74a080240b7bddaa6fefe298
+guid: 8a9f86a4bc77d114ab238b34334d2c6a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7650092850920945991
-    second: sprite-hume-1_0
+      213: -5249973278229385630
+    second: sprite-rousseau-2_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite-hume-1_0
+      name: sprite-rousseau-2_0
       rect:
         serializedVersion: 2
-        x: 853
-        y: 719
-        width: 169
-        height: 582
+        x: 846
+        y: 684
+        width: 235
+        height: 648
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b60a12851965d590800000000000000
-      internalID: -7650092850920945991
+      spriteID: 26e28d67e195427b0800000000000000
+      internalID: -5249973278229385630
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite-hume-1_0: -7650092850920945991
+      sprite-rousseau-2_0: -5249973278229385630
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
