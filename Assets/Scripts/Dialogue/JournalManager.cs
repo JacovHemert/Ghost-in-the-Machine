@@ -327,6 +327,9 @@ public class JournalManager : MonoBehaviour
             AddKeyword("Company");
             AddKeyword("Hologram");
             AddKeyword("Bathroom stall");
+            AddKeyword("Mother");
+            AddKeyword("Office");
+            AddKeyword("Computer");
 
         }
     }

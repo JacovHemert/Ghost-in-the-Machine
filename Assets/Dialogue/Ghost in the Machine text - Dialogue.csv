@@ -328,7 +328,7 @@ Middle,,,,,,,,,
 ,5,Ryle,,0,,Story20,I'm not giving up on you.,,
 ,,,,,,,,,
 ,,,,,,,,,
-,,Rene,Rene bottling,0,,ReneBottle0,Guess there's no point in protecting the company anymore. I'm done with that obsession. Might as well give you the code for the GRAPS doors before I pass on. It's 4587940. Time to punch in for the next world.,,Code for GRAPS doors
+,,Rene,Rene bottling,0,,ReneBottle0,Guess there's no point in protecting the company anymore. I'm done with that obsession. Might as well give you the code for the GRAPS doors before I pass on. It's 4587940. Time to punch in for the next world.,,
 ,,Ryle,Rene bottling,0,,ReneBottle1,"I'm sorry, but I can't let you do that. <catches Rene in a bottle>",,
 ,,Lucy in Bottle,Rene bottling,0,,ReneBottle2,!!!,,
 ,,Ryle,Rene bottling,0,,ReneBottle3,"I know what you're thinking. You think I'm obsessed with this Ghost in the Machine, right? But that's not true. This isn't about the technology. It's about you.",,
@@ -430,5 +430,6 @@ Middle,,,,,,,,,
 ,,Inspect,Hume,-1,,Dead body (office),"A woman with a head wound, lying in a pool of blood. Looks like she'd been dragged across the carpet halfheartedly.",,
 ,,Inspect,Rousseau,-1,,Dead body (workshop),"A slim figure that has been somewhat charred, probably by the exposed spectral energy of the machine.",,Exposed spectral energy
 ,,Inspect,Immanuel,-1,,Dead body (hallway),An emu with a gunshot wound to the back.,,Gun
-,,Inspect,,-1,,Keypad,A keypad next to the doors leading to the humming machine in the back of the room.,,
+,,Inspect,,-1,,Keypad,A keypad next to the doors leading to the humming machine in the back of the room. The doors are locked.,,
 ,,Inspect,,-1,,Gun locker,An open gun locker. Looks like there are some weapons missing.,,
+,,Inspect,,-1,,Keypad (open),The keypad accepts the code and the doors are now open.,,

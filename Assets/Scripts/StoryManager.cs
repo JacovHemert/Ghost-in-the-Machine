@@ -11,6 +11,8 @@ public class StoryManager : MonoBehaviour
     public InteractableObject ghostInfo;
     public string ghostName;
 
+    public bool gotPassCode = false;
+
     public GameObject creditsObj;
 
     [HideInInspector] public int introStoryCounter = 0, bottlingStoryCounter = 0;    
@@ -210,6 +212,7 @@ public class StoryManager : MonoBehaviour
 
                 bottlingStoryCounter = 0;
                 ghostInfo.LucidLevel++;
+                gotPassCode = true;
                 //ghostInfo = EmptyInfo;
             }
         }
