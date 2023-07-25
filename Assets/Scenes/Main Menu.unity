@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingMenu: {fileID: 1046648516}
   musicSlider: {fileID: 1818056768}
-  sfxSlider: {fileID: 0}
+  sfxSlider: {fileID: 1879066367}
   audioMixer: {fileID: 24100000, guid: 21f4ea2f195a7c44f9ded52ce2d5fcd7, type: 2}
   sampleSFX: {fileID: 1900612966}
 --- !u!1 &437215500
@@ -3081,19 +3081,7 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 426813134}
-        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
-        m_MethodName: OnSFXVolumeChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1900612964
 GameObject:
   m_ObjectHideFlags: 0
