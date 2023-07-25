@@ -31,6 +31,9 @@ public class DialogueManager : MonoBehaviour
 
     public InteractableObject currentNPC;
 
+    public bool openDoors = false;
+
+    [SerializeField] private GameObject doorsClosedObj, doorsOpenObj;
 
     private void Awake()
     {
@@ -221,7 +224,11 @@ public class DialogueManager : MonoBehaviour
         else if (StoryManager.GetInstance().ContinueBottlingStory)
             StoryManager.GetInstance().ShowBottlingStorySegment();
 
-        
+        if (openDoors)
+        {
+            doorsClosedObj.SetActive(false);
+            doorsOpenObj.SetActive(true);
+        }
 
     }
 

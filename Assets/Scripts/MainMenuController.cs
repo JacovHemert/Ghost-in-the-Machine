@@ -2,30 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] GameObject settingMenu;
-    [SerializeField] Slider musicSlider;
-    [SerializeField] Slider sfxSlider;
-    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] private GameObject settingMenu;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioSource sampleSFX;
 
     private const string MusicVolumeParam = "Music Volume";
     private const string SFXVolumeParam = "SFX Volume";
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         settingMenu.SetActive(false);
 
         musicSlider.value = GetMusicVolume();
         sfxSlider.value = GetSFXVolume();
+
+        sfxSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
     }
 
     public void OnStartButtonClick()
     {
-       
+        SceneManager.LoadSceneAsync("Scenes/Main Scene");
     }
 
     public void OnSettingsButtonClick()
@@ -46,11 +50,12 @@ public class MainMenuController : MonoBehaviour
     public void OnSFXVolumeChanged(float value)
     {
         SetSFXVolume(value);
+        sampleSFX.Play();
     }
 
     public void OnExitButtonClick()
     {
-
+        Application.Quit();
     }
 
     private float GetMusicVolume()
@@ -78,6 +83,7 @@ public class MainMenuController : MonoBehaviour
         audioMixer.SetFloat(SFXVolumeParam, db);
     }
 
+    // Converts a float value (0 to 1) to a decibel value (-80 to 20)
     private float FloatToDb(float value)
     {
         // Don't ask where these coefficients came from
@@ -85,6 +91,7 @@ public class MainMenuController : MonoBehaviour
         return Mathf.Clamp(db, -80, 20);
     }
 
+    // Converts a decibel value (-80 to 20) to a float value (0 to 1)
     private float DbToFloat(float db)
     {
         float value = (Mathf.Pow(10, (db + 80)/50) - 1) / 100;

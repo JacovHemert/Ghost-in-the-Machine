@@ -46,6 +46,13 @@ public class DialogueTrigger : MonoBehaviour
         {            
             DialogueManager.GetInstance().keywordToAdd = associatedKeyword;
         }
+        //Debug.Log("Get to outside : " + objInformation.ObjName);
+        if (StoryManager.GetInstance().gotPassCode && objInformation.JobTitle == "Keypad")
+        {
+            //Debug.Log("Get to inside");
+            objInformation.JobTitle = "Keypad (open)";
+            DialogueManager.GetInstance().openDoors = true;
+        }
 
         //DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         interactionEvent.Invoke();
