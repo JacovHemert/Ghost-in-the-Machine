@@ -779,7 +779,7 @@ MonoBehaviour:
     JobTitle: Elevator
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &61546063
 GameObject:
@@ -1423,7 +1423,7 @@ MonoBehaviour:
     JobTitle: Flower
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &92330750
 GameObject:
@@ -1529,7 +1529,7 @@ MonoBehaviour:
     JobTitle: Knife
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &94911725
 GameObject:
@@ -26843,7 +26843,10 @@ MonoBehaviour:
     JobTitle: Security Officer
     LucidLevel: 0
     ObjImage: {fileID: -1261399482810378049, guid: 01e62cb7980398744b76f366310fb6e7, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: c75807db9475e6d4eaca0bae43584491, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: d56acb2a7579f0349ba8b17f46d0938d, type: 3}
+    - {fileID: 8300000, guid: c75807db9475e6d4eaca0bae43584491, type: 3}
+    - {fileID: 8300000, guid: 9d9d4655142162d41889248c2ffb9141, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &272349532
 GameObject:
@@ -28510,7 +28513,7 @@ MonoBehaviour:
     JobTitle: GRAPS
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &308776343
 GameObject:
@@ -31846,7 +31849,7 @@ MonoBehaviour:
     JobTitle: Keypad
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &460905126
 GameObject:
@@ -32457,7 +32460,7 @@ MonoBehaviour:
     JobTitle: Dead body (workshop)
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &499195890
 GameObject:
@@ -32891,7 +32894,7 @@ MonoBehaviour:
     JobTitle: Gun
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &527506504
 GameObject:
@@ -33480,7 +33483,10 @@ MonoBehaviour:
     JobTitle: Engineer
     LucidLevel: 0
     ObjImage: {fileID: 6027847117033493058, guid: 75f435286b6cc3748aa8e91997803daf, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 15f7994fe3fa2d647a2433854066dab6, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: ebf683ada26c7d5448b1017f3c68868c, type: 3}
+    - {fileID: 8300000, guid: 15f7994fe3fa2d647a2433854066dab6, type: 3}
+    - {fileID: 8300000, guid: a0311bbbe2045784d80fc95c4704ae75, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &564971723
 GameObject:
@@ -33957,7 +33963,7 @@ MonoBehaviour:
     JobTitle: Bowl of soup
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &598861517
 GameObject:
@@ -35179,7 +35185,7 @@ MonoBehaviour:
     JobTitle: Rat poison
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &685580038
 GameObject:
@@ -35623,7 +35629,10 @@ MonoBehaviour:
     JobTitle: Ghost Technician
     LucidLevel: 0
     ObjImage: {fileID: -5939720050745528477, guid: 685f535d72c0b0f44aff9fd2e0964519, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: b594970a6b4df40428907de165a0d4a4, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: 598941f3e34bcfc4bab523c8a2d305ca, type: 3}
+    - {fileID: 8300000, guid: f452afc55e8e3014f9e95b11d875f30e, type: 3}
+    - {fileID: 8300000, guid: b594970a6b4df40428907de165a0d4a4, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &698252099
 GameObject:
@@ -36329,7 +36338,7 @@ MonoBehaviour:
     JobTitle: Phone
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &717684231
 GameObject:
@@ -38690,7 +38699,10 @@ MonoBehaviour:
     JobTitle: Janitor
     LucidLevel: 0
     ObjImage: {fileID: -8486653472850773519, guid: bdcbeef52c1a3b5428e87911322c88b0, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 813d3c85ab2d60c4895a2750bed621a3, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: a3a10be3d6e97354e894b0d1f645d07a, type: 3}
+    - {fileID: 8300000, guid: 5492236a5620d7c4b9e2b9ecfef19b35, type: 3}
+    - {fileID: 8300000, guid: 813d3c85ab2d60c4895a2750bed621a3, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &764265612
 GameObject:
@@ -39132,7 +39144,7 @@ MonoBehaviour:
     JobTitle: Sign-in sheet
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &773581718
 GameObject:
@@ -39600,7 +39612,7 @@ MonoBehaviour:
     JobTitle: Mop
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &795657840
 GameObject:
@@ -39706,7 +39718,7 @@ MonoBehaviour:
     JobTitle: Stained carpet
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &811794794
 GameObject:
@@ -40466,7 +40478,7 @@ MonoBehaviour:
     JobTitle: Security badge
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &861835862
 GameObject:
@@ -40732,7 +40744,7 @@ MonoBehaviour:
     JobTitle: Dead body (office)
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &885810492
 GameObject:
@@ -41580,7 +41592,7 @@ MonoBehaviour:
     JobTitle: 
     LucidLevel: -1
     ObjImage: {fileID: 0}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 0}
   ghostName: 
   gotPassCode: 0
@@ -41592,63 +41604,87 @@ MonoBehaviour:
     JobTitle: Ghost Bottler
     LucidLevel: 10000
     ObjImage: {fileID: -6639794934594664251, guid: c75b3fcffa64cb64cb9bcf02ddd25ac0, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 9a324d1d8f75b4a4b9105e8c41ceae6a, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: b7b69100e0669404f9faf495874a5d38, type: 3}
+    - {fileID: 8300000, guid: c533209cf1127f0459973e9266985cf4, type: 3}
+    - {fileID: 8300000, guid: 9a324d1d8f75b4a4b9105e8c41ceae6a, type: 3}
     inkJSON: {fileID: 0}
   LucyInfo:
     ObjName: Lucy
     JobTitle: Ghost Bottler
     LucidLevel: 10000
     ObjImage: {fileID: -5508584112869647287, guid: 4fc577e71c6570d449f772bd48a3b652, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 137df09e89942c84c8a541637da12305, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: ee2b1ae4b7b6846459c7695cd8ac5f30, type: 3}
+    - {fileID: 8300000, guid: 3bb9d7cc51c32da439d2ea2f5e74f1d8, type: 3}
+    - {fileID: 8300000, guid: 137df09e89942c84c8a541637da12305, type: 3}
     inkJSON: {fileID: 0}
   LucyBottleInfo:
     ObjName: Lucy in Bottle
     JobTitle: Ghost in a bottle
     LucidLevel: 10000
     ObjImage: {fileID: 3125626902783787472, guid: 376987002fd94f54f9588b4ef7dd2fdb, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 137df09e89942c84c8a541637da12305, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: ee2b1ae4b7b6846459c7695cd8ac5f30, type: 3}
+    - {fileID: 8300000, guid: 3bb9d7cc51c32da439d2ea2f5e74f1d8, type: 3}
+    - {fileID: 8300000, guid: 137df09e89942c84c8a541637da12305, type: 3}
     inkJSON: {fileID: 0}
   EmptyInfo:
     ObjName: Help
     JobTitle: 
     LucidLevel: 10000
     ObjImage: {fileID: 0}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 0}
   BertrandInfo:
     ObjName: Bertrand
     JobTitle: Cook
     LucidLevel: 10
     ObjImage: {fileID: 706894096880840946, guid: 64b6ea44fc0824b42aed5f3ed2ba0110, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 6beab2bc2daf0ff4b8ca2d031d2bf344, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: d8264bf90e452e047b17f778a9015f94, type: 3}
+    - {fileID: 8300000, guid: 6beab2bc2daf0ff4b8ca2d031d2bf344, type: 3}
+    - {fileID: 8300000, guid: b8eae30f28f7ba14590ccfcb4299dd47, type: 3}
     inkJSON: {fileID: 0}
   HumeInfo:
     ObjName: Hume
     JobTitle: Engineer
     LucidLevel: 10
     ObjImage: {fileID: 6027847117033493058, guid: 75f435286b6cc3748aa8e91997803daf, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 15f7994fe3fa2d647a2433854066dab6, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: ebf683ada26c7d5448b1017f3c68868c, type: 3}
+    - {fileID: 8300000, guid: 15f7994fe3fa2d647a2433854066dab6, type: 3}
+    - {fileID: 8300000, guid: a0311bbbe2045784d80fc95c4704ae75, type: 3}
     inkJSON: {fileID: 0}
   ImmanuelInfo:
     ObjName: Immanuel
     JobTitle: Janitor
     LucidLevel: 10
     ObjImage: {fileID: -8486653472850773519, guid: bdcbeef52c1a3b5428e87911322c88b0, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 813d3c85ab2d60c4895a2750bed621a3, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: a3a10be3d6e97354e894b0d1f645d07a, type: 3}
+    - {fileID: 8300000, guid: 5492236a5620d7c4b9e2b9ecfef19b35, type: 3}
+    - {fileID: 8300000, guid: 813d3c85ab2d60c4895a2750bed621a3, type: 3}
     inkJSON: {fileID: 0}
   LockeInfo:
     ObjName: Locke
     JobTitle: Security Officer
     LucidLevel: 10
     ObjImage: {fileID: -1261399482810378049, guid: 01e62cb7980398744b76f366310fb6e7, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: c75807db9475e6d4eaca0bae43584491, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: d56acb2a7579f0349ba8b17f46d0938d, type: 3}
+    - {fileID: 8300000, guid: c75807db9475e6d4eaca0bae43584491, type: 3}
+    - {fileID: 8300000, guid: 9d9d4655142162d41889248c2ffb9141, type: 3}
     inkJSON: {fileID: 0}
   ReneInfo:
     ObjName: Rene
     JobTitle: Exec. Sr. Corp. Production Manager
     LucidLevel: 10
     ObjImage: {fileID: -2524249475613619267, guid: e05fb3397f7e0b54a86d583914428631, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 08bffc619c53d6143bd1291fd33f09c8, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: 9879ed833efd09c4691b0ec06e2d7acd, type: 3}
+    - {fileID: 8300000, guid: 2957077c53a2cd94ca53a77f39190593, type: 3}
+    - {fileID: 8300000, guid: 08bffc619c53d6143bd1291fd33f09c8, type: 3}
     inkJSON: {fileID: 0}
 --- !u!1 &905606350
 GameObject:
@@ -41838,7 +41874,7 @@ MonoBehaviour:
     JobTitle: Conspiracy board
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &917086090
 GameObject:
@@ -42112,7 +42148,7 @@ MonoBehaviour:
     JobTitle: Dead body (bathroom)
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &934188838
 GameObject:
@@ -45952,7 +45988,7 @@ MonoBehaviour:
     JobTitle: 
     LucidLevel: -1
     ObjImage: {fileID: -5393949342150720945, guid: e51a00ab571081c468cc5f5fa852e479, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1097412975
 GameObject:
@@ -46354,7 +46390,7 @@ MonoBehaviour:
     JobTitle: Plaque
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1118674965
 GameObject:
@@ -52668,7 +52704,7 @@ MonoBehaviour:
     JobTitle: Statuette
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1230685172
 GameObject:
@@ -52728,7 +52764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Michael "Macajust" Utley and Andrew "Anjru" Reed
+  m_text: Michael "Macajust" Utley and Anjru
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 552be208111303e448bcb23be5ccdeb4, type: 2}
   m_sharedMaterial: {fileID: -3944125848876212492, guid: 552be208111303e448bcb23be5ccdeb4, type: 2}
@@ -55099,7 +55135,7 @@ MonoBehaviour:
     JobTitle: Dead body (dumpster)
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1361704280
 GameObject:
@@ -60401,7 +60437,10 @@ MonoBehaviour:
     JobTitle: Cook
     LucidLevel: 0
     ObjImage: {fileID: 706894096880840946, guid: 64b6ea44fc0824b42aed5f3ed2ba0110, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 6beab2bc2daf0ff4b8ca2d031d2bf344, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: d8264bf90e452e047b17f778a9015f94, type: 3}
+    - {fileID: 8300000, guid: 6beab2bc2daf0ff4b8ca2d031d2bf344, type: 3}
+    - {fileID: 8300000, guid: b8eae30f28f7ba14590ccfcb4299dd47, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1420800595
 GameObject:
@@ -60507,7 +60546,7 @@ MonoBehaviour:
     JobTitle: Gun locker
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1422323980
 GameObject:
@@ -61048,7 +61087,7 @@ MonoBehaviour:
     JobTitle: Locker
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1466674391
 GameObject:
@@ -64000,7 +64039,7 @@ MonoBehaviour:
     JobTitle: Taser
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1607368173
 GameObject:
@@ -64478,7 +64517,7 @@ MonoBehaviour:
     JobTitle: Dead body (hallway)
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1637880643
 GameObject:
@@ -64607,14 +64646,17 @@ MonoBehaviour:
     JobTitle: Ghost Bottler
     LucidLevel: 1000000
     ObjImage: {fileID: -6639794934594664251, guid: c75b3fcffa64cb64cb9bcf02ddd25ac0, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 9a324d1d8f75b4a4b9105e8c41ceae6a, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: b7b69100e0669404f9faf495874a5d38, type: 3}
+    - {fileID: 8300000, guid: c533209cf1127f0459973e9266985cf4, type: 3}
+    - {fileID: 8300000, guid: 9a324d1d8f75b4a4b9105e8c41ceae6a, type: 3}
     inkJSON: {fileID: 4900000, guid: 7c39aa4d3b9d87e43ba4350cd2f7ec1f, type: 3}
   currentNPC:
     ObjName: 
     JobTitle: 
     LucidLevel: -1
     ObjImage: {fileID: 0}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 0}
   openDoors: 0
   doorsClosedObj: {fileID: 885810492}
@@ -64834,7 +64876,10 @@ MonoBehaviour:
     JobTitle: Exec. Sr. Corp. Production Manager
     LucidLevel: 0
     ObjImage: {fileID: -2524249475613619267, guid: e05fb3397f7e0b54a86d583914428631, type: 3}
-    VoiceNormal: {fileID: 8300000, guid: 08bffc619c53d6143bd1291fd33f09c8, type: 3}
+    VoiceNormal:
+    - {fileID: 8300000, guid: 9879ed833efd09c4691b0ec06e2d7acd, type: 3}
+    - {fileID: 8300000, guid: 2957077c53a2cd94ca53a77f39190593, type: 3}
+    - {fileID: 8300000, guid: 08bffc619c53d6143bd1291fd33f09c8, type: 3}
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1667214196
 GameObject:
@@ -65282,7 +65327,7 @@ MonoBehaviour:
     JobTitle: Filing cabinet
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1682192279
 GameObject:
@@ -65979,7 +66024,7 @@ MonoBehaviour:
     JobTitle: Shards of glass
     LucidLevel: -1
     ObjImage: {fileID: 7499154508442906066, guid: aa5f5727ab27f6f4da8937cd0745334b, type: 3}
-    VoiceNormal: {fileID: 0}
+    VoiceNormal: []
     inkJSON: {fileID: 4900000, guid: 86b41aada2aa9564ba942ba3ef9baa2e, type: 3}
 --- !u!1 &1707702090
 GameObject:

@@ -157,7 +157,7 @@ public class DialogueManager : MonoBehaviour
 
     private void StartDialogueMode(InteractableObject actor)
     {
-        GetComponent<AudioSource>().clip = actor.VoiceNormal;
+        GetComponent<AudioSource>().clip = actor.VoiceNormal[UnityEngine.Random.Range(0, actor.VoiceNormal.Count)];
         GetComponent<AudioSource>().Play();        
 
         submitAction.Enable();
