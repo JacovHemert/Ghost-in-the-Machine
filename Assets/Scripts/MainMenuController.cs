@@ -7,10 +7,11 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] GameObject settingMenu;
-    [SerializeField] Slider musicSlider;
-    [SerializeField] Slider sfxSlider;
-    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] private GameObject settingMenu;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioSource sampleSFX;
 
     private const string MusicVolumeParam = "Music Volume";
     private const string SFXVolumeParam = "SFX Volume";
@@ -47,6 +48,7 @@ public class MainMenuController : MonoBehaviour
     public void OnSFXVolumeChanged(float value)
     {
         SetSFXVolume(value);
+        sampleSFX.Play();
     }
 
     public void OnExitButtonClick()
