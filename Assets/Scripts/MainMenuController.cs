@@ -51,7 +51,7 @@ public class MainMenuController : MonoBehaviour
 
     public void OnExitButtonClick()
     {
-
+        Application.Quit();
     }
 
     private float GetMusicVolume()
@@ -79,6 +79,7 @@ public class MainMenuController : MonoBehaviour
         audioMixer.SetFloat(SFXVolumeParam, db);
     }
 
+    // Converts a float value (0 to 1) to a decibel value (-80 to 20)
     private float FloatToDb(float value)
     {
         // Don't ask where these coefficients came from
@@ -86,6 +87,7 @@ public class MainMenuController : MonoBehaviour
         return Mathf.Clamp(db, -80, 20);
     }
 
+    // Converts a decibel value (-80 to 20) to a float value (0 to 1)
     private float DbToFloat(float db)
     {
         float value = (Mathf.Pow(10, (db + 80)/50) - 1) / 100;
