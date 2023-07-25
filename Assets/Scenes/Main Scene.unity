@@ -41634,7 +41634,8 @@ MonoBehaviour:
     JobTitle: 
     LucidLevel: 10000
     ObjImage: {fileID: 0}
-    VoiceNormal: []
+    VoiceNormal:
+    - {fileID: 0}
     inkJSON: {fileID: 0}
   BertrandInfo:
     ObjName: Bertrand
