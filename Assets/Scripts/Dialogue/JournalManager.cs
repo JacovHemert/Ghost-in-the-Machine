@@ -221,7 +221,7 @@ public class JournalManager : MonoBehaviour
         {
             string NPCName = speaker.GetComponentInParent<DialogueTrigger>().objInformation.ObjName;
 
-            if (SafeToContinue(NPCName, selectedKeyword))
+            if (SafeToContinue(speaker.GetComponentInParent<DialogueTrigger>().objInformation, selectedKeyword))
             {
                 KeywordEntry entry = journalData.AskNPCAbout(speaker.GetComponentInParent<DialogueTrigger>().objInformation, selectedKeyword);
                 DialogueManager.GetInstance().EnterDialogueMode(speaker.GetComponentInParent<DialogueTrigger>().objInformation, entry);
@@ -238,12 +238,13 @@ public class JournalManager : MonoBehaviour
         textPanel.text = journalData.GetDialogueForJournal(selectedNPC, selectedKeyword);
     }
 
-    private bool SafeToContinue(string speaker, string keyword)
+    private bool SafeToContinue(InteractableObject npc, string keyword)
     {
         bool safe = false;
+        string speaker = npc.ObjName;
         if (speaker == "Rene")
         {
-            if (keyword == "Mother")
+            if (keyword == "Mother" && npc.LucidLevel >= 5)
             {
                 if (foundKeywords.Contains("Office") && foundKeywords.Contains("Computer") && foundKeywords.Contains("Hologram"))
                     safe = true;
@@ -253,7 +254,7 @@ public class JournalManager : MonoBehaviour
         }
         else if (speaker == "Rousseau")
         {
-            if (keyword == "Resignation")
+            if (keyword == "Resignation" && npc.LucidLevel >= 5)
             {
                 if (foundKeywords.Contains("GRAPS") && foundKeywords.Contains("Company") && foundKeywords.Contains("Hologram") && foundKeywords.Contains("Bathroom stall"))
                     safe = true;
@@ -264,7 +265,7 @@ public class JournalManager : MonoBehaviour
         }
         else if (speaker == "Locke")
         {
-            if (keyword == "Update")
+            if (keyword == "Update" && npc.LucidLevel >= 5)
             {
                 if (foundKeywords.Contains("Hologram") && foundKeywords.Contains("Office") && foundKeywords.Contains("Bathroom stall") && foundKeywords.Contains("Pantry") && foundKeywords.Contains("Computer"))
                     safe = true;
@@ -275,7 +276,7 @@ public class JournalManager : MonoBehaviour
         }
         else if (speaker == "Immanuel")
         {
-            if (keyword == "Birdie")
+            if (keyword == "Birdie" && npc.LucidLevel >= 5)
             {
                 if (foundKeywords.Contains("Extinction event") && foundKeywords.Contains("Company") && foundKeywords.Contains("GRAPS"))
                     safe = true;
@@ -286,7 +287,7 @@ public class JournalManager : MonoBehaviour
         }
         else if (speaker == "Hume")
         {
-            if (keyword == "Photo")
+            if (keyword == "Photo" && npc.LucidLevel >= 5)
             {
                 if (foundKeywords.Contains("GRAPS") && foundKeywords.Contains("Pantry") && foundKeywords.Contains("Computer") && foundKeywords.Contains("Lunch"))
                     safe = true;
@@ -297,7 +298,7 @@ public class JournalManager : MonoBehaviour
         }
         else if (speaker == "Bertrand")
         {
-            if (keyword == "Hologram")
+            if (keyword == "Hologram" && npc.LucidLevel >= 5)
             {
                 if (foundKeywords.Contains("Pantry") && foundKeywords.Contains("Lunch"))
                     safe = true;
