@@ -11,11 +11,14 @@ public class StoryManager : MonoBehaviour
     public InteractableObject ghostInfo;
     public string ghostName;
 
+    public GameObject creditsObj;
+
     [HideInInspector] public int introStoryCounter = 0, bottlingStoryCounter = 0;    
 
     [Header("CharacterInfo")]
     public InteractableObject RyleInfo;
     public InteractableObject LucyInfo, LucyBottleInfo, EmptyInfo;
+    public InteractableObject BertrandInfo, HumeInfo, ImmanuelInfo, LockeInfo, ReneInfo;
 
     public static StoryManager GetInstance()
     {
@@ -171,7 +174,9 @@ public class StoryManager : MonoBehaviour
 
         ghostName = ghostInfo.ObjName;
 
-        Debug.Log("COUNTER: " + bottlingStoryCounter);
+        //Debug.Log("COUNTER: " + bottlingStoryCounter + " (HC)Rousseau vs (GN)" + ghostName + "? " );
+        //Debug.Log(ghostName == "Rousseau");
+        //Debug.Log(ghostName.Equals("Rousseau"));
 
         if (ghostName == "Rene")
         {
@@ -202,7 +207,196 @@ public class StoryManager : MonoBehaviour
             else if (bottlingStoryCounter == 4)
             {
                 DialogueManager.GetInstance().EnterDialogueMode(LucyBottleInfo, JournalManager.GetInstance().GetKeywordEntry(LucyBottleInfo, ghostName + "Bottle" + bottlingStoryCounter));
-                
+
+                bottlingStoryCounter = 0;
+                ghostInfo.LucidLevel++;
+                //ghostInfo = EmptyInfo;
+            }
+        }
+
+        else if (ghostName == "Locke")
+        {
+            if (bottlingStoryCounter == 0)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 1)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 2)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 3)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 4)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyBottleInfo, JournalManager.GetInstance().GetKeywordEntry(LucyBottleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 5)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 6)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyBottleInfo, JournalManager.GetInstance().GetKeywordEntry(LucyBottleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+
+                bottlingStoryCounter = 0;
+                ghostInfo.LucidLevel++;
+                //ghostInfo = EmptyInfo;
+            }
+        }
+        else if (ghostName == "Immanuel")
+        {
+            if (bottlingStoryCounter == 0)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 1)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 2)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyBottleInfo, JournalManager.GetInstance().GetKeywordEntry(LucyBottleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 3)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+
+                bottlingStoryCounter = 0;
+                ghostInfo.LucidLevel++;
+                //ghostInfo = EmptyInfo;
+            }
+        }
+        else if (ghostName == "Hume")
+        {
+            if (bottlingStoryCounter == 0)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 1)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 2)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 3)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 4)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 5)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 6)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyBottleInfo, JournalManager.GetInstance().GetKeywordEntry(LucyBottleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 7)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 8)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 9)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyBottleInfo, JournalManager.GetInstance().GetKeywordEntry(LucyBottleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+
+                bottlingStoryCounter = 0;
+                ghostInfo.LucidLevel++;
+                //ghostInfo = EmptyInfo;
+            }
+        }
+        else if (ghostName == "Bertrand")
+        {
+            if (bottlingStoryCounter == 0)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 1)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 2)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 3)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 4)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyBottleInfo, JournalManager.GetInstance().GetKeywordEntry(LucyBottleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 5)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 6)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyBottleInfo, JournalManager.GetInstance().GetKeywordEntry(LucyBottleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+
                 bottlingStoryCounter = 0;
                 ghostInfo.LucidLevel++;
                 //ghostInfo = EmptyInfo;
@@ -210,24 +404,227 @@ public class StoryManager : MonoBehaviour
         }
         else if (ghostName == "Rousseau")
         {
-            
+            Debug.Log("gets to ros");
+            if (bottlingStoryCounter == 0)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 1)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 2)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 3)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+                MusicManager.GetInstance().PlayMusic(1);
+            }
+            else if (bottlingStoryCounter == 4)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyBottleInfo, JournalManager.GetInstance().GetKeywordEntry(LucyBottleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 5)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 6)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 7)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+
+
+            //Releasing of other ghosts
+            else if (bottlingStoryCounter == 8)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(BertrandInfo, JournalManager.GetInstance().GetKeywordEntry(BertrandInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 9)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(HumeInfo, JournalManager.GetInstance().GetKeywordEntry(HumeInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 10)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ImmanuelInfo, JournalManager.GetInstance().GetKeywordEntry(ImmanuelInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 11)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LockeInfo, JournalManager.GetInstance().GetKeywordEntry(LockeInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 12)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ReneInfo, JournalManager.GetInstance().GetKeywordEntry(ReneInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+
+
+            // Conversation with Lucy
+
+            else if (bottlingStoryCounter == 13)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyInfo, JournalManager.GetInstance().GetKeywordEntry(LucyInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 14)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 15)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyInfo, JournalManager.GetInstance().GetKeywordEntry(LucyInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 16)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 17)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyInfo, JournalManager.GetInstance().GetKeywordEntry(LucyInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 18)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 19)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyInfo, JournalManager.GetInstance().GetKeywordEntry(LucyInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 20)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 21)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyInfo, JournalManager.GetInstance().GetKeywordEntry(LucyInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 22)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 23)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyInfo, JournalManager.GetInstance().GetKeywordEntry(LucyInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 24)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 25)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyInfo, JournalManager.GetInstance().GetKeywordEntry(LucyInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 26)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 27)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyInfo, JournalManager.GetInstance().GetKeywordEntry(LucyInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 28)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 29)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(LucyInfo, JournalManager.GetInstance().GetKeywordEntry(LucyInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+
+            //END Lucy convo
+
+            else if (bottlingStoryCounter == 30)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 31)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(ghostInfo, JournalManager.GetInstance().GetKeywordEntry(ghostInfo, ghostName + "Bottle" + bottlingStoryCounter));
+                ContinueBottlingStory = true;
+                bottlingStoryCounter++;
+            }
+            else if (bottlingStoryCounter == 32)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(RyleInfo, JournalManager.GetInstance().GetKeywordEntry(RyleInfo, ghostName + "Bottle" + bottlingStoryCounter));
+
+                bottlingStoryCounter = 0;
+                //ghostInfo.LucidLevel++;
+                //ghostInfo = EmptyInfo;
+                creditsObj.SetActive(true);
+                creditsObj.GetComponent<Animator>().SetTrigger("Play");
+            }
+
         }
-        else if (ghostName == "Locke")
+        else
         {
-            
+            Debug.Log("Name doesn't match any of the options.");
         }
-        else if (ghostName == "Immanuel")
-        {
-            
-        }
-        else if (ghostName == "Hume")
-        {
-           
-        }
-        else if (ghostName == "Bertrand")
-        {
-            
-        }
+        
     }
 
 }

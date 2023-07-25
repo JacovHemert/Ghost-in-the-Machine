@@ -243,7 +243,7 @@ public class JournalManager : MonoBehaviour
         bool safe = false;
         if (speaker == "Rene")
         {
-            if (keyword == "MotherVOID")
+            if (keyword == "Mother")
             {
                 if (foundKeywords.Contains("Office") && foundKeywords.Contains("Computer") && foundKeywords.Contains("Hologram"))
                     safe = true;
@@ -315,6 +315,20 @@ public class JournalManager : MonoBehaviour
     public KeywordEntry GetKeywordEntry(InteractableObject actor, string keyword)
     {
         return journalData.AskNPCAbout(actor, keyword);
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            AddKeyword("Resignation");
+            AddKeyword("GRAPS");
+            AddKeyword("Company");
+            AddKeyword("Hologram");
+            AddKeyword("Bathroom stall");
+
+        }
     }
 }
 
