@@ -318,20 +318,20 @@ public class JournalManager : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            AddKeyword("Resignation");
-            AddKeyword("GRAPS");
-            AddKeyword("Company");
-            AddKeyword("Hologram");
-            AddKeyword("Bathroom stall");
-            AddKeyword("Mother");
-            AddKeyword("Office");
-            AddKeyword("Computer");
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.P))
+    //    {
+    //        AddKeyword("Resignation");
+    //        AddKeyword("GRAPS");
+    //        AddKeyword("Company");
+    //        AddKeyword("Hologram");
+    //        AddKeyword("Bathroom stall");
+    //        AddKeyword("Mother");
+    //        AddKeyword("Office");
+    //        AddKeyword("Computer");
 
-        }
-    }
+    //    }
+    //}
 }
 
