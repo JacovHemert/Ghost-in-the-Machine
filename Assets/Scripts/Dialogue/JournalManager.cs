@@ -76,7 +76,8 @@ public class JournalManager : MonoBehaviour
     {
         if (context.performed)
         {
-            ToggleJournal();
+            if (!DialogueManager.GetInstance().DialogueIsPlaying)
+                ToggleJournal();
         }
     }
 

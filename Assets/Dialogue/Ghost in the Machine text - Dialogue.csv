@@ -293,8 +293,8 @@ Middle,,,,,,,,,
 ,,Rousseau,,3,,Mother,"I don't really remember my mom. She was around more than my dad, but it's like I can't even remember her face. I kept myself company most of the time growing up. Didn't really make friends. It was a hard time for me. But on the bright side, I had a lot of free time to learn how spectral physics work. Which allowed me to get a job and live on my own terms when I was fifteen. I don't resent my parents though. They did the best they could manage.",,
 ,,Rousseau,,5,,Traces of blood,"Blood on my jacket. From where I was shot. Immanuel was lying on the ground. I shouldn't have left him there. But I was too scared. Scared of dying, but more scared of the GRAPS activating and causing everyone on Aris to die. I couldn't let that happen. I took the long way around to the workshop, so Rene wouldn't have a shot at me until I got there. Somehow I still made it there before him, but I knew he'd come.",,
 ,,Rousseau,,3,,Protect,"What's going to happen to Hume's family? They were already struggling financially with Hume working full time. Now that she's... now that she's gone, they'll be in trouble. I have to protect them. Somehow.",,
-,,Rousseau,,1,,Update,"The GRAPS is coming along nicely. The functionality is pretty much in place, so now we just need to close up that exposed energy and install all the fairings.",,
-,,Rousseau,,1,,Broken door,"Broken? The door to the GRAPS is definitely not broken. Hume and I lock it down every night before we go, and I test it after we do. It's not broken.",,
+,,Rousseau,,1,,Update,"The GRAPS is coming along nicely. The functionality is pretty much in place, so now we just need to close up that exposed energy and install all the fairings.",,GRAPS
+,,Rousseau,,1,,Broken door,"Broken? The door to the GRAPS is definitely not broken. Hume and I lock it down every night before we go, and I test it after we do. It's not broken.",,GRAPS
 ,,Rousseau,,3,,Tickets,Hume got us tickets to the showing of the holo-film Battle of the Stars. It's a classic.,,
 ,,Rousseau,,1,,Birdie,"I had a parrot once. It died, and that felt worse than just not having a pet at all.",,
 ,,Rousseau,,1,,Watercolor,It's best to keep paints away from spectral energy. Most people don't listen to that advice though. ,,
@@ -408,7 +408,7 @@ Middle,,,,,,,,,
 ,,Help,,0,,Not done,[This ghost still has other important things to tell you. Try asking other things before you ask this keyword.],,
 ,,Inspect,,-1,,Plaque,It's a plaque that reads 'Employee of the Month'. It's been hastily stuffed in the trash.,,Employee of the month
 ,,Inspect,Rene,-1,,Dead body (bathroom),"A thin man, fairly young. Looks like he was vomiting a bit before he died.",,
-,,Inspect,,-1,,Conspiracy board,"A pinboard with various newspaper clippings and pictures, with red thread connecting them. Some of the clippings' headlines are 'Planet-wide plague?' and 'Millions dead'. A red thread connects them with a sticky note that reads 'Descartes Power'.",,
+,,Inspect,,-1,,Conspiracy board,"A pinboard with various newspaper clippings and pictures, with red thread connecting them. Some of the clippings' headlines are 'Planet-wide plague?' and 'Millions dead'. A red thread connects them with a sticky note that reads 'Descartes Power'.",,Bathroom stall
 ,,Inspect,,-1,,Gun,A Forest Sparrow pistol. Commonly used by security and law enforcement. Deadly at close range. It's missing five bullets in the clip.,,Gun
 ,,Inspect,,-1,,Knife,"A professional-looking chef's knife. Looks clean, except for some traces of garlic on the edge of the blade.",,Chef's knife
 ,,Inspect,,-1,,Elevator,"The elevator here seems to be missing. There's safety tape hanging loosely from the sides, which look like they were torn open.",,Elevator
