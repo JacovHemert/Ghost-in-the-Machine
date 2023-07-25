@@ -52728,7 +52728,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Macajust and Andrew
+  m_text: Michael "Macajust" Utley and Andrew "Anjru" Reed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 552be208111303e448bcb23be5ccdeb4, type: 2}
   m_sharedMaterial: {fileID: -3944125848876212492, guid: 552be208111303e448bcb23be5ccdeb4, type: 2}
