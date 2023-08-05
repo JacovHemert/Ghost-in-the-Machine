@@ -81,7 +81,7 @@ public class JournalManager : MonoBehaviour
         }
     }
 
-    private void ToggleJournal()
+    public void ToggleJournal()
     {
         // Prevent opening the journal during dialogue segments
         if (!DialogueManager.GetInstance().DialogueIsPlaying)

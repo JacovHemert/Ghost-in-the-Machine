@@ -250,6 +250,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""5a989d5a-419b-44dc-8c6d-faaed5140b18"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Journal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""af7b3431-1a39-43e6-bd02-69d0aa3d30a4"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
