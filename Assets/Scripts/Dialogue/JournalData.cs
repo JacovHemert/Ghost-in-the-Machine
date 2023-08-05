@@ -48,6 +48,7 @@ public class JournalData
             if (!journalEntry.Found && journalEntry.AdvanceLucidity) 
             {
                 npc.LucidLevel++;
+                JournalManager.GetInstance().LucidUpAnimation();
 
                 if (npc.LucidLevel == 7)
                 {

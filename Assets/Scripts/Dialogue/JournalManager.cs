@@ -24,6 +24,7 @@ public class JournalManager : MonoBehaviour
 
     private Button selectedKeywordButton;
     private Button selectedNPCButton;
+    [SerializeField] private GameObject lucidityParticles;
 
     private string selectedKeyword;
     private InteractableObject selectedNPC;
@@ -70,6 +71,13 @@ public class JournalManager : MonoBehaviour
         
         SelectButtons();
         journalPanel.SetActive(false);
+    }
+
+    public void LucidUpAnimation()
+    {
+        lucidityParticles.SetActive(false);
+        lucidityParticles.SetActive(true);
+
     }
 
     public void OnActivateJournal(InputAction.CallbackContext context)
