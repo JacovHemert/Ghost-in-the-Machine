@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoryManager : MonoBehaviour
+public class StoryManager : MonoBehaviour, IData
 {
     private static StoryManager instance;
 
@@ -22,6 +22,8 @@ public class StoryManager : MonoBehaviour
     public InteractableObject LucyInfo, LucyBottleInfo, EmptyInfo;
     public InteractableObject BertrandInfo, HumeInfo, ImmanuelInfo, LockeInfo, ReneInfo;
 
+    public List<DialogueTrigger> allSavedDialogueTriggerObjects = new List<DialogueTrigger>();
+
     public static StoryManager GetInstance()
     {
         return instance;
@@ -38,7 +40,7 @@ public class StoryManager : MonoBehaviour
 
     private void Start()
     {
-        ShowIntroStorySegment();
+        if (introStoryCounter == 0) ShowIntroStorySegment();
 
     }
 
@@ -630,4 +632,87 @@ public class StoryManager : MonoBehaviour
         
     }
 
+    public void LoadData(GameData data)
+    {
+        bottlingStoryCounter = data.BottlingStoryCounter;
+        introStoryCounter = data.IntroStoryCounter;
+        gotPassCode = data.GotPassCode;
+
+        foreach (var obj in allSavedDialogueTriggerObjects)
+        {
+            var newObj = data.Actors.Find(n => n.ObjName == obj.objInformation.ObjName);
+            if (newObj != null)
+            {
+                obj.objInformation.LucidLevel = newObj.LucidLevel;
+            }
+        }
+
+
+        foreach (var trigger in data.StoryTriggers)
+        {
+            Debug.Log("DATA - Loading " + trigger.Key + " to be " + trigger.Value);
+        }
+
+
+
+        var tempTriggers = new List<StoryTrigger>();
+
+        foreach (var trigger in FindObjectsOfType<StoryTrigger>(true))
+        {
+            tempTriggers.Add(trigger);
+            
+        }
+
+        foreach (var trigger in tempTriggers)
+        {
+            bool triggerActive = true;
+            if (data.storyTriggers.Find(n => n.TriggerName == trigger.triggerName) != null)
+            {
+                triggerActive = data.storyTriggers.Find(n => n.TriggerName == trigger.triggerName).TriggerActive;
+            }
+            //if (data.StoryTriggers.TryGetValue(trigger.triggerName, out bool loadedTriggerActive))//  (n => n.triggerName == trigger.triggerName) != null)
+            //{
+            //    triggerActive = loadedTriggerActive;//data.storyTriggers.Find(n => n.triggerName == trigger.triggerName).active;
+            //}
+            trigger.active = triggerActive;
+            trigger.gameObject.SetActive(trigger.active);
+            Debug.Log("Loading " + trigger.triggerName + " to be " + trigger.active);
+        }
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.BottlingStoryCounter = bottlingStoryCounter;
+        data.IntroStoryCounter = introStoryCounter;
+        data.GotPassCode = gotPassCode;
+
+        data.storyTriggers = new List<TriggerObject>();
+
+        int i = 0;
+        foreach (var trigger in FindObjectsOfType<StoryTrigger>(true))
+        {
+            data.storyTriggers.Add(new TriggerObject(trigger.triggerName, trigger.active));
+            
+
+            //data.StoryTriggers.Add(trigger.triggerName, trigger.active);
+
+            //Debug.Log("trigger " + data.storyTriggers[i].triggerName  + " is " + data.storyTriggers[i].active);
+            i++;
+        }
+
+
+        foreach( var dialogueTrigger in allSavedDialogueTriggerObjects)
+        {
+            data.Actors.Add(dialogueTrigger.objInformation);
+        }
+
+        
+
+
+
+        //         public InteractableObject RyleInfo;
+        //public InteractableObject LucyInfo, LucyBottleInfo, EmptyInfo;
+        //public InteractableObject BertrandInfo, HumeInfo, ImmanuelInfo, LockeInfo, ReneInfo;
+
+    }
 }

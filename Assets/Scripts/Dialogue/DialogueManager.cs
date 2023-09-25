@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour, IData
 {
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -270,5 +270,20 @@ public class DialogueManager : MonoBehaviour
         }
 
         return new Ink.Compiler(text).Compile();
+    }
+
+    public void LoadData(GameData data)
+    {
+        openDoors = data.DoorsOpen;
+        if (openDoors)
+        {
+            doorsClosedObj.SetActive(false);
+            doorsOpenObj.SetActive(true);
+        }
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.DoorsOpen = openDoors;
     }
 }

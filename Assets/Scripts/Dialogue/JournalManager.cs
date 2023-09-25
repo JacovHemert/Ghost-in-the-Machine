@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class JournalManager : MonoBehaviour
+public class JournalManager : MonoBehaviour, IData
 {
     [SerializeField] private TextAsset journalDataFile; // CSV file containing the dialogue for interactions
     [SerializeField] private GameObject journalPanel;   // The UI panel for the player's journal
@@ -50,11 +50,11 @@ public class JournalManager : MonoBehaviour
     void Start()
     {
         //TODO: this is just for testing, remove later
-        AddKeyword("Hume");
-        AddKeyword("Bertrand");
-        AddKeyword("Immanuel");
-        AddKeyword("Rene");
-        AddKeyword("Rousseau");
+        AddKeyword("Hume", false);
+        AddKeyword("Bertrand", false);
+        AddKeyword("Immanuel", false);
+        AddKeyword("Rene", false);
+        AddKeyword("Rousseau", false);
         AddKeyword("Locke");
 
         selectedNPCButton = namesPage.transform.GetChild(0).GetComponent<Button>();
@@ -144,12 +144,19 @@ public class JournalManager : MonoBehaviour
     /// Adds a keyword to the notebook/journal. 
     /// </summary>
     /// <returns>True if the keyword is new, false if it is already known.</returns>
-    public bool AddKeyword(string keyword) 
+    public bool AddKeyword(string keyword, bool save = true) 
     {
         if (!string.IsNullOrEmpty(keyword) && !foundKeywords.Contains(keyword))
         {
             foundKeywords.Add(keyword);
             AddKeywordButton(keyword);
+            if (save)
+            {
+                if (DataManager.GetInstance() != null)
+                    Debug.Log(DataManager.GetInstance());
+
+                DataManager.GetInstance().SaveGame();
+            }
             return true;
         }
         else
@@ -329,6 +336,25 @@ public class JournalManager : MonoBehaviour
     public KeywordEntry GetKeywordEntry(InteractableObject actor, string keyword)
     {
         return journalData.AskNPCAbout(actor, keyword);
+    }
+
+    public void LoadData(GameData data)
+    {
+        //journalData = data.PlayerJournalData;
+        
+        foreach (var keyword in data.FoundKeyWords)
+        {
+            AddKeyword(keyword, false);
+        }
+
+
+
+    }
+
+    public void SaveData(GameData data)
+    {
+        //data.PlayerJournalData = journalData;
+        data.FoundKeyWords = foundKeywords;
     }
 
 

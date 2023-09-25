@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using System.Linq;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IData
 {
     [SerializeField] private GameObject buttonPromptPanel, journalPanel;
 
@@ -241,5 +241,14 @@ public class PlayerController : MonoBehaviour
         GetComponentInChildren<SpriteMask>().sprite = GetComponentInChildren<SpriteRenderer>().sprite;
     }
 
+    public void LoadData(GameData data)
+    {
+        transform.position = data.PlayerPos;
+    }
 
+    public void SaveData(GameData data)
+    {
+        data.PlayerPos = this.transform.position;
+        
+    }
 }

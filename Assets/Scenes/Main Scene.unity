@@ -26201,6 +26201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52df0294c4e69374a93e1bcc6f18219f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerName: 
+  active: 1
 --- !u!60 &181757895
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -28409,6 +28411,7 @@ Transform:
   - {fileID: 902095992}
   - {fileID: 904095575}
   - {fileID: 1447715051}
+  - {fileID: 2115476537}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31673,6 +31676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52df0294c4e69374a93e1bcc6f18219f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerName: 
+  active: 1
 --- !u!60 &441262921
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -41839,6 +41844,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 2957077c53a2cd94ca53a77f39190593, type: 3}
     - {fileID: 8300000, guid: 08bffc619c53d6143bd1291fd33f09c8, type: 3}
     inkJSON: {fileID: 0}
+  allSavedDialogueTriggerObjects:
+  - {fileID: 759742653}
+  - {fileID: 696546681}
+  - {fileID: 557891987}
+  - {fileID: 240921410}
+  - {fileID: 1417425644}
+  - {fileID: 1651926171}
 --- !u!1 &905606350
 GameObject:
   m_ObjectHideFlags: 0
@@ -53044,6 +53056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52df0294c4e69374a93e1bcc6f18219f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerName: 
+  active: 1
 --- !u!60 &1233064242
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -53228,6 +53242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52df0294c4e69374a93e1bcc6f18219f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerName: 
+  active: 1
 --- !u!1 &1252712398
 GameObject:
   m_ObjectHideFlags: 0
@@ -55342,6 +55358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52df0294c4e69374a93e1bcc6f18219f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerName: 
+  active: 1
 --- !u!60 &1361704283
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -75701,6 +75719,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2115476536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2115476537}
+  - component: {fileID: 2115476538}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2115476537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115476536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 297747323}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2115476538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115476536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89f9f7b8714ecd4e940b8cd362b0346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fileName: SaveData.gitm
 --- !u!1 &2121355099
 GameObject:
   m_ObjectHideFlags: 0
